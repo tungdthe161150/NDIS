@@ -1,0 +1,32 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.News.CreateModel
+@{
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="container">
+    <h1>Thêm tin tức mới</h1>
+    <a asp-page="./Index">Quay lại</a>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="News.Title">Tiêu đề (Title):</label>
+            <input asp-for="News.Title" class="form-control" />
+            <span asp-validation-for="News.Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="News.Content">Nội dung (Content):</label>
+            <textarea asp-for="News.Content" rows="5" class="form-control"></textarea>
+            <span asp-validation-for="News.Content" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="News.Source">Nguồn (Content):</label>
+            <textarea asp-for="News.Source" rows="5" class="form-control"></textarea>
+            <span asp-validation-for="News.Source" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Lưu (Save)</button>
+    </form>
+</div>
+
+
+

@@ -1,0 +1,2957 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NaturalDisasterInformationSystem.bundle.scp.css",
+      "PackagePath": "staticwebassets\\NaturalDisasterInformationSystem.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\demo.css",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\demo.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\demo.css.map",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\demo.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\fonts.css",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\fonts.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\fonts.min.css",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\fonts.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\kaiadmin.css",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\kaiadmin.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\kaiadmin.css.map",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\kaiadmin.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\kaiadmin.min.css",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\kaiadmin.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\plugins.css",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\plugins.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\plugins.css.map",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\plugins.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\css\\plugins.min.css",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\css\\plugins.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-brands-400.eot"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-brands-400.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-brands-400.woff"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-regular-400.eot"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-regular-400.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-regular-400.woff"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-solid-900.eot"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-solid-900.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-solid-900.woff"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\fontawesome\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\simple-line-icons\\Simple-Line-Icons.eot",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\simple-line-icons\\Simple-Line-Icons.eot"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\simple-line-icons\\Simple-Line-Icons.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\simple-line-icons\\Simple-Line-Icons.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\simple-line-icons\\Simple-Line-Icons.ttf",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\simple-line-icons\\Simple-Line-Icons.ttf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\simple-line-icons\\Simple-Line-Icons.woff",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\simple-line-icons\\Simple-Line-Icons.woff"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\simple-line-icons\\Simple-Line-Icons.woff2",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\simple-line-icons\\Simple-Line-Icons.woff2"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\summernote\\summernote.eot",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\summernote\\summernote.eot"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\summernote\\summernote.ttf",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\summernote\\summernote.ttf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\summernote\\summernote.woff",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\summernote\\summernote.woff"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\fonts\\summernote\\summernote.woff2",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\fonts\\summernote\\summernote.woff2"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\arashmil.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\arashmil.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\bg-404.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\bg-404.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\blogpost.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\blogpost.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\chadengle.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\chadengle.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example1-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example1-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example1.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example1.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example10-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example10-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example10.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example10.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example11-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example11-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example11.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example11.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example12-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example12-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example12.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example12.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example2-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example2-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example2.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example2.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example3-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example3-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example3.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example3.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example4-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example4-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example4.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example4.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example5-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example5-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example5.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example5.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example6-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example6-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example6.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example6.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example7-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example7-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example7.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example7.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example8-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example8-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example8.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example8.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example9-300x300.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example9-300x300.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\example9.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\example9.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\logo.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\logo.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\logo1.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\logo1.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\logo2.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\logo2.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\logoinvoice.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\logoinvoice.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product1.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product10.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product10.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product11.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product11.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product12.jpeg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product12.jpeg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product2.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product2.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product3.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product3.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product4.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product4.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product5.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product5.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product6.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product6.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product7.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product7.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\examples\\product8.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\examples\\product8.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ad.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ad.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ae.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ae.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\af.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\af.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ag.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ag.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ai.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ai.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\al.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\al.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\am.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\am.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\an.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\an.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ao.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ao.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ar.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ar.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\as.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\as.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\at.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\at.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\au.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\au.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\aw.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\aw.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ax.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ax.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\az.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\az.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ba.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ba.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bb.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bb.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bd.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bd.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\be.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\be.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bf.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bf.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bg.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bg.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bh.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bh.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bi.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bi.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bj.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bj.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bn.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bn.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bo.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bo.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\br.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\br.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bs.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bs.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bt.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bt.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bv.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bv.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bw.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bw.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\by.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\by.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\bz.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\bz.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ca.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ca.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\catalonia.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\catalonia.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cc.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cc.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cd.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cd.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cf.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cf.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cg.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cg.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ch.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ch.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ci.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ci.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ck.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ck.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cl.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cl.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cn.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cn.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\co.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\co.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cs.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cs.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cu.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cu.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cv.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cv.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cx.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cx.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cy.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cy.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\cz.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\cz.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\de.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\de.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\dj.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\dj.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\dk.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\dk.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\dm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\dm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\do.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\do.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\dz.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\dz.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ec.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ec.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ee.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ee.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\eg.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\eg.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\eh.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\eh.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\england.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\england.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\er.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\er.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\es.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\es.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\et.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\et.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\europeanunion.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\europeanunion.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\fam.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\fam.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\fi.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\fi.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\fj.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\fj.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\fk.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\fk.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\fm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\fm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\fo.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\fo.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\fr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\fr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ga.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ga.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gb.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gb.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gd.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gd.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ge.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ge.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gf.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gf.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gh.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gh.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gi.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gi.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gl.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gl.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gn.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gn.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gp.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gp.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gq.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gq.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gs.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gs.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gt.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gt.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gu.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gu.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gw.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gw.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\gy.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\gy.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\hk.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\hk.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\hm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\hm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\hn.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\hn.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\hr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\hr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ht.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ht.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\hu.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\hu.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\id.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\id.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ie.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ie.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\il.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\il.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\in.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\in.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\io.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\io.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\iq.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\iq.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ir.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ir.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\is.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\is.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\it.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\it.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\jm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\jm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\jo.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\jo.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\jp.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\jp.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ke.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ke.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\kg.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\kg.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\kh.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\kh.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ki.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ki.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\km.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\km.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\kn.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\kn.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\kp.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\kp.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\kr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\kr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\kw.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\kw.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ky.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ky.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\kz.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\kz.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\la.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\la.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\lb.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\lb.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\lc.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\lc.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\li.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\li.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\lk.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\lk.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\lr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\lr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ls.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ls.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\lt.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\lt.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\lu.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\lu.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\lv.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\lv.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ly.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ly.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ma.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ma.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mc.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mc.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\md.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\md.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\me.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\me.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mg.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mg.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mh.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mh.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mk.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mk.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ml.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ml.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mn.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mn.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mo.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mo.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mp.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mp.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mq.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mq.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ms.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ms.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mt.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mt.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mu.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mu.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mv.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mv.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mw.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mw.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mx.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mx.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\my.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\my.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\mz.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\mz.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\na.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\na.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\nc.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\nc.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ne.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ne.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\nf.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\nf.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ng.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ng.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ni.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ni.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\nl.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\nl.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\no.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\no.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\np.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\np.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\nr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\nr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\nu.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\nu.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\nz.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\nz.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\om.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\om.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pa.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pa.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pe.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pe.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pf.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pf.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pg.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pg.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ph.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ph.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pk.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pk.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pl.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pl.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pn.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pn.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ps.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ps.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pt.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pt.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\pw.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\pw.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\py.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\py.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\qa.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\qa.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\re.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\re.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\readme.txt",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\readme.txt"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ro.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ro.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\rs.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\rs.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ru.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ru.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\rw.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\rw.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sa.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sa.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sb.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sb.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sc.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sc.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\scotland.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\scotland.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sd.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sd.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\se.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\se.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sg.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sg.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sh.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sh.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\si.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\si.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sj.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sj.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sk.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sk.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sl.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sl.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sn.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sn.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\so.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\so.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\st.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\st.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sv.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sv.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sy.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sy.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\sz.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\sz.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tc.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tc.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\td.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\td.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tf.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tf.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tg.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tg.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\th.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\th.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tj.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tj.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tk.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tk.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tl.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tl.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tn.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tn.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\to.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\to.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tr.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tr.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tt.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tt.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tv.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tv.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tw.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tw.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\tz.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\tz.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ua.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ua.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ug.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ug.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\um.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\um.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\us.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\us.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\uy.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\uy.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\uz.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\uz.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\va.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\va.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\vc.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\vc.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ve.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ve.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\vg.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\vg.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\vi.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\vi.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\vn.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\vn.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\vu.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\vu.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\wales.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\wales.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\wf.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\wf.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ws.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ws.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\ye.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\ye.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\yt.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\yt.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\za.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\za.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\zm.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\zm.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\flags\\zw.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\flags\\zw.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\img-shadow.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\img-shadow.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\jm_denis.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\jm_denis.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\demo1.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\demo1.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\demo2.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\demo2.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\demo3.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\demo3.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\demo4.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\demo4.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\demo5.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\demo5.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\demo6.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\demo6.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\demo7.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\demo7.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\demo8.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\demo8.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\demo9.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\demo9.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\favicon.ico",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\favicon.ico"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\favicon.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\favicon.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\favicon.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\favicon.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\icon.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\icon.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\icon.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\icon.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\logo3.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\logo3.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\logo_dark.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\logo_dark.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\logo_dark.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\logo_dark.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\logo_documentation.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\logo_documentation.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\logo_light.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\logo_light.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\kaiadmin\\logo_light.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\kaiadmin\\logo_light.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\logoproduct.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\logoproduct.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\logoproduct2.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\logoproduct2.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\logoproduct3.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\logoproduct3.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\mlane.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\mlane.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\profile.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\profile.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\profile2.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\profile2.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\sauro.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\sauro.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\talha.jpg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\talha.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_Hello_qnas.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_Hello_qnas.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_Taken_if77.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_Taken_if77.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_blank_canvas_3rbb.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_blank_canvas_3rbb.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_creative_team_r90h.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_creative_team_r90h.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_empty_xct9.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_empty_xct9.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_no_data_qbuo.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_no_data_qbuo.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_not_found_60pq.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_not_found_60pq.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_page_not_found_su7k.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_page_not_found_su7k.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_sign_in_e6hj.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_sign_in_e6hj.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_tabs_jf82.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_tabs_jf82.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_update_uxn2.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_update_uxn2.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\undraw\\undraw_upgrade_06a0.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\undraw\\undraw_upgrade_06a0.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\img\\visa.svg",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\img\\visa.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\core\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\core\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\core\\jquery-3.7.1.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\core\\jquery-3.7.1.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\core\\popper.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\core\\popper.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\demo.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\demo.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\kaiadmin.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\kaiadmin.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\kaiadmin.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\kaiadmin.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\bootstrap-notify\\bootstrap-notify.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\bootstrap-notify\\bootstrap-notify.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\bootstrap-tagsinput\\bootstrap-tagsinput.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\bootstrap-tagsinput\\bootstrap-tagsinput.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\bootstrap-toggle\\bootstrap-toggle.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\bootstrap-toggle\\bootstrap-toggle.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\chart-circle\\circles.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\chart-circle\\circles.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\chart.js\\chart.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\chart.js\\chart.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\datatables\\datatables.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\datatables\\datatables.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\datepicker\\bootstrap-datetimepicker.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\datepicker\\bootstrap-datetimepicker.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\dropzone\\dropzone.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\dropzone\\dropzone.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\fullcalendar\\fullcalendar.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\fullcalendar\\fullcalendar.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\gmaps\\gmaps.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\gmaps\\gmaps.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\jquery-scrollbar\\jquery.scrollbar.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\jquery-scrollbar\\jquery.scrollbar.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\jquery.magnific-popup\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\jquery.magnific-popup\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\jquery.sparkline\\jquery.sparkline.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\jquery.sparkline\\jquery.sparkline.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\jquery.validate\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\jquery.validate\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\jsvectormap\\jsvectormap.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\jsvectormap\\jsvectormap.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\jsvectormap\\world.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\jsvectormap\\world.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\list.js\\list.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\list.js\\list.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\moment\\moment.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\moment\\moment.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\owl-carousel\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\owl-carousel\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\owl-carousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\owl-carousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\owl-carousel\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\owl-carousel\\owl.video.play.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\select2\\select2.full.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\select2\\select2.full.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\sortable\\sortable.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\sortable\\sortable.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\sticky-sidebar\\sticky-sidebar.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\sticky-sidebar\\sticky-sidebar.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\summernote\\summernote-lite.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\summernote\\summernote-lite.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\sweetalert\\sweetalert.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\sweetalert\\sweetalert.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\plugin\\webfont\\webfont.min.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\plugin\\webfont\\webfont.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\setting-demo.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\setting-demo.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\LayoutAdmin\\assets\\js\\setting-demo2.js",
+      "PackagePath": "staticwebassets\\LayoutAdmin\\assets\\js\\setting-demo2.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\assets\\css\\ajax-loader.gif"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\animate.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\aos.css",
+      "PackagePath": "staticwebassets\\assets\\css\\aos.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\bootstrap-datepicker.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap-datepicker.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\bootstrap\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\bootstrap\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\assets\\css\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\css\\mixins\\_text-hide.css",
+      "PackagePath": "staticwebassets\\assets\\css\\css\\mixins\\_text-hide.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\flaticon.css",
+      "PackagePath": "staticwebassets\\assets\\css\\flaticon.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\icomoon.css",
+      "PackagePath": "staticwebassets\\assets\\css\\icomoon.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\ionicons.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\ionicons.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\jquery.timepicker.css",
+      "PackagePath": "staticwebassets\\assets\\css\\jquery.timepicker.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\assets\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\flaticon\\backup.txt",
+      "PackagePath": "staticwebassets\\assets\\fonts\\flaticon\\backup.txt"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\flaticon\\font\\Flaticon.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\flaticon\\font\\Flaticon.eot"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\flaticon\\font\\Flaticon.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\flaticon\\font\\Flaticon.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\flaticon\\font\\Flaticon.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\flaticon\\font\\Flaticon.ttf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\flaticon\\font\\Flaticon.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\flaticon\\font\\Flaticon.woff"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\flaticon\\font\\_flaticon.scss",
+      "PackagePath": "staticwebassets\\assets\\fonts\\flaticon\\font\\_flaticon.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\flaticon\\font\\flaticon.css",
+      "PackagePath": "staticwebassets\\assets\\fonts\\flaticon\\font\\flaticon.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\flaticon\\font\\flaticon.html",
+      "PackagePath": "staticwebassets\\assets\\fonts\\flaticon\\font\\flaticon.html"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\flaticon\\license\\license.pdf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\flaticon\\license\\license.pdf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\icomoon\\icomoon.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\icomoon\\icomoon.eot"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\icomoon\\icomoon.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\icomoon\\icomoon.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\icomoon\\icomoon.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\icomoon\\icomoon.ttf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\icomoon\\icomoon.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\icomoon\\icomoon.woff"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\ionicons\\css\\_ionicons.scss",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons\\css\\_ionicons.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\ionicons\\css\\ionicons.min.css",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons\\css\\ionicons.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\ionicons\\fonts\\ionicons.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons\\fonts\\ionicons.eot"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\ionicons\\fonts\\ionicons.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons\\fonts\\ionicons.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\ionicons\\fonts\\ionicons.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons\\fonts\\ionicons.ttf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\ionicons\\fonts\\ionicons.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons\\fonts\\ionicons.woff"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\ionicons\\fonts\\ionicons.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons\\fonts\\ionicons.woff2"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\open-iconic\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\open-iconic\\open-iconic.eot"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\open-iconic\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\open-iconic\\open-iconic.otf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\open-iconic\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\open-iconic\\open-iconic.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\open-iconic\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\open-iconic\\open-iconic.ttf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\fonts\\open-iconic\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\open-iconic\\open-iconic.woff"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\bg_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg_1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\bg_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg_2.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\bg_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg_3.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\bg_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg_4.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\bg_5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg_5.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\bg_6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg_6.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\bg_7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\bg_7.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\cause-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\cause-1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\cause-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\cause-2.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\cause-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\cause-3.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\cause-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\cause-4.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\cause-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\cause-5.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\cause-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\cause-6.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\event-1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\event-1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\event-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\event-2.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\event-3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\event-3.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\event-4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\event-4.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\event-5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\event-5.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\event-6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\event-6.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\image_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\image_1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\image_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\image_2.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\image_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\image_3.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\image_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\image_4.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\image_5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\image_5.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\image_6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\image_6.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\loc.png",
+      "PackagePath": "staticwebassets\\assets\\images\\loc.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\person_1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\person_1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\person_2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\person_2.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\person_3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\person_3.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\person_4.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\person_4.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\person_5.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\person_5.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\person_6.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\person_6.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\person_7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\person_7.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\person_8.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\person_8.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\images\\person_9.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\person_9.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\aos.js",
+      "PackagePath": "staticwebassets\\assets\\js\\aos.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\bootstrap-datepicker.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap-datepicker.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\google-map.js",
+      "PackagePath": "staticwebassets\\assets\\js\\google-map.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\jquery-3.2.1.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery-3.2.1.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\jquery-migrate-3.0.1.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery-migrate-3.0.1.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\jquery.animateNumber.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.animateNumber.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\jquery.easing.1.3.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.easing.1.3.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\jquery.stellar.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.stellar.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\jquery.timepicker.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.timepicker.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\jquery.waypoints.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.waypoints.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\popper.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\range.js",
+      "PackagePath": "staticwebassets\\assets\\js\\range.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\js\\scrollax.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\scrollax.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_alert.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_alert.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_badge.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_badge.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_breadcrumb.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_button-group.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_button-group.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_card.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_card.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_carousel.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_carousel.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_close.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_close.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_code.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_code.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_custom-forms.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_custom-forms.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_dropdown.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_forms.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_forms.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_functions.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_functions.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_grid.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_grid.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_images.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_images.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_input-group.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_input-group.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_jumbotron.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_jumbotron.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_list-group.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_media.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_media.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_mixins.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_modal.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_modal.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_nav.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_nav.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_navbar.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_navbar.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_pagination.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_popover.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_popover.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_print.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_print.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_progress.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_progress.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_reboot.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_reboot.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_root.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_root.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_tables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_tables.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_tooltip.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_transitions.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_transitions.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_type.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_type.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_utilities.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_utilities.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\_variables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\_variables.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\bootstrap.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_background-variant.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_background-variant.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_float.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_float.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_grid-framework.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_grid-framework.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_image.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_nav-divider.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_nav-divider.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_screen-reader.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_size.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_size.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_table-row.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_table-row.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_text-emphasis.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_text-emphasis.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_text-hide.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_text-hide.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\mixins\\_visibility.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\mixins\\_visibility.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_align.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_align.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_background.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_background.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_borders.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_borders.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_clearfix.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_display.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_display.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_embed.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_embed.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_flex.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_flex.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_float.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_float.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_position.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_position.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_screenreaders.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_screenreaders.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_shadows.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_shadows.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_sizing.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_sizing.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_spacing.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_spacing.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_text.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_text.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\bootstrap\\utilities\\_visibility.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\bootstrap\\utilities\\_visibility.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\assets\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\style.scss"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\02b0f4e5-661f-446e-99df-ea4ae63f51d8.jpg",
+      "PackagePath": "staticwebassets\\uploads\\02b0f4e5-661f-446e-99df-ea4ae63f51d8.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\5f970fb7-602f-4e67-87d9-2f90c56075aa.svg",
+      "PackagePath": "staticwebassets\\uploads\\5f970fb7-602f-4e67-87d9-2f90c56075aa.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\6cc16bf5-9ac7-4f80-92d2-7c4305a5dfd1.png",
+      "PackagePath": "staticwebassets\\uploads\\6cc16bf5-9ac7-4f80-92d2-7c4305a5dfd1.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\7615ea26-d55e-4a6d-92df-6bee1823c25a.png",
+      "PackagePath": "staticwebassets\\uploads\\7615ea26-d55e-4a6d-92df-6bee1823c25a.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\Logo.png",
+      "PackagePath": "staticwebassets\\uploads\\Logo.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\Logo1.png",
+      "PackagePath": "staticwebassets\\uploads\\Logo1.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\QR\\Logo1.png",
+      "PackagePath": "staticwebassets\\uploads\\QR\\Logo1.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\QR\\Logo2.png",
+      "PackagePath": "staticwebassets\\uploads\\QR\\Logo2.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\QR\\Thiết kế chưa có tên.png",
+      "PackagePath": "staticwebassets\\uploads\\QR\\Thiết kế chưa có tên.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\QR\\download.svg",
+      "PackagePath": "staticwebassets\\uploads\\QR\\download.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\QR\\earthquake.png",
+      "PackagePath": "staticwebassets\\uploads\\QR\\earthquake.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\QR\\sample_large.jpg",
+      "PackagePath": "staticwebassets\\uploads\\QR\\sample_large.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\Video background HD về thiên nhiên tuyệt đẹp - Copy - Copy.mp4",
+      "PackagePath": "staticwebassets\\uploads\\Video background HD về thiên nhiên tuyệt đẹp - Copy - Copy.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\a2-9846.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a2-9846.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\avatar_default.jpg",
+      "PackagePath": "staticwebassets\\uploads\\avatar_default.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\bg-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bg-1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\459135636_957672036397577_8689556668015387881_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\459135636_957672036397577_8689556668015387881_n.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\Logo1.png",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\Logo1.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\Logo1.svg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\Logo1.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\Logo2.png",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\Logo2.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\Logo2.svg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\Logo2.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\a2-9846.jpg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\a2-9846.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\a9-copy-6635.jpg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\a9-copy-6635.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\avatar_default.jpg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\avatar_default.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\bg-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\bg-1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\download.svg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\download.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\earthquake.png",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\earthquake.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\logo3.png",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\logo3.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\sample_large.jpg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\sample_large.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\sample_large.svg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\sample_large.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\sample_small.jpg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\sample_small.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\campaigns\\z5809584326751-b4b8d17c11c26fe791320ce6e14e2fbc-8262.jpg",
+      "PackagePath": "staticwebassets\\uploads\\campaigns\\z5809584326751-b4b8d17c11c26fe791320ce6e14e2fbc-8262.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\donation\\Capstone_Test-Guidelines_HaPN.pdf",
+      "PackagePath": "staticwebassets\\uploads\\donation\\Capstone_Test-Guidelines_HaPN.pdf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\donation\\bg-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\donation\\bg-1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\donation\\lich-su-giao-dich.xlsx",
+      "PackagePath": "staticwebassets\\uploads\\donation\\lich-su-giao-dich.xlsx"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\donation\\tt1.pdf",
+      "PackagePath": "staticwebassets\\uploads\\donation\\tt1.pdf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\eed741b7-03bf-495e-aac1-3867b470e0ba.jpg",
+      "PackagePath": "staticwebassets\\uploads\\eed741b7-03bf-495e-aac1-3867b470e0ba.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\Logo1.png",
+      "PackagePath": "staticwebassets\\uploads\\images\\Logo1.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\Logo2.png",
+      "PackagePath": "staticwebassets\\uploads\\images\\Logo2.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\Screenshot 2024-10-30 100743.png",
+      "PackagePath": "staticwebassets\\uploads\\images\\Screenshot 2024-10-30 100743.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\Thiết kế chưa có tên.png",
+      "PackagePath": "staticwebassets\\uploads\\images\\Thiết kế chưa có tên.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\Video background HD về thiên nhiên tuyệt đẹp.mp4",
+      "PackagePath": "staticwebassets\\uploads\\images\\Video background HD về thiên nhiên tuyệt đẹp.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\bg-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\bg-1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\download.svg",
+      "PackagePath": "staticwebassets\\uploads\\images\\download.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\earthquake.png",
+      "PackagePath": "staticwebassets\\uploads\\images\\earthquake.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\logo3.png",
+      "PackagePath": "staticwebassets\\uploads\\images\\logo3.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\sample_large.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\sample_large.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\sample_large.svg",
+      "PackagePath": "staticwebassets\\uploads\\images\\sample_large.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\sample_small.jpg",
+      "PackagePath": "staticwebassets\\uploads\\images\\sample_small.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\images\\sample_small.svg",
+      "PackagePath": "staticwebassets\\uploads\\images\\sample_small.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\it1.pdf",
+      "PackagePath": "staticwebassets\\uploads\\it1.pdf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\Logo1.png",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\Logo1.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\Logo1.svg",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\Logo1.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\Logo2.png",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\Logo2.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\Logo2.svg",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\Logo2.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\Screenshot 2024-10-30 100743.png",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\Screenshot 2024-10-30 100743.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\Thiết kế chưa có tên.png",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\Thiết kế chưa có tên.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\Video background HD về thiên nhiên tuyệt đẹp - Copy (2).mp4",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\Video background HD về thiên nhiên tuyệt đẹp - Copy (2).mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\Video background HD về thiên nhiên tuyệt đẹp - Copy - Copy.mp4",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\Video background HD về thiên nhiên tuyệt đẹp - Copy - Copy.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\Video background HD về thiên nhiên tuyệt đẹp - Copy.mp4",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\Video background HD về thiên nhiên tuyệt đẹp - Copy.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\Video background HD về thiên nhiên tuyệt đẹp.mp4",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\Video background HD về thiên nhiên tuyệt đẹp.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\avatar_default.jpg",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\avatar_default.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\bg-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\bg-1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\download.svg",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\download.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\earthquake.png",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\earthquake.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\logo3.png",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\logo3.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\sample_large.jpg",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\sample_large.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\sample_large.svg",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\sample_large.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\sample_small.jpg",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\sample_small.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\sample_small.svg",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\sample_small.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\video1.mp4",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\video1.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\video2.mp4",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\video2.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\projectInformation\\z5809584326751-b4b8d17c11c26fe791320ce6e14e2fbc-8262.jpg",
+      "PackagePath": "staticwebassets\\uploads\\projectInformation\\z5809584326751-b4b8d17c11c26fe791320ce6e14e2fbc-8262.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\459135636_957672036397577_8689556668015387881_n.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sos\\459135636_957672036397577_8689556668015387881_n.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\Logo1.png",
+      "PackagePath": "staticwebassets\\uploads\\sos\\Logo1.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\Video background HD về thiên nhiên tuyệt đẹp - Copy (2).mp4",
+      "PackagePath": "staticwebassets\\uploads\\sos\\Video background HD về thiên nhiên tuyệt đẹp - Copy (2).mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\Video background HD về thiên nhiên tuyệt đẹp - Copy - Copy.mp4",
+      "PackagePath": "staticwebassets\\uploads\\sos\\Video background HD về thiên nhiên tuyệt đẹp - Copy - Copy.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\Video background HD về thiên nhiên tuyệt đẹp - Copy.mp4",
+      "PackagePath": "staticwebassets\\uploads\\sos\\Video background HD về thiên nhiên tuyệt đẹp - Copy.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\Video background HD về thiên nhiên tuyệt đẹp.mp4",
+      "PackagePath": "staticwebassets\\uploads\\sos\\Video background HD về thiên nhiên tuyệt đẹp.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\a2-9846.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sos\\a2-9846.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\bg-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sos\\bg-1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\download.svg",
+      "PackagePath": "staticwebassets\\uploads\\sos\\download.svg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\earthquake.png",
+      "PackagePath": "staticwebassets\\uploads\\sos\\earthquake.png"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\sos\\video2.mp4",
+      "PackagePath": "staticwebassets\\uploads\\sos\\video2.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\tt1.pdf",
+      "PackagePath": "staticwebassets\\uploads\\tt1.pdf"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\videos\\Video background HD về thiên nhiên tuyệt đẹp - Copy.mp4",
+      "PackagePath": "staticwebassets\\uploads\\videos\\Video background HD về thiên nhiên tuyệt đẹp - Copy.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\videos\\Video background HD về thiên nhiên tuyệt đẹp.mp4",
+      "PackagePath": "staticwebassets\\uploads\\videos\\Video background HD về thiên nhiên tuyệt đẹp.mp4"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\videos\\bg-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\videos\\bg-1.jpg"
+    },
+    {
+      "Id": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\wwwroot\\uploads\\videos\\video2.mp4",
+      "PackagePath": "staticwebassets\\uploads\\videos\\video2.mp4"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.NaturalDisasterInformationSystem.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.NaturalDisasterInformationSystem.props",
+      "PackagePath": "build\\NaturalDisasterInformationSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.NaturalDisasterInformationSystem.props",
+      "PackagePath": "buildMultiTargeting\\NaturalDisasterInformationSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.NaturalDisasterInformationSystem.props",
+      "PackagePath": "buildTransitive\\NaturalDisasterInformationSystem.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

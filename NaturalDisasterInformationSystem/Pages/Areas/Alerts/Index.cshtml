@@ -1,0 +1,189 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.Alerts.IndexModel
+@{
+    ViewData["Title"] = "Management News";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Quản lý thông báo</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- Nút tạo tin tức mới -->
+            <a asp-page="Create">Thêm</a>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="basic-datatables" class="display table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Nội dung</th>
+                                        <th>Ngày tạo</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Nội dung</th>
+                                        <th>Ngày tạo</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (var alerts in Model.EmergencyAlerts)
+                                    {
+                                        <tr>
+                                            <td>@alerts.AlertId</td>
+                                            <td>@(alerts.AlertMessage.Length > 100 ? alerts.AlertMessage.Substring(0, 100) + "..." : alerts.AlertMessage)</td>
+                                            <td>@alerts.CreatedAt?.ToString("dd/MM/yyyy")</td>
+                                            <td>
+                                                <a href="javascript:void(0)" onclick="showDetailModal('@alerts.AlertId')">Detail</a>
+                                                <a asp-page="./Update" asp-route-id="@alerts.AlertId">Update</a>
+                                                <a asp-page="./Delete" asp-route-id="@alerts.AlertId">Delete</a>
+                                                <a href="javascript:void(0)" onclick="confirmDelete('@alerts.AlertId')">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showDetailModal(alertsId) {
+        $.ajax({
+            url: '/Areas/Alerts/Detail?id=' + alertsId,
+            type: 'GET',
+            success: function (result) {
+                Swal.fire({
+                    title: '',
+                    html: result,
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng',
+                    width: '800px',
+                    heightAuto: true,
+                    customClass: {
+                        popup: 'custom-swal-popup',
+                        title: 'custom-swal-title',
+                        content: 'custom-swal-content'
+                    }
+                });
+            },
+            error: function (xhr, status, error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lỗi',
+                    text: 'Không thể tải chi tiết tin tức.'
+                });
+            }
+        });
+    }
+
+    function confirmDelete(newsId) {
+        Swal.fire({
+            title: '',
+            text: "Bạn muốn xóa thông tin này đúng không",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Đồng ý',
+            cancelButtonText: 'Hủy bỏ'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    url: '/Areas/News/Delete?id=' + newsId,
+                    method: 'POST',
+                    headers: {
+                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                    },
+                    success: function (response) {
+                        Swal.fire(
+                            'Đã xóa',
+                            'Thông tin đã được xóa',
+                            'success'
+                        ).then(() => {
+                            // Reload lại trang sau khi xóa thành công
+                            location.reload();
+                        });
+                    },
+                    error: function () {
+                        Swal.fire(
+                            'Lỗi!',
+                            'Đã xảy ra sự cố khi xóa tin tức.',
+                            'error'
+                        );
+                    }
+                });
+            }
+        });
+    }
+</script>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <script>
+        // Hiển thị thông báo nếu có từ TempData
+        @if (TempData["UpdateSuccess"] != null)
+        {
+            <text>
+                Swal.fire('Success', '@TempData["UpdateSuccess"]', 'success');
+            </text>
+        }
+
+            $(document).ready(function () {
+                $('#createNewsForm').on('submit', function (e) {
+                    e.preventDefault();
+                    var formData = {
+                        Title: $('#Title').val(),
+                        Content: $('#Content').val()
+                    };
+                    $.ajax({
+                        url: '@Url.Page("/Areas/News/Create?handler=CreateNews")',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: formData,
+                        success: function (response) {
+                            if (response.success) { 
+                                $('#createNewsModal').modal('hide'); 
+                                Swal.fire('Success', 'Tin tức đã được thêm thành công', 'success').then(() => { 
+                                    location.reload(); 
+                                }); 
+                            } 
+                            else {
+                                Swal.fire('Error', 'Đã xảy ra lỗi', 'error');
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            Swal.fire('Error', 'Đã xảy ra lỗi', 'error');
+                        }
+                    });
+                });
+    </script>
+}

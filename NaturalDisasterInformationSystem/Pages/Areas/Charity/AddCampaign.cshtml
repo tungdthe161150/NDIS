@@ -1,0 +1,148 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Charity.AddCampaignModel
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Add Campaign";
+
+    var charityId = HttpContextAccessor.HttpContext?.Session.GetString("CharityId")
+                    ?? HttpContextAccessor.HttpContext?.Request.Cookies["CharityId"];
+}
+@{
+    ViewData["Title"] = "List Campaign";
+    // Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div 
+     style="background-image: url('/assets/images/bg_7.jpg');
+           background-size: cover; background-position: center center;
+           background-attachment: fixed; min-height: 100vh; display: flex;
+           align-items: center; justify-content: center; position: relative;">
+
+    <div class="overlay"
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+               background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+    <div class="container"
+         style="position: relative; z-index: 2; padding: 20px; max-width: 1400px;
+               margin: 0 auto; width: 100%; padding-top: 73px;">
+
+        <div class="profile-section" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin: 20px 0;">
+            <h2 style="margin-bottom: 20px; font-size: 24px; color: #333; text-align: center;">Tạo Chiến Dịch</h2>
+          <div class="container">
+    <div class="page-inner">
+       
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                                        <form method="post" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="CampaignName">Tên Chiến Dịch</label>
+                                    <input type="text" class="form-control" id="CampaignName" name="CampaignName" required />
+                                </div>
+                                            <div class="form-group">
+                                                <label for="Images">Hình Ảnh Chiến Dịch</label>
+                                                <input type="file" id="Images" name="Images" accept="image/*" multiple required
+                                                       style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
+                                                <small style="color: #888;">(Giữ Ctrl để chọn nhiều hình ảnh)</small>
+                                            </div>
+
+                              
+                                <div class="form-group">
+                                    <label for="GoalAmount">Số Tiền Mục Tiêu</label>
+                                    <input type="number" class="form-control" id="GoalAmount" name="GoalAmount" step="0.01" required />
+                                </div>
+                                            <div class="form-group">
+                                                <label for="Images_QR">Mã QR</label>
+                                                <input type="file" id="Images_QR" name="Images_QR" accept="image/*"  required
+                                                       style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
+                                             
+                                            </div>
+
+                                <div class="form-group">
+                                    <label for="StartDate">Ngày Bắt Đầu</label>
+                                    <input type="date" class="form-control" id="StartDate" name="StartDate" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="EndDate">Ngày Kết Thúc</label>
+                                    <input type="date" class="form-control" id="EndDate" name="EndDate"  />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="DisasterId">Thiên Tai</label>
+                                    <select class="form-control" id="DisasterId" name="DisasterId" required>
+                                        <option value="">Select a Disaster</option>
+                                        @foreach (var disaster in Model.Disasters)
+                                        {
+                                            if (disaster.DisasterId == Model.DisasterId)
+                                            {
+                                                <option value="@disaster.DisasterId" selected>
+                                                    @disaster.DisasterName
+                                                </option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@disaster.DisasterId">
+                                                    @disaster.DisasterName
+                                                </option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                            <div class="form-group">
+                                                <label for="Description">Mô Tả</label>
+                                                <div id="editor" style="min-height: 200px; overflow-y: auto;"></div>
+                                                <input type="hidden" name="Description" id="Description">
+                                            </div>
+
+
+                                <div class="form-group" style="display:none">
+                                    <label for="CharityId">Charity ID</label>
+                                    <input type="number" class="form-control" id="CharityId" name="CharityId" value="@charityId" readonly />
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Tạo</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+          
+        </div>
+
+    </div>
+</div>
+
+<!-- Quill stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<!-- Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        modules: {
+            toolbar: [
+                [{ 'header': [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['link', 'image'],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                ['clean']
+            ]
+        }
+    });
+
+    // Lắng nghe sự kiện thay đổi và cập nhật giá trị vào input ẩn
+    quill.on('text-change', function () {
+        document.getElementById('Description').value = quill.root.innerHTML;
+    });
+</script>

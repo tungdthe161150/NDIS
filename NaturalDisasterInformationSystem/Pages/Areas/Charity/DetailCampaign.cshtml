@@ -1,0 +1,131 @@
+﻿@page 
+@model NaturalDisasterInformationSystem.Pages.Areas.Charity.DetailCampaignModel
+@{
+    var roleId = HttpContext.Session.GetString("RoleId") ?? Request.Cookies["RoleId"];
+    var userId = HttpContext.Session.GetString("UserId") ?? Request.Cookies["UserId"];
+}
+
+
+<div style="background-image: url('/assets/images/bg_7.jpg');
+           background-size: cover; background-position: center center;
+           background-attachment: fixed; min-height: 100vh; display: flex;
+           align-items: center; justify-content: center; position: relative;">
+
+    <div class="overlay"
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+               background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+    <div class="container"
+         style="position: relative; z-index: 2; padding: 20px; max-width: 1400px;
+               margin: 0 auto; width: 100%; padding-top: 73px;">
+
+        <div class="profile-section" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin: 20px 0;">
+            <div class="container">
+                <div class="page-header text-center">
+                    <h2 class="fw-bold text-uppercase mb-4">@Model.Campaign.CampaignName</h2>
+                </div>
+
+                <div class="row">
+                    <!-- Main Image Section -->
+                    <div class="col-md-8">
+                        <div style="background-color: #ddd; height: 300px; display: flex; justify-content: center; align-items: center;">
+                            @if (!string.IsNullOrEmpty(Model.Campaign.ImgCam))
+                            {
+                                // Split the image paths by comma and take the first one for the main image
+                                var mainImagePath = Model.Campaign.ImgCam.Split(',').FirstOrDefault();
+                                <img src="@Url.Content($"/uploads/campaigns/{mainImagePath}")" style="width: 100%; height: 100%;" alt="Main Image" />
+                            }
+                            else
+                            {
+                                <div class="mb-3" style="background-color: #ddd; height: 140px; display: flex; justify-content: center; align-items: center;">
+                                    <span style="font-size: 16px; color: #666;">600 x 400</span>
+                                </div>
+                                @* <img src="~/uploads/bg-1.jpg" style="width: 100%; height: 100%;" alt="Default Image" /> *@
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Secondary Image Section -->
+                    <div class="col-md-4">
+                        @if (!string.IsNullOrEmpty(Model.Campaign.ImgCam) && Model.Campaign.ImgCam.Split(',').Length > 2)
+                        {
+                            // Split the image paths by comma
+                            var imagePaths = Model.Campaign.ImgCam.Split(',');
+                            for (int i = 1; i < imagePaths.Length && i <= 4; i++) // Display up to 2 secondary images
+                            {
+                                <div class="mb-3" style="background-color: #ddd; height: 140px; display: flex; justify-content: center; align-items: center;">
+                                    <img src="@Url.Content($"/uploads/campaigns/{imagePaths[i]}")" style="width: 100%; height: 100%;" alt="Secondary Image @i" />
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            // Default images for secondary sections
+                            <div class="mb-3" style="background-color: #ddd; height: 140px; display: flex; justify-content: center; align-items: center;">
+                                <span style="font-size: 16px; color: #666;">400 x 300</span>
+                            </div>
+                            <div style="background-color: #ddd; height: 140px; display: flex; justify-content: center; align-items: center;">
+                                <span style="font-size: 16px; color: #666;">400 x 300</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+
+                <div class="mt-4">
+                    <a asp-page="/Areas/Charity/Update_Information" asp-route-pi_id="@Model.Campaign.CampaignId" asp-route-vh_id="@userId" class="btn btn-outline-primary">Cập nhật thông tin cho dự án</a>
+                    <a asp-page="/Areas/Charity/listdonation"  asp-route-c_id="@Model.Campaign.CampaignId" class="btn btn-outline-primary">Cập nhật ủng hộ</a>
+
+                    <h4 class="fw-bold">1. Mục tiêu chiến dịch</h4>
+                    <p>@Html.Raw(@Model.Campaign.Description)</p>
+
+                    <h4 class="fw-bold">2. Thông tin chi tiết:</h4>
+                    <ul>
+                        <li><strong>Thời gian tổ chức:</strong> Từ ngày @Model.Campaign.StartDate?.ToShortDateString() đến ngày @Model.Campaign.EndDate?.ToShortDateString()</li>
+                        <li><strong>Mục tiêu gây quỹ:</strong> @Model.Campaign.GoalAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))</li>
+                        <li><strong>Đã huy động:</strong> @Model.Campaign.RaisedAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))</li>
+@*                         <li><strong>Địa điểm phát cứu trợ:</strong> Quảng Trị, Thừa Thiên Huế và Quảng Bình</li>
+ *@                    </ul>
+                </div>
+
+                <div class="mt-4 d-flex justify-content-between">
+                    <a class="btn btn-primary" asp-page="/Areas/Charity/VolunteerRegistrationList" asp-route-cv_id="@Model.Campaign.CampaignId">Duyệt tình nguyện viên</a>
+                    @* <a class="btn btn-primary" asp-page="/Areas/Charity/VolunteerRegistrationList" asp-route-cv_id="@Model.Campaign.CampaignId">Danh sách đóng góp</a> *@
+                    @* <a class="btn btn-primary" asp-page="/Areas/Charity/VolunteerRegistrationList" asp-route-cv_id="@Model.Campaign.CampaignId">Ẩn</a> *@
+                    <a class="btn btn-primary" asp-page="/Areas/Charity/UpdateCampaign" asp-route-ud_id="@Model.Campaign.CampaignId">Cập nhật</a>
+                    @if (Model.Campaign.Hidden == "0")
+                    {
+                        <form method="post" onsubmit="return confirmAction(this);">
+                            <input type="hidden" name="id" value="@Model.Campaign.CampaignId" />
+                            <input type="hidden" name="Hidden" value="0" />
+                            <button type="submit" asp-page-handler="Dis" class="btn btn-primary">Hiện</button>
+                        </form>
+                    }
+                    else if (Model.Campaign.Hidden == "1")
+                    {
+                        <form method="post" onsubmit="return confirmAction(this);">
+                            <input type="hidden" name="id" value="@Model.Campaign.CampaignId" />
+                            <input type="hidden" name="Hidden" value="1" />
+                            <button type="submit" asp-page-handler="Hidden" class="btn btn-primary">Ẩn</button>
+                        </form>
+                    }
+
+                    
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+<script>
+    function confirmAction(form) {
+        const isHiddenAction = form.querySelector('input[name="Hidden"]').value === "1";
+        const message = isHiddenAction
+            ? "Bạn có chắc chắn muốn ẩn chiến dịch này không?"
+            : "Bạn có chắc chắn muốn hiển thị chiến dịch này không?";
+        return confirm(message); // Returns true to submit, false to cancel
+    }
+</script>

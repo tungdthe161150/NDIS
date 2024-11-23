@@ -1,0 +1,120 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Charity.VolunteerRegistrationDetailModel
+@{
+    ViewData["Title"] = "Volunteer Registration Detail";
+}
+
+<div style="background-image: url('/assets/images/bg_7.jpg');
+           background-size: cover; background-position: center center;
+           background-attachment: fixed; min-height: 100vh; display: flex;
+           align-items: center; justify-content: center; position: relative;">
+
+    <div class="overlay"
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+               background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+    <div class="container"
+         style="position: relative; z-index: 2; padding: 20px; max-width: 1400px;
+               margin: 0 auto; width: 100%; padding-top: 73px;">
+
+        <div class="profile-section" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin: 20px 0;">
+
+            <div class="container">
+                <h3 style="margin-top: 20px; font-weight: bold;">Chi Tiết</h3>
+
+                <!-- User Information Section -->
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
+                    <div style="flex: 1 1 45%; margin-bottom: 10px;">
+                        <label style="font-weight: bold;">Họ tên:</label>
+                        <span>@Model.UserDetail?.FullName</span>
+                    </div>
+                    <div style="flex: 1 1 45%; margin-bottom: 10px;">
+                        <label style="font-weight: bold;">Năm sinh:</label>
+                        <span>@Model.UserDetail?.Birthday?.ToString("yyyy")</span>
+                    </div>
+                    <div style="flex: 1 1 45%; margin-bottom: 10px;">
+                        <label style="font-weight: bold;">Giới tính:</label>
+                        <span>@(Model.UserDetail?.Gender == true ? "Nam" : "Nữ")</span>
+                    </div>
+                    <div style="flex: 1 1 45%; margin-bottom: 10px;">
+                        <label style="font-weight: bold;">Email:</label>
+                        <span>@Model.UserDetail?.Email</span>
+                    </div>
+                    <div style="flex: 1 1 45%; margin-bottom: 10px;">
+                        <label style="font-weight: bold;">Số điện thoại:</label>
+                        <span>@Model.UserDetail?.PhoneNumber</span>
+                    </div>
+                    <div style="flex: 1 1 45%; margin-bottom: 10px;">
+                        <label style="font-weight: bold;">Lí do tham gia:</label>
+                        <span>@Model.VolunteerDetail?.Reasons</span>
+                    </div>
+                    <div style="flex: 1 1 90%; margin-bottom: 10px;">
+                        <label style="font-weight: bold;">Mô tả bản thân:</label>
+                        <div style="border: 1px solid #ccc; padding: 5px; min-height: 50px; background-color: #f9f9f9;">
+                            @Model.VolunteerDetail?.Describe
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volunteer Campaigns Table -->
+                <h3 style="margin-top: 20px; font-weight: bold;">Các chiến dịch đã tham gia</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <thead>
+                        <tr style="background-color: #d9ead3;">
+                            <th style="border: 1px solid #ccc; padding: 8px;text-align: center;">STT</th>
+                            <th style="border: 1px solid #ccc; padding: 8px;text-align: center;">Chiến dịch</th>
+                            <th style="border: 1px solid #ccc; padding: 8px;text-align: center;">Ngày tham gia</th>
+                            @* <th style="border: 1px solid #ccc; padding: 8px;text-align: center;">Đánh giá</th> *@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.VolunteerHistoryList != null && Model.VolunteerHistoryList.Count > 0)
+                        {
+                            int index = 1;
+                            foreach (var history in Model.VolunteerHistoryList)
+                            {
+                                <tr>
+                                    <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">@index</td>
+                                    <td style="border: 1px solid #ccc; padding: 8px;text-align: center;">@history.Event?.CampaignName </td>
+                                    <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">@history.JoinedAt?.ToString("dd/MM/yyyy") </td>
+                                    @* <td style="border: 1px solid #ccc; padding: 8px; text-align: center;">@history.Evaluate</td> *@
+                                </tr>
+                                index++;
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4" style="border: 1px solid #ccc; padding: 8px; text-align: center;">Không có dữ liệu</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <!-- Action Buttons -->
+                <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <form method="post" onsubmit="return confirm('Bạn có chắc chắn muốn chấp nhận không?');">
+                        <input type="hidden" name="status" value="hoàn thành" />
+                        <input type="hidden" name="ProfileId" value="@Model.VolunteerDetail.ProfileId" />
+                        <button type="submit" asp-page-handler="" style="padding: 10px 15px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">
+                            Chấp nhận
+                        </button>
+                    </form>
+
+                    <form method="post" onsubmit="return confirm('Bạn có chắc chắn muốn từ chối không?');">
+                        <input type="hidden" name="status" value="tham gia" />
+                        <input type="hidden" name="ProfileId" value="@Model.VolunteerDetail.ProfileId" />
+                        <button type="submit" asp-page-handler="TuChoi" style="padding: 10px 15px; background-color: #f44336; color: white; border: none; cursor: pointer;">
+                            Từ chối
+                        </button>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

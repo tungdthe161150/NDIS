@@ -1,0 +1,316 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.User.RegisterCharityModel
+@{
+    ViewData["Title"] = "Register Charity";
+}
+@{
+    ViewData["Title"] = "Home page";
+    var roleId = HttpContext.Session.GetString("RoleId") ?? Request.Cookies["RoleId"];
+    var userId = HttpContext.Session.GetString("UserId") ?? Request.Cookies["UserId"];
+}
+
+@* @if (ModelState.Values.Any(v => v.Errors.Count > 0))
+{
+    <div class="alert alert-danger">
+        @foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@error.ErrorMessage</p>
+        }
+    </div>
+} *@
+
+@* @if (ModelState.ContainsKey(string.Empty))
+{
+    <div class="alert alert-success">
+        @ModelState[string.Empty].Errors.First().ErrorMessage
+    </div>
+} *@
+
+
+
+
+
+
+<div class=""
+     style="background-image: url('/assets/images/bg_7.jpg');
+           background-size: cover; background-position: center center;
+           background-attachment: fixed; min-height: 100vh; display: flex;
+           align-items: center; justify-content: center; position: relative;">
+
+    <div class="overlay"
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+               background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+    <div class="container"
+         style="position: relative; z-index: 2; padding: 20px; max-width: 1400px;
+               margin: 0 auto; width: 100%; padding-top: 73px;">
+
+        <div class="profile-section">
+            <h2>Đăng ký Tổ chức từ thiện</h2>
+            @if (Model.CharityDetail != null && Model.CharityDetail.CharityId != null)
+            {
+                if (!string.IsNullOrEmpty(Model.CharityDetail.Comment))
+                {
+                    <div class="alert alert-info mt-3">
+                        <strong>Lý Do Không Được Duyệt:</strong> @Model.CharityDetail.Comment
+                    </div>
+                }
+
+                <h4 style="color:red">Bạn đã đăng kí thành tổ chức từ thiện và đang chờ xét duyệt.</h4>
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                                    <form method="post" enctype="multipart/form-data" asp-page-handler="Update">
+
+                <div class="form-group" style="margin-bottom: 1.5rem;" hidden>
+                    <label for="UserId" style="font-weight: bold; color: #333;">UserId</label>
+                    <input type="text" class="form-control" id="UserId" asp-for="UserId" value="@Model.CharityDetail.UserId" readonly style="border-radius: 8px; border: 1px solid #ddd; padding: 10px; font-size: 1rem; color: #333; background-color: #f9f9f9;" />
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="CharityName" style="font-weight: bold; color: #333;">Tên tổ chức từ thiện</label>
+                    <input type="text" class="form-control" id="CharityName" asp-for="CharityName" value="@Model.CharityDetail.CharityName"  style="border-radius: 8px; border: 1px solid #ddd; padding: 10px; font-size: 1rem; color: #333; background-color: #f9f9f9;" />
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="Img" style="font-weight: bold; color: #333;">Tài liệu tải lên</label>
+                        <div class="form-group">
+                            <input type="file" class="form-control" id="Img" value="@Model.CharityDetail.Img" name="Images" multiple accept="image/*,.pdf" />
+                        </div>
+                    <div class="uploaded-files" style="display: flex; flex-wrap: wrap;">
+                        @foreach (var img in Model.CharityDetail.DocumentImgs)
+                        {
+@*                             var fileExtension = System.IO.Path.GetExtension(img.Img).ToLower();
+ *@
+                            <div class="file-item" style="margin-right: 1rem; margin-bottom: 1rem; width: 100%; max-width: 400px; border: 1px solid #ddd; border-radius: 8px; background-color: #f9f9f9; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 15px;">
+                               @*  @if (fileExtension == ".pdf")
+                                {
+                                    <div class="pdf-file">
+                                        <!-- Display PDF inline -->
+                                        <embed src="@img.Img" type="application/pdf" style="width: 100%; height: 400px; border-radius: 8px;" />
+                                        <a href="@img.Img" download style="display: inline-block; margin-top: 10px; padding: 8px 15px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 4px; font-weight: bold; text-align: center; transition: background-color 0.3s ease;">Download PDF <i class="fa fa-download"></i></a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="image-file">
+                                        <!-- Display Image inline -->
+                                        <img src="@img.Img" alt="Document Image" style="width: 100%; max-height: 300px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" />
+                                        <a href="@img.Img" download style="display: inline-block; margin-top: 10px; padding: 8px 15px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 4px; font-weight: bold; text-align: center; transition: background-color 0.3s ease;">Download Image <i class="fa fa-download"></i></a>
+                                    </div>
+                                } *@
+                                <div class="card-body">
+                                    <a href="@("/uploads/"+img.Img)" target="_blank">@img.Img</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="Description" style="font-weight: bold; color: #333;">Mô tả</label>
+                        <input class="form-control" id="Description" asp-for="Description" value="@Model.CharityDetail.Description" style="border-radius: 8px; border: 1px solid #ddd; padding: 10px; font-size: 1rem; color: #333; background-color: #f9f9f9;"/>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="Website" style="font-weight: bold; color: #333;">Website</label>
+                        <input class="form-control" id="Website" asp-for="Website" value="@Model.CharityDetail.Website" style="border-radius: 8px; border: 1px solid #ddd; padding: 10px; font-size: 1rem; color: #333; background-color: #f9f9f9;"/>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="ContactEmail" style="font-weight: bold; color: #333;">Email liên hệ</label>
+                    <input type="email" class="form-control" id="ContactEmail" asp-for="ContactEmail" value="@Model.CharityDetail.ContactEmail"  style="border-radius: 8px; border: 1px solid #ddd; padding: 10px; font-size: 1rem; color: #333; background-color: #f9f9f9;" />
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="PhoneNumber" style="font-weight: bold; color: #333;">Số điện thoại</label>
+                    <input type="text" class="form-control" id="PhoneNumber" asp-for="PhoneNumber" value="@Model.CharityDetail.PhoneNumber"  style="border-radius: 8px; border: 1px solid #ddd; padding: 10px; font-size: 1rem; color: #333; background-color: #f9f9f9;" />
+                </div>
+                    <button type="submit" class="btn btn-primary">Cập nhật</button>
+                </form>
+            }
+            else
+            {
+                <form method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+
+                    <div hidden class="form-group">
+                        <label for="UserId">UserId</label>
+                        <input type="text" class="form-control" id="UserId" asp-for="UserId" value="@userId" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="CharityName">Tên Tổ chức từ thiện</label>
+                        <input type="text" class="form-control" id="CharityName" asp-for="CharityName" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Img">Upload Images</label>
+                        <input type="file" class="form-control" id="Img" name="Images" multiple accept="image/*,.pdf" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Description">Mô tả</label>
+                        <textarea class="form-control" id="Description" asp-for="Description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Website">Website</label>
+                        <textarea class="form-control" id="Website" asp-for="Website"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ContactEmail">Email liên hệ</label>
+                        <input type="email" class="form-control" id="ContactEmail" asp-for="ContactEmail" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="PhoneNumber">Số điện thoại</label>
+                        <input type="text" class="form-control" id="PhoneNumber" asp-for="PhoneNumber" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Đăng ký</button>
+                </form>
+            }
+
+           
+        </div>
+
+
+    </div>
+</div>
+
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 d-flex services p-3 py-4 d-block">
+                    <div class="icon d-flex mb-3"><span class="flaticon-donation-1"></span></div>
+                    <div class="media-body pl-4">
+                        <h3 class="heading">Make Donation</h3>
+                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 d-flex services p-3 py-4 d-block">
+                    <div class="icon d-flex mb-3"><span class="flaticon-charity"></span></div>
+                    <div class="media-body pl-4">
+                        <h3 class="heading">Become A Volunteer</h3>
+                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex align-self-stretch ftco-animate">
+                <div class="media block-6 d-flex services p-3 py-4 d-block">
+                    <div class="icon d-flex mb-3"><span class="flaticon-donation"></span></div>
+                    <div class="media-body pl-4">
+                        <h3 class="heading">Sponsorship</h3>
+                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="ftco-section bg-light">
+    <div class="container-fluid">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-5 heading-section ftco-animate text-center">
+                <h2 class="mb-4">Our Causes</h2>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="carousel-cause owl-carousel">
+                    <div class="item">
+                        <div class="cause-entry">
+                            <a href="#" class="img" style="background-image: url('/assets/images/cause-1.jpg');"></a>
+                            <div class="text p-3 p-md-4">
+                                <h3><a href="#">Clean water for the urban area</a></h3>
+                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+                                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
+                                <div class="progress custom-progress-success">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cause-entry">
+                            <a href="#" class="img" style="background-image: url('/assets/images/cause-2.jpg');"></a>
+                            <div class="text p-3 p-md-4">
+                                <h3><a href="#">Clean water for the urban area</a></h3>
+                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+                                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
+                                <div class="progress custom-progress-success">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cause-entry">
+                            <a href="#" class="img" style="background-image: url('/assets/images/cause-3.jpg');"></a>
+                            <div class="text p-3 p-md-4">
+                                <h3><a href="#">Clean water for the urban area</a></h3>
+                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+                                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
+                                <div class="progress custom-progress-success">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cause-entry">
+                            <a href="#" class="img" style="background-image: url('/assets/images/cause-4.jpg');"></a>
+                            <div class="text p-3 p-md-4">
+                                <h3><a href="#">Clean water for the urban area</a></h3>
+                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+                                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
+                                <div class="progress custom-progress-success">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cause-entry">
+                            <a href="#" class="img" style="background-image: url('/assets/images/cause-5.jpg');"></a>
+                            <div class="text p-3 p-md-4">
+                                <h3><a href="#">Clean water for the urban area</a></h3>
+                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+                                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
+                                <div class="progress custom-progress-success">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="cause-entry">
+                            <a href="#" class="img" style="background-image: url('/assets/images/cause-6.jpg');"></a>
+                            <div class="text p-3 p-md-4">
+                                <h3><a href="#">Clean water for the urban area</a></h3>
+                                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
+                                <span class="donation-time mb-3 d-block">Last donation 1w ago</span>
+                                <div class="progress custom-progress-success">
+                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,88 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.News.DetailModel
+@{
+    var newList = ViewData["News"] as Models.News;
+    ViewData["Title"] = "Management News";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="card shadow-lg mt-4">
+            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                <h4 class="card-title mb-0">Chi tiết tin tức</h4>
+                <a asp-page="Index" class="btn btn-outline-light">Quay lại</a>
+            </div>
+            <div class="card-body p-4">
+                <div class="info-container">
+                    <div class="info-item">
+                        <h6 class="info-label">Mã Tin Tức</h6>
+                        <p class="info-value">@newList.NewsId</p>
+                    </div>
+                    <div class="info-item">
+                        <h6 class="info-label">Tiêu Đề</h6>
+                        <p class="info-value">@newList.Title</p>
+                    </div>
+                    <div class="info-item">
+                        <h6 class="info-label">Nội Dung</h6>
+                        <div class="info-content">
+                            <p class="info-value">@newList.Content</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <h6 class="info-label">Nguồn</h6>
+                        <p class="info-value">@newList.Source</p>
+                    </div>
+                    <div class="info-item">
+                        <h6 class="info-label">Ngày Xuất Bản</h6>
+                        <p class="info-value">@newList.PublishedAt</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .info-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .info-item {
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #f1f3f5;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 5px;
+    }
+
+    .info-value {
+        font-size: 16px;
+        color: #212529;
+        line-height: 1.5;
+    }
+
+    .info-content {
+        max-height: 300px;
+        overflow-y: auto;
+        padding-right: 10px;
+        border-left: 4px solid #007bff;
+    }
+
+    .card-header {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+</style>
+

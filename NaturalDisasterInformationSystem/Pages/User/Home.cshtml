@@ -1,0 +1,749 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.User.HomeModel
+@{
+
+}
+@{
+    ViewData["Title"] = "Home page";
+    var roleId = HttpContext.Session.GetString("RoleId") ?? Request.Cookies["RoleId"];
+    var userId = HttpContext.Session.GetString("UserId") ?? Request.Cookies["UserId"];
+    var sdt = HttpContext.Session.GetString("SDT") ?? Request.Cookies["SDT"];
+}
+ <style>
+    /* Set the height for the map */
+    #windy {
+        width: 80%; /* Giảm chiều rộng để chừa chỗ cho bảng cảnh báo */
+        height: 700px;
+        float: right;
+    }
+
+    /* Bảng cảnh báo nằm bên trái */
+    #warningPanel {
+        width: 20%;
+        height: 700px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        position: relative;
+        float: left;
+        background-color: #f9f9f9;
+        padding: 10px;
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Tạo container cho văn bản cảnh báo cuộn lên */
+    .scrolling-container {
+        position: absolute;
+        bottom: 0;
+        animation: scrollUp 30s linear infinite;
+    }
+
+    /* Màu sắc tương ứng với mức độ thiên tai */
+    .low-level {
+        background-color: #d4edda;
+    }
+    /* Màu xanh nhạt cho mức độ thấp */
+    .moderate-level {
+        background-color: #fff3cd;
+    }
+    /* Màu vàng nhạt cho mức độ trung bình */
+    .high-level {
+        background-color: #f8d7da;
+    }
+    /* Màu đỏ nhạt cho mức độ cao */
+
+    .warning-box {
+        border: 1px solid #ccc;
+        margin: 10px 0;
+        padding: 10px;
+        border-radius: 4px;
+    }
+
+    /* Keyframes để cuộn văn bản từ dưới lên */
+    @@keyframes scrollUp {
+        0% {
+            transform: translateY(100%);
+        }
+
+        100% {
+            transform: translateY(-100%);
+        }
+
+        /* Style for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        /*-----------------------*/
+        #filterSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px 0;
+        gap: 10px;
+    }
+
+    select {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-size: 16px;
+        width: 200px;
+        transition: all 0.3s ease;
+    }
+
+    select:hover {
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    }
+
+    input[type="text"] {
+        padding: 8px 12px;
+        width: 250px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+        outline: none;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+    }
+
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+    #logo-wrapper{display:none;}
+
+    @@media (max-width: 768px) {
+        #filterSection {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+        }
+    }
+   @@media only screen and (min-width: 992px) {
+    #ftco-navbar1 {
+        margin-top: 50px; 
+    }
+}
+
+    </style>
+<style>
+    #logo-wrapper {
+        display: none;
+    }
+    @@keyframes scroll {
+        0% {
+            transform: translateX(10%);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    .scroll-container {
+        display: inline-block;
+        width: max-content;
+    }
+</style>
+  
+<nav class=" navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar1" style="margin-top:50px">
+    <div>
+        <h2>
+            @if (Model.Disasters != null && Model.Disasters.Count > 0)
+            {
+                var dateNow = DateTime.Now; // Get the current date and time
+                <div style="overflow: hidden; white-space: nowrap; width: 100%;">
+                    <div style="display: inline-block; opacity: 1; animation: scroll 30s linear infinite;color:wheat">
+                        @foreach (var disaster in Model.Disasters)
+                        {
+                            // Check if TimeUpdate is within the last 5 days
+                            if (disaster.TimeUpdate >= dateNow.AddDays(-7))
+                            {
+                                <div style=" display: inline-block; min-width: 200px;">
+                                    Cảnh báo có @if (disaster.DisasterDetails != null)
+                                    {
+                                        <strong>@disaster.DisasterDetails.NameDisaster</strong>
+                                    } ở @disaster.AffectedArea .Đây là thiên tai cấp @disaster.Level .
+                                    <strong>Thời gian bắt đầu:</strong> @disaster.TimeStart.ToString("g")
+                                    <strong>Thời gian cập nhật:</strong> @disaster.TimeUpdate.ToString("g")
+
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+            else
+            {
+                <p>No disaster information available.</p>
+            }
+        </h2>
+
+    </div>
+</nav>
+<div class=""
+
+     style="background-image: url('/assets/images/bg_7.jpg');
+           background-size: cover; background-position: center center;
+           background-attachment: fixed; min-height: 100vh; display: flex;
+           align-items: center; justify-content: center; position: relative;">
+
+    <div class="overlay"
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+               background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+    <div class="container"
+         style="position: relative; z-index: 2; padding: 20px; max-width: 1400px;
+               margin: 0 auto; width: 100%; padding-top: 73px;">
+        @* <div class="container">
+            <h2>Submit Your Report</h2>
+            <form id="reportForm" method="post">
+                <div class="form-group">
+                    <label for="content">Content:</label>
+                    <input type="text" id="content" name="content" required class="form-control" />
+                </div>
+                <input type="hidden" id="longitude" name="longitude" />
+                <input type="hidden" id="latitude" name="latitude" />
+                <input type="hidden" name="userId" value="@userId" />
+                <div class="form-group">
+                    <button type="button" id="getLocation" class="btn btn-primary">Get My Location</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div> *@
+         @if(userId!=null){
+        <button id="sosButton" class="btn btn-danger" style="margin-top:50px">SOS</button>
+        <div id="reportModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
+            <div class="modal-content" style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%;">
+                <span class="close" onclick="document.getElementById('reportModal').style.display='none'" style="color: #aaa; float: right; font-size: 28px; font-weight: bold;">&times;</span>
+                <div class="container">
+                    <h2>Gửi Yêu Cầu Hỗ Trợ</h2>
+                        <form id="reportForm" asp-page-handler="AddReport" method="post" enctype="multipart/form-data">
+                            <div class="form-container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; margin: 20px 0;">
+                                <!-- Bên trái: Nội dung và tải ảnh -->
+                                <div class="form-left" style="flex: 1; min-width: 45%; margin-bottom: 20px;">
+                                    <div class="form-group" style="margin-bottom: 15px;">
+                                        <label for="content">Nội dung:</label>
+                                        <textarea id="content" name="content" required class="form-control" rows="4" style="width: 100%; max-width: 500px; padding: 8px; border-radius: 5px; box-sizing: border-box;">Tôi đang gặp nguy hiểm và cần trợ giúp. Đây là số điện thoại của tôi @sdt...</textarea>
+                                    </div>
+
+                                    <!-- Tải ảnh -->
+                                    <div class="form-group" style="margin-bottom: 15px;">
+                                        <label for="imgSos">Tải ảnh lên:</label>
+                                        <input type="file" id="imgSos" name="imgSos" accept="image/*,video/*" class="form-control" multiple style="width: 100%; padding: 8px; border-radius: 5px; box-sizing: border-box;" />
+                                    </div>
+                                </div>
+
+                                <!-- Bên phải: Chọn địa chỉ -->
+                                <div class="form-right" style="flex: 1; min-width: 45%; margin-bottom: 20px;">
+                                    <div class="form-group" style="margin-bottom: 15px;">
+                                        <label for="province">Tỉnh/Thành phố:</label>
+                                        <select id="province" name="province" class="form-control" onchange="updateAddress()" style="width: 100%; height: 40px; padding: 8px; border-radius: 5px; box-sizing: border-box;">
+                                            <option value="">Chọn tỉnh/thành phố</option>
+                                            <!-- Các tỉnh sẽ được lấy từ API -->
+                                        </select>
+
+                                        <label for="district">Quận/Huyện:</label>
+                                        <select id="district" name="district" class="form-control" onchange="updateAddress()" style="width: 100%; height: 40px; padding: 8px; border-radius: 5px; box-sizing: border-box;">
+                                            <option value="">Chọn quận/huyện</option>
+                                            <!-- Các quận sẽ được lấy từ API dựa trên tỉnh/thành phố đã chọn -->
+                                        </select>
+
+                                        <label for="commune">Xã/Phường:</label>
+                                        <select id="commune" name="commune" class="form-control" onchange="updateAddress()" style="width: 100%; height: 40px; padding: 8px; border-radius: 5px; box-sizing: border-box;">
+                                            <option value="">Chọn xã/phường</option>
+                                            <!-- Các xã sẽ được lấy từ API dựa trên quận/huyện đã chọn -->
+                                        </select>
+
+                                        <label for="village">Thôn/Xóm (Nhập nếu không có trong danh sách):</label>
+                                        <input type="text" id="village" name="village" class="form-control" placeholder="Nhập tên thôn/xóm (nếu không có trong danh sách)" oninput="updateAddress()" style="width: 100%; padding: 8px; border-radius: 5px; box-sizing: border-box;" />
+
+                                        <!-- Trường địa chỉ ẩn -->
+                                        <input type="hidden" id="address" name="address" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="hidden" id="longitude" name="longitude" />
+                            <input type="hidden" id="latitude" name="latitude" />
+                            <input type="hidden" name="userId" value="@userId" />
+
+                            <div class="form-group" style="margin-top: 20px;">
+                                <button type="button" id="getLocation" class="btn btn-primary" style="padding: 10px 20px; font-size: 16px; margin-right: 10px;">Lấy vị trí</button>
+                                <button type="submit" class="btn btn-success" style="padding: 10px 20px; font-size: 16px;">Gửi</button>
+                            </div>
+                        </form>
+
+
+
+                </div>
+            </div>
+        </div>
+         }
+      
+        <div>
+            <div id="windy" style="width: 75%; height: 700px; float: right; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);"></div> <!-- Vùng chứa bản đồ -->
+
+            <div id="warningPanel" style="width: 25%; height: 700px; overflow-y: auto; float: left; background-color: #f5f5f5; padding: 15px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                <div class="scrolling-container" style="animation: scrollUp 20s linear infinite; position: relative;">
+                    <!-- Kiểm tra và hiển thị cảnh báo nếu có dữ liệu thiên tai -->
+                    @if (Model.Disasters != null && Model.Disasters.Count > 0)
+                    {
+                        var dateNow = DateTime.Now;
+                        var hasRecentDisaster = false;
+
+                        foreach (var disaster in Model.Disasters)
+                        {
+                            if (disaster.TimeUpdate >= dateNow.AddDays(-7))
+                            {
+                                hasRecentDisaster = true;
+
+                                var levelClass = disaster.Level <= 3 ? "low-level" :
+                                (disaster.Level > 3 && disaster.Level <= 7) ? "moderate-level" : "high-level";
+
+                                <div class="warning-box @levelClass" data-id="@disaster.Id" style="margin-bottom: 15px; padding: 10px 15px; border-radius: 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); font-size: 0.9rem;
+                background-color: @(disaster.Level <= 3 ? "#d4edda" : (disaster.Level <= 7 ? "#fff3cd" : "#f8d7da"));
+                border-left: 5px solid @(disaster.Level <= 3 ? "#28a745" : (disaster.Level <= 7 ? "#ffc107" : "#dc3545"));">
+
+                                    <strong>Loại hình:</strong> @disaster.DisasterDetails?.NameDisaster <br>
+                                    <strong>Khu vực:</strong> @disaster.AffectedArea <br>
+                                    <strong>Thời gian:</strong> @disaster.TimeUpdate.ToString("g") <br>
+                                    <strong>Cấp độ:</strong> @disaster.Level
+                                </div>
+                            }
+                        }
+
+                        if (!hasRecentDisaster)
+                        {
+                            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                                <p style="color: #666; font-size: 0.9rem; text-align: center;">Không có thông tin thiên tai gần đây.</p>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p style="color: #666; font-size: 0.9rem; text-align: center;">Không có thông tin thiên tai gần đây.</p>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+       
+        
+        <div id="filterSection"
+             style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;
+                   background: rgba(255, 255, 255, 0.9); padding: 20px 30px;
+                   border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);    justify-content: center;">
+
+            <select id="disasterTypeFilter"
+                    style="padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+                       outline: none; transition: 0.3s; ">
+                <option value="">Tất cả</option>
+                @{
+                    var uniqueDisasters = Model.Disasters
+                    .Select(d => d.DisasterDetails.NameDisaster)
+                    .Distinct()
+                    .ToList();
+                }
+                @foreach (var disasterName in uniqueDisasters)
+                {
+                    <option value="@disasterName">@disasterName</option>
+                }
+            </select>
+
+            <input type="text" id="affectedAreaSearch"
+                   placeholder="Tìm kiếm Khu vực bị ảnh hưởng"
+                   style="padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+                       outline: none; transition: 0.3s;" />
+
+            <label style="display: flex; align-items: center; gap: 10px;">
+                <input type="checkbox" id="highestIdFilter"
+                       style="accent-color: #2b6cb0; transform: scale(1.5);" />
+                Thiên tai mới nhất
+            </label>
+        </div>
+    </div>
+</div>
+
+<section class="ftco-section" style="background-color: #330000; padding: 30px 0;">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-10 heading-section ftco-animate text-center">
+                <div class="emergency-banner" style="background-color: #ff0000; padding: 20px; border-radius: 10px;">
+                    <h2 class="mb-4" style="color: #fff; font-size: 36px; font-weight: bold; animation: pulse 1s infinite;">
+                        ⚠️ KHẨN CẤP! DANH SÁCH NGƯỜI CẦN HỖ TRỢ ⚠️
+                    </h2>
+                    <p style="color: #fff; font-size: 18px; font-weight: bold;">
+                        Nếu bạn ở gần, vui lòng giúp đỡ ngay lập tức! Mọi sự hỗ trợ đều vô cùng quý giá!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex" style="overflow-x: auto; white-space: nowrap; display: flex; flex-wrap: nowrap; gap: 10px; padding: 10px;">
+            @if (Model.Reports != null && Model.Reports.Any())
+            {                @foreach (var report in Model.Reports)
+                {
+                    var currentTime = DateTime.Now;
+                    var reportTime = report.CreateTime ?? DateTime.MinValue;
+                    var daysDifference = (currentTime - reportTime).TotalDays;
+
+                    string backgroundColor;
+                    if (daysDifference < 1)
+                    {
+                        backgroundColor = "#ff0000";
+                    }
+                    else if (daysDifference < 2)
+                    {
+                        backgroundColor = "#F7FF00";
+                    }
+                    else
+                    {
+                        backgroundColor = "#13EF4D";
+                    }
+                    <div class="emergency-card" style="border: 3px solid @backgroundColor; border-radius: 8px; animation: alertBlink 1s infinite; margin-right: 10px; flex: 0 0 250px; max-width: 300px; background-color: #f5f5f5; padding: 10px;">
+                        <!-- Phần đầu báo cáo -->
+                        <div class="block-20" style="background-color: #ffcccc; height: 30px; text-align: center; display: flex; justify-content: center; align-items: center; position: relative; font-size: 16px; color: #666; padding: 5px;">
+                            <span>🚨</span>
+                            <div class="badge badge-danger" style="position: absolute; top: 5px; right: 5px; font-size: 12px; color: white; background-color: red; padding: 3px 6px; border-radius: 5px; animation: pulse 1s infinite;">KHẨN CẤP</div>
+                        </div>
+
+                        <!-- Nội dung -->
+                        <div class="text" style="font-size: 12px; color: #333; font-weight: bold; margin-top: 10px;">
+                            <div style="margin-bottom: 5px;">
+                                <span style="color: #ff0000; font-weight: bold;">🕒 Thời gian: @report.CreateTime?.ToString("'Ngày 'd' Tháng' MM, yyyy 'lúc' HH:mm")</span>
+                            </div>
+                            <p style="color: #555; margin-bottom: 10px; font-size: 14px; word-wrap: break-word; white-space: normal; overflow-wrap: break-word;">@report.Content</p>
+                            <a asp-page="/User/DetailSos" asp-route-s_id="@report.SosId" style="color: blue; font-weight: bold; text-decoration: underline; font-size: 12px;">Chi Tiết</a>
+                        </div>
+                    </div>
+                }
+
+            }
+            else
+            {
+                <div style="width: 100%; text-align: center; font-size: 16px; font-weight: bold; color: #888; padding: 20px; background-color: #fff; border-radius: 8px;">
+                    Không Có Lời Kêu Cứu Trong Mấy Ngày Gần Đây
+                </div>
+            }
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sosButton = document.getElementById("sosButton");
+        const reportModal = document.getElementById("reportModal");
+
+        sosButton.addEventListener("click", function () {
+            if (confirm("Đây là tính năng khẩn cấp!!!Chỉ nên sử dụng nó khi thực sự cần thiết để tránh ánh hưởng tới mọi người !!!")) {
+                // If confirmed, show the modal
+                reportModal.style.display = "block"; // Show the modal
+            }
+        });
+
+        // Function to close the modal
+        window.onclick = function (event) {
+            if (event.target == reportModal) {
+                reportModal.style.display = "none"; // Hide the modal
+            }
+        };
+    });
+</script>
+
+ <script>
+    document.getElementById('getLocation').addEventListener('click', function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                document.getElementById('longitude').value = position.coords.longitude;
+                document.getElementById('latitude').value = position.coords.latitude;
+                alert("Location retrieved: Longitude " + position.coords.longitude + ", Latitude " + position.coords.latitude);
+            }, function () {
+                alert("Unable to retrieve your location.");
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    });
+</script>
+
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+  <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+  <script>
+        const options = {
+            key: '44phXZRSg6vYJF3qnHWy1uVVY4SIuITf',  
+            lat: 21.0285,        
+            lon: 105.8542,       
+            zoom: 5,           
+        };
+
+        windyInit(options, windyAPI => {
+            const map = windyAPI.map; // Lấy đối tượng bản đồ
+
+            // Tạo một layer group để quản lý các marker
+            const disasterLayer = L.layerGroup().addTo(map);
+        const markers = {};
+            // Chuyển đổi dữ liệu từ Model
+            var dis = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Disasters));
+
+            console.log(dis); // Log để kiểm tra mảng disasters
+
+            // Hàm để hiển thị markers theo lựa chọn
+            function displayMarkers(filter = "", search = "", showHighestId = false) {
+                disasterLayer.clearLayers(); // Xóa tất cả marker hiện tại
+                if (dis && dis.length > 0) {
+
+                     let maxId = Math.max(...dis.map(d => d.id)); 
+                    console.log('Max ID:', maxId);
+
+                    dis.forEach(disaster => {
+                        if (disaster.lat && disaster.lon) {
+                             const affectedArea = disaster.kv_anhhuong.toLowerCase();
+                            const searchLower = search.toLowerCase();
+
+                             const matchesFilter = (filter === "" || disaster.disaster.name_disaster === filter);
+                            const matchesSearch = (search === "" || affectedArea.includes(searchLower));
+                            const isHighestId = showHighestId ? disaster.id === maxId : true; 
+
+                            console.log(`Disaster ID: ${disaster.id}, Matches: ${matchesFilter}, ${matchesSearch}, Highest ID: ${isHighestId}`);
+
+                            // Kiểm tra xem loại thiên tai có khớp với filter không
+                            if (matchesFilter && matchesSearch && isHighestId) {
+                                // Tạo marker và thêm vào layer group
+                                const marker = L.marker([disaster.lat, disaster.lon]);
+                                marker.addTo(disasterLayer);
+
+                                // Tạo nội dung popup với các thuộc tính cần thiết
+                            const popupContent = `
+        <strong>Loại hình thiên tai:</strong> ${disaster.name_vn}<br>
+        <strong>Thời gian:</strong> ${new Date(disaster.time_update).toLocaleString()}<br>
+        <strong>Vị trí:</strong> ${disaster.lon}, ${disaster.lat}<br>
+        <strong>Kgu vực ảnh hưởng:</strong> ${disaster.kv_anhhuong}<br>
+        <strong>Loại thiên tai:</strong> ${disaster.disaster.name_disaster}<br>
+        <strong>Cấp độ thiên tai:</strong> ${disaster.level}<br>
+                   <form method="post" action="?handler=AddDisaster">
+    @Html.AntiForgeryToken()
+        <input type="hidden" name="disasterName" value="${disaster.name_vn}" />
+        <input type="hidden" name="location" value="${disaster.kv_anhhuong}" />
+        <input type="hidden" name="description" value="${disaster.description}" />
+        <input type="hidden" name="severityLevel" value="${disaster.level}" />
+            <input type="hidden" name="idjson" value="${disaster.id}" />
+        <button type="submit" class="btn btn-primary">View Details</button>
+    </form>
+
+           
+
+    `;
+
+                                marker.bindPopup(popupContent);
+                            markers[disaster.id] = marker;
+
+                            }
+                        } else {
+                            console.warn('Invalid latitude or longitude for disaster:', disaster);
+                        }
+                    });
+                } else {
+                    console.warn('No disasters found or disasters data is empty.');
+                }
+            }
+
+            // Hiển thị tất cả markers ban đầu
+            displayMarkers();
+        // Add click event to each warning box to scroll to marker on the map
+        document.querySelectorAll('.warning-box').forEach(box => {
+            box.addEventListener('click', function () {
+                const disasterId = parseInt(this.getAttribute('data-id'));
+
+                // Check if marker exists and navigate the map to it
+                if (markers[disasterId]) {
+                    map.setView(markers[disasterId].getLatLng(), 8); // Adjust zoom level if necessary
+                    markers[disasterId].openPopup(); // Open the marker's popup
+                }
+            });
+        });
+            // Lắng nghe sự kiện thay đổi chọn loại thiên tai
+           document.getElementById('disasterTypeFilter').addEventListener('change', (event) => {
+                const selectedDisaster = event.target.value; 
+                const searchInput = document.getElementById('affectedAreaSearch').value; 
+                const showHighestId = document.getElementById('highestIdFilter').checked;
+                displayMarkers(selectedDisaster, searchInput, showHighestId); 
+            });
+
+            document.getElementById('affectedAreaSearch').addEventListener('input', (event) => {
+                const searchValue = event.target.value; 
+                const selectedDisaster = document.getElementById('disasterTypeFilter').value; 
+                const showHighestId = document.getElementById('highestIdFilter').checked; 
+                displayMarkers(selectedDisaster, searchValue, showHighestId); 
+            });
+
+            document.getElementById('highestIdFilter').addEventListener('change', (event) => {
+                const showHighestId = event.target.checked; 
+                const selectedDisaster = document.getElementById('disasterTypeFilter').value; 
+                const searchInput = document.getElementById('affectedAreaSearch').value; 
+                displayMarkers(selectedDisaster, searchInput, showHighestId); 
+            });
+        });
+
+
+    </script>
+
+  <script>
+    // Update address field with selected values
+    function updateAddress() {
+        const province = document.getElementById('province').value;
+        const district = document.getElementById('district').value;
+        const commune = document.getElementById('commune').value;
+        const village = document.getElementById('village').value;
+
+        let address = '';
+
+        if (province) {
+            address += document.getElementById('province').selectedOptions[0].text + ', ';
+        }
+
+        if (district) {
+            address += document.getElementById('district').selectedOptions[0].text + ', ';
+        }
+
+        if (commune) {
+            address += document.getElementById('commune').selectedOptions[0].text + ', ';
+        }
+
+        if (village) {
+            address += village + ', ';
+        }
+
+        // Remove last comma and space if present
+        address = address.trim().replace(/,$/, '');
+
+        // Set the address field value
+        document.getElementById('address').value = address;
+    }
+
+    // Fetch and populate the province, district, and commune dropdowns
+    fetch('https://provinces.open-api.vn/api/?depth=2')
+        .then(response => response.json())
+        .then(data => {
+            const provinceSelect = document.getElementById('province');
+            data.forEach(province => {
+                const option = document.createElement('option');
+                option.value = province.code;
+                option.textContent = province.name;
+                provinceSelect.appendChild(option);
+            });
+
+            provinceSelect.addEventListener('change', function () {
+                const selectedProvince = provinceSelect.value;
+                if (selectedProvince) {
+                    loadDistricts(selectedProvince);
+                } else {
+                    clearDistricts();
+                }
+            });
+        });
+
+    function loadDistricts(provinceCode) {
+        fetch(`https://provinces.open-api.vn/api/p/${provinceCode}?depth=2`)
+            .then(response => response.json())
+            .then(data => {
+                const districtSelect = document.getElementById('district');
+                districtSelect.innerHTML = '<option value="">Select District</option>';
+                data.districts.forEach(district => {
+                    const option = document.createElement('option');
+                    option.value = district.code;
+                    option.textContent = district.name;
+                    districtSelect.appendChild(option);
+                });
+                districtSelect.disabled = false;
+                document.getElementById('commune').disabled = true;
+                document.getElementById('village').disabled = true;
+                document.getElementById('village').value = '';
+            });
+    }
+
+    function clearDistricts() {
+        document.getElementById('district').disabled = true;
+        document.getElementById('district').innerHTML = '<option value="">Select District</option>';
+        document.getElementById('commune').disabled = true;
+        document.getElementById('commune').innerHTML = '<option value="">Select Commune</option>';
+        document.getElementById('village').disabled = true;
+        document.getElementById('village').value = '';
+    }
+
+    document.getElementById('district').addEventListener('change', function () {
+        const selectedDistrict = this.value;
+        if (selectedDistrict) {
+            loadCommunes(selectedDistrict);
+        } else {
+            document.getElementById('commune').disabled = true;
+            document.getElementById('commune').innerHTML = '<option value="">Select Commune</option>';
+            document.getElementById('village').disabled = true;
+            document.getElementById('village').value = '';
+        }
+    });
+
+    function loadCommunes(districtCode) {
+        fetch(`https://provinces.open-api.vn/api/d/${districtCode}?depth=2`)
+            .then(response => response.json())
+            .then(data => {
+                const communeSelect = document.getElementById('commune');
+                communeSelect.innerHTML = '<option value="">Select Commune</option>';
+                data.wards.forEach(commune => {
+                    const option = document.createElement('option');
+                    option.value = commune.code;
+                    option.textContent = commune.name;
+                    communeSelect.appendChild(option);
+                });
+
+                communeSelect.disabled = false;
+                document.getElementById('village').disabled = false;
+            });
+    }
+
+    document.getElementById('commune').addEventListener('change', function () {
+        const selectedCommune = this.value;
+        if (selectedCommune) {
+            document.getElementById('village').disabled = false;
+        } else {
+            document.getElementById('village').disabled = true;
+            document.getElementById('village').value = '';
+        }
+    });
+
+
+
+    </script>

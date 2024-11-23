@@ -1,0 +1,72 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.News.UpdateModel
+@{
+    ViewData["Title"] = "Management News";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>Cập nhật thông tin tin tức</h3>
+        </div>
+        <div class="card-body">
+            <form id="updateForm" method="post">
+                <!-- Username -->
+                <div class="form-group mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="News.Title" value="@Model.News.Title" required placeholder="Enter title" />
+                </div>
+
+                <!-- Email -->
+                <div class="form-group mb-3">
+                    <label for="content" class="form-label">Content</label>
+                    <input type="text" class="form-control" id="content" name="News.Content" value="@Model.News.Content" required placeholder="Enter content" />
+                </div>
+
+                <!-- Full Name -->
+                <div class="form-group mb-3">
+                    <label for="source" class="form-label">Source</label>
+                    <input type="text" class="form-control" id="source" name="News.Source" value="@Model.News.Source" required placeholder="Enter source" />
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group mb-3">
+                    <label for="publishedAt" class="form-label">Published At</label>
+                    <input type="text" class="form-control" id="publishedAt" name="News.PublishedAt" value="@Model.News.PublishedAt" required placeholder="Enter published at" />
+                </div>
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <input type="submit" class="btn btn-success px-5 py-2" value="Cập nhật" id="saveBtn" />
+                    <input type="submit" asp-page="./Index" class="btn btn-success px-5 py-2" value="Quay lại" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        document.getElementById('saveBtn').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Hiển thị SweetAlert2 để xác nhận
+            Swal.fire({
+                title: 'Bạn có chắc chắn muốn cập nhật?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Có, cập nhật!',
+                cancelButtonText: 'Hủy bỏ'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Nếu người dùng xác nhận, submit form
+                    document.getElementById('updateForm').submit();
+                } else {
+                    // Nếu người dùng nhấn 'Hủy bỏ', hiển thị thông báo đã hủy
+                    Swal.fire('Đã hủy', 'Cập nhật đã bị hủy', 'info');
+                }
+            });
+        });
+    </script>
+}

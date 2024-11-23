@@ -1,0 +1,74 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.ListModel
+@using NaturalDisasterInformationSystem.Models
+@{
+    ViewData["Title"] = "Management Account";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Quản lý tài khoản</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="basic-datatables"
+                                   class="display table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Username</th>
+                                        <th>Fullname</th>
+                                        <th>Active</th>
+                                        <th>Created_at</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Username</th>
+                                        <th>Fullname</th>
+                                        <th>Active</th>
+                                        <th>Created_at</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (var user in Model.Users)
+                                    {
+                                        <tr>
+                                            <td>@user.UserId</td>
+                                            <td>@user.Username</td>
+                                            <td>@user.FullName</td>
+                                            <td>@user.Active</td>
+                                            <td>@user.CreatedAt.Value.ToString("dd/MM/yyyy")</td>
+                                            <td>
+                                                <a asp-page="./Detail" asp-route-id="@user.UserId">Detail</a>
+                                                <a asp-page="./Update" asp-route-id="@user.UserId">Update</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

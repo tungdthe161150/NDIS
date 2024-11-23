@@ -1,0 +1,327 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.User.DetailCampaignUserModel
+@{
+    ViewData["Title"] = "Chi Tiết Chiến Dịch Gây Quỹ";
+    var roleId = HttpContext.Session.GetString("RoleId") ?? Request.Cookies["RoleId"];
+    var userId = HttpContext.Session.GetString("UserId") ?? Request.Cookies["UserId"];
+}
+<style>
+    /* Nút 3 chấm */
+#dropdownMenuButton {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #555;
+}
+
+/* Menu báo cáo */
+#dropdownMenu {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    min-width: 200px;
+}
+
+/* Tùy chọn trong menu */
+#dropdownMenu a {
+    display: block;
+    padding: 12px 15px;
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+#dropdownMenu a:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+/* Hiệu ứng fade khi menu xuất hiện */
+@@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#dropdownMenu {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+</style>
+<div class=""
+     style="background-image: url('/assets/images/bg_7.jpg');
+           background-size: cover; background-position: center center;
+           background-attachment: fixed; min-height: 100vh; display: flex;
+           align-items: center; justify-content: center; position: relative;">
+
+    <div class="overlay"
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+               background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+     <div class="container"
+         style="position: relative; z-index: 2; padding: 20px; max-width: 1400px;
+               margin: 0 auto; width: 100%; padding-top: 73px;">
+
+        <div class="profile-section" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin: 20px 0;">
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+
+                <!-- Tiêu đề chiến dịch -->
+                <h2 class="fw-bold text-uppercase mb-4"
+                    style="margin: 0; font-size: 24px; color: #333; text-align: left;">
+                    @Model.DetailFundraisingCampaign.CampaignName – Chia Sẻ Yêu Thương
+                </h2>
+             <!-- Nút 3 chấm -->
+                <div style="position: relative; display: inline-block;">
+                    <button id="dropdownMenuButton"
+                            onclick="toggleDropdown()"
+                            style="
+                    background: none;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 24px;
+                    color: #555;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 5px;
+                ">
+                        <span style="font-size: 24px; font-weight: bold;">&#x22EE;</span> <!-- Icon 3 chấm -->
+                    </button>
+
+                    <!-- Menu báo cáo -->
+                    <div id="dropdownMenu"
+                         style="
+                 display: none;
+                 position: absolute;
+                 right: 0;
+                 margin-top: 10px;
+                 background-color: #fff;
+                 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                 border-radius: 8px;
+                 z-index: 100;
+                 padding: 10px;
+                 min-width: 200px;
+             ">
+                        <a asp-page="/User/ReportViolation" asp-route-id="@Model.DetailFundraisingCampaign.CampaignId"
+
+                           style="
+                   display: block;
+                   padding: 12px 15px;
+                   text-decoration: none;
+                   color: #333;
+                   font-size: 16px;
+                   font-weight: 500;
+                   border-radius: 6px;
+                   transition: background-color 0.2s ease;
+               ">
+                            Báo cáo vi phạm
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+           @*  <div class="d-flex">
+                <div style="flex: 1; padding: 10px;">
+                    <img src="/uploads/images/sample_large.svg" alt="Campaign Image" style="width: 100%; height: auto; border: 1px solid #ddd;">
+                </div>
+                <div style="flex: 1; padding: 10px;">
+                    <img src="/uploads/images/sample_small.svg" alt="Campaign Image" style="width: 100%; height: 200px; margin-bottom: 10px; border: 1px solid #ddd;">
+                    <img src="/uploads/images/sample_small.svg" alt="Campaign Image" style="width: 100%; height: 200px; border: 1px solid #ddd;">
+                </div>
+            </div> *@
+            <div class="row">
+                <!-- Main Image Section -->
+                <div class="col-md-8">
+                    <div style="background-color: #ddd; height: 300px; display: flex; justify-content: center; align-items: center;">
+                        @if (!string.IsNullOrEmpty(Model.DetailFundraisingCampaign.ImgCam))
+                        {
+                            // Split the image paths by comma and take the first one for the main image
+                            var mainImagePath = Model.DetailFundraisingCampaign.ImgCam.Split(',').FirstOrDefault();
+                            <img src="@Url.Content($"/uploads/campaigns/{mainImagePath}")" style="width: 100%; height: 100%;" alt="Main Image" />
+                        }
+                        else
+                        {
+                            <div class="mb-3" style="background-color: #ddd; height: 140px; display: flex; justify-content: center; align-items: center;">
+                                <span style="font-size: 16px; color: #666;">600 x 400</span>
+                            </div>
+                            @* <img src="~/uploads/bg-1.jpg" style="width: 100%; height: 100%;" alt="Default Image" /> *@
+                        }
+                    </div>
+                </div>
+
+                <!-- Secondary Image Section -->
+                <div class="col-md-4">
+                    @if (!string.IsNullOrEmpty(Model.DetailFundraisingCampaign.ImgCam) && Model.DetailFundraisingCampaign.ImgCam.Split(',').Length > 2)
+                    {
+                        // Split the image paths by comma
+                        var imagePaths = Model.DetailFundraisingCampaign.ImgCam.Split(',');
+                        for (int i = 1; i < imagePaths.Length && i <= 4; i++) // Display up to 2 secondary images
+                        {
+                            <div class="mb-3" style="background-color: #ddd; height: 140px; display: flex; justify-content: center; align-items: center;">
+                                <img src="@Url.Content($"/uploads/campaigns/{imagePaths[i]}")" style="width: 100%; height: 100%;" alt="Secondary Image @i" />
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        // Default images for secondary sections
+                        <div class="mb-3" style="background-color: #ddd; height: 140px; display: flex; justify-content: center; align-items: center;">
+                            <span style="font-size: 16px; color: #666;">400 x 300</span>
+                        </div>
+                        <div style="background-color: #ddd; height: 140px; display: flex; justify-content: center; align-items: center;">
+                            <span style="font-size: 16px; color: #666;">400 x 300</span>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-3" style="padding: 10px; border-top: 1px solid #e0e0e0; border-bottom: 1px solid #e0e0e0;">
+                <span style="font-size: 18px; font-weight: bold; color: #333;    display: ruby;">Tên Tổ Chức: <a asp-page="/User/ProfileCharity" asp-route-pc_id="@Model.DetailFundraisingCampaign.Charity.CharityId">@Model.DetailFundraisingCampaign.Charity.CharityName</a></span>
+                <a asp-page="/Areas/Charity/Update_Information" asp-route-pi_id="@Model.DetailFundraisingCampaign.CampaignId" asp-route-vh_id="@userId" class="btn btn-outline-primary">Cập nhật thông tin cho dự án</a>
+                <a asp-page="/Areas/Charity/listdonation" asp-route-c_id="@Model.DetailFundraisingCampaign.CampaignId" class="btn btn-outline-primary">Thông tin ủng hộ</a>
+
+            <button id="donateButton" class="btn btn-outline-primary">Quyên góp</button>
+            <div id="donateModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
+                <div class="modal-content" style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%;">
+                    <span class="close" onclick="document.getElementById('donateModal').style.display='none'" style="color: #aaa; float: right; font-size: 28px; font-weight: bold;">&times;</span>
+                    <div class="container">
+                        <h2>Ủng Hộ Quyên Góp</h2>
+                        <p>Hãy đóng góp để hỗ trợ những người cần giúp đỡ.</p>
+                        <div style="display: flex; align-items: center; gap: 20px; margin-top: 20px;">
+               
+                             @if (@Model.DetailFundraisingCampaign.ImgQr!=null) { 
+                                         
+                            <div style="flex: 2; text-align: center;">
+                                <img src="/uploads/QR/@Model.DetailFundraisingCampaign.ImgQr" alt="QR Code" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"/>
+                            </div>
+                           
+                            <div style="flex: 2;">
+                                <p><strong>Mã Ủng Hộ:</strong>MCD_@Model.DetailFundraisingCampaign.CampaignId</p>
+                                        <p>Khi ủng hộ mọi người có thể ghi nội dung như sau: MCD_@Model.DetailFundraisingCampaign.CampaignId-Nội Dung của người dùng(nếu có)  </p>
+                            </div>}
+                            else{
+                                     <p >Chiến Dịch Hiện Tại Chưa Có Mã QR Để Ủng HỘ </p>
+                            }
+               
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+            <div style="background-color: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  margin: 20px auto; font-family: Arial, sans-serif; color: #333;">
+
+                <div style="margin-bottom: 20px;">
+                    <p style="font-size: 18px; font-weight: bold; color: #555; margin-bottom: 10px;">1.Mục tiêu gây quỹ</p>
+                    <div>
+                        <ul style="font-size: 16px; line-height: 1.5; margin: 0; padding: 0 0 0 20px; list-style-type: disc;">
+                            <li style="margin-bottom: 8px;"><strong>Mục tiêu:</strong> @Model.DetailFundraisingCampaign.GoalAmount?.ToString("C",new System.Globalization.CultureInfo("vi-VN"))</li>
+                            <li><strong>Số tiền đã gây quỹ được:</strong> @Model.DetailFundraisingCampaign.RaisedAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <p style="font-size: 18px; font-weight: bold; color: #555; margin-bottom: 10px;">2.Thời Gian</p>
+                    <p style="font-size: 16px; margin: 0;">
+                        <strong>Bắt đầu ngày: @Model.DetailFundraisingCampaign.StartDate?.ToShortDateString()</strong> <br />
+                        <strong>Kết thúc ngày: @Model.DetailFundraisingCampaign.EndDate?.ToShortDateString()</strong>
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <p style="font-size: 18px; font-weight: bold; color: #555; margin-bottom: 10px;">3.Thông Tin Chi Tiết</p>
+                    <p style="font-size: 16px; line-height: 1.5; margin: 0;">
+                        @* <strong>Thông Tin Chi Tiết:</strong> *@ @Html.Raw(@Model.DetailFundraisingCampaign.Description)
+                    </p>
+                </div>
+
+                @if (userId != null && Model.DetailFundraisingCampaign.VolunteerHistories?.Any(c => c.UserId.ToString() == userId) == false)
+                {
+                    <div style="margin-top: 20px; text-align: center;">
+                        <strong style="display: block; margin-bottom: 10px;">Hãy đăng ký tình nguyện viên:</strong>
+                        <a asp-page="/user/VolunteerSignup" asp-route-vr_id="@Model.DetailFundraisingCampaign.CampaignId"
+                           style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-size: 16px;">
+                            Đăng Ký Tình Nguyện Viên
+                        </a>
+                    </div>
+                }
+                else if (userId != null && Model.DetailFundraisingCampaign.VolunteerHistories?.Any(c => c.UserId.ToString() == userId && c.Status?.ToLower() == "tham gia".ToLower()) == true)
+                {
+                    <div style="margin-top: 20px; text-align: center;">
+                        <strong style="display: block; margin-bottom: 10px;color:red">Bạn đã đăng ký tình nguyện viên và đang chờ xét duyệt.</strong>
+                    </div>
+                }
+                else if (userId != null && Model.DetailFundraisingCampaign.VolunteerHistories?.Any(c => c.UserId.ToString() == userId && c.Status?.ToLower() == "hoàn thành".ToLower()) == true)
+                {
+                    <div style="margin-top: 20px; text-align: center;">
+                        <strong style="display: block; margin-bottom: 10px;color:forestgreen">Bạn đã trở thành tình nguyện viên.</strong>
+                    </div>
+                }
+                else
+                {
+                    <div style="margin-top: 20px; text-align: center;">
+                        <strong style="display: block; margin-bottom: 10px;">Hãy đăng nhập để có thể đăng ký thành tình nguyện viên:</strong>
+                    </div>
+                }
+
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+       
+        const donateButton = document.getElementById("donateButton");
+        const donateModal = document.getElementById("donateModal");
+
+      
+
+        donateButton.addEventListener("click", function () {
+            donateModal.style.display = "block"; // Show the Donate modal
+        });
+
+        // Close modals when clicking outside of them
+        window.onclick = function (event) {
+           
+            if (event.target == donateModal) {
+                donateModal.style.display = "none"; // Hide the Donate modal
+            }
+        };
+    });
+</script>
+<script>
+    function toggleDropdown() {
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Ẩn menu khi click ra ngoài
+    document.addEventListener('click', function (event) {
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const dropdownButton = document.getElementById('dropdownMenuButton');
+
+        if (!dropdownMenu.contains(event.target) && event.target !== dropdownButton) {
+            dropdownMenu.style.display = 'none';
+        }
+    });
+</script>

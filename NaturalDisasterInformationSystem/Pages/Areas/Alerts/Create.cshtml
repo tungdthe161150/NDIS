@@ -1,0 +1,45 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Alerts.CreateModel
+@using NaturalDisasterInformationSystem.Models;
+@{
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+    var userList = ViewData["User"] as List<User>;
+}
+
+<div class="container">
+    <h1>Gửi thông báo SMS</h1>
+
+    <form method="post">
+        <div class="form-group">
+            <label for="PhoneNumber">Số điện thoại</label>
+            @if (userList != null && userList.Any())
+            {
+                @foreach (var user in userList)
+                {
+                    <div>
+                        <input type="checkbox" name="SelectedPhoneNumbers" value="@user.PhoneNumber" />
+                        <label>@user.PhoneNumber</label>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Không có người dùng nào trong danh sách.</p>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="MessageContent">Nội dung tin nhắn:</label>
+            <textarea id="MessageContent" name="MessageContent" class="form-control"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Gửi SMS" />
+    </form>
+</div>
+
+<!-- Hiển thị kết quả gửi tin nhắn nếu có -->
+@if (ViewData["Result"] != null)
+{
+    <div class="result-message">
+        @Html.Raw(ViewData["Result"])
+    </div>
+}

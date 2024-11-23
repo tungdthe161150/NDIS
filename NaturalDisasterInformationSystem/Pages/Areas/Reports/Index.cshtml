@@ -1,0 +1,101 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Reports.IndexModel
+@{
+    ViewData["Title"] = "Management News";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Quản lý báo cáo vi phạm</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="basic-datatables" class="display table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Lý do</th>
+                                        <th>Trạng thái</th>
+                                        <th>Ngày tạo</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Lý do</th>
+                                        <th>Trạng thái</th>
+                                        <th>Ngày tạo</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @* @foreach (var rp in Model.reports)
+                                    {
+                                        <tr>
+                                            <td>@rp.ReportId</td>
+                                            <td>@(rp.Reason.Length > 100 ? rp.Reason.Substring(0, 100) + "..." : rp.Reason)</td>
+                                            <td>@rp.Status</td>
+                                            <td>@rp.CreatedAt</td>
+                                            <td>
+                                                <a asp-page="Detail" asp-route-id="@rp.ReportId">Chi tiết</a>
+                                            </td>
+                                        </tr>
+                                    } *@
+
+                                    @{
+                                        int stt = 1; // Đếm số thứ tự
+                                        string lastReason = null;
+                                        string lastStatus = null;
+                                        DateTime? lastCreatedAt = null;
+                                    }
+
+                                    @foreach (var rp in Model.reports)
+                                    {
+                                        // Kiểm tra nếu giá trị hiện tại khác giá trị trước
+                                        bool isNewRow =
+                                        rp.Reason != lastReason ||
+                                        rp.Status != lastStatus ||
+                                        rp.CreatedAt != lastCreatedAt;
+
+                                        <tr>
+                                            <td>@(isNewRow ? stt++ : "")</td>
+                                            <td>@(isNewRow ? (rp.Reason.Length > 100 ? rp.Reason.Substring(0, 100) + "..." : rp.Reason) : "")</td>
+                                            <td>@(isNewRow ? rp.Status : "")</td>
+                                            <td>@(isNewRow ? rp.CreatedAt?.ToString("dd/MM/yyyy") : "")</td>
+                                            <td>
+                                                @* asp-route-stt="@(isNewRow ? stt : "")" *@
+                                                <a asp-page="Detail" asp-route-id="@rp.CampaignId">Chi tiết</a>
+                                            </td>
+                                        </tr>
+
+                                        // Cập nhật giá trị của dòng trước đó
+                                        lastReason = rp.Reason;
+                                        lastStatus = rp.Status;
+                                        lastCreatedAt = rp.CreatedAt;
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

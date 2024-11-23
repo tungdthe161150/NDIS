@@ -1,0 +1,462 @@
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    ViewData["Title"] = "Home page";
+
+    var roleId = HttpContextAccessor.HttpContext?.Session.GetString("RoleId")
+                 ?? HttpContextAccessor.HttpContext?.Request.Cookies["RoleId"];
+
+    var userId = HttpContextAccessor.HttpContext?.Session.GetString("UserId")
+                 ?? HttpContextAccessor.HttpContext?.Request.Cookies["UserId"];
+    var charityId = HttpContextAccessor.HttpContext?.Session.GetString("CharityId")
+           ?? HttpContextAccessor.HttpContext?.Request.Cookies["CharityId"];
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NaturalDisasterInformationSystem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NaturalDisasterInformationSystem.styles.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
+    <link rel="icon"
+          href="~/LayoutAdmin/assets/img/kaiadmin/logo3.png"
+          type="image/x-icon" />
+    <link rel="stylesheet" href="~/assets/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/animate.css">
+
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/assets/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="~/assets/css/aos.css">
+
+    <link rel="stylesheet" href="~/assets/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="~/assets/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/assets/css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="~/assets/css/flaticon.css">
+    <link rel="stylesheet" href="~/assets/css/icomoon.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <style>
+        .profile-section {
+            background-color: #ffffff; /* White background for contrast */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 20px; /* Padding for spacing */
+            margin: 20px 0; /* Margin for separation from other elements */
+        }
+
+            .profile-section h2 {
+                margin-bottom: 20px; /* Space below the header */
+                font-size: 24px; /* Larger font size for the title */
+                color: #333; /* Darker text color */
+            }
+
+        .form-group {
+            margin-bottom: 15px; /* Space between form fields */
+        }
+
+            .form-group label {
+                font-weight: bold; /* Bold labels */
+                color: #555; /* Slightly darker label color */
+            }
+
+        .form-control {
+            border-radius: 4px; /* Rounded input fields */
+            border: 1px solid #ced4da; /* Light border */
+            transition: border-color 0.3s; /* Transition effect for focus */
+        }
+
+            .form-control:focus {
+                border-color: #007bff; /* Border color on focus */
+                box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Shadow on focus */
+            }
+
+        .btn-primary {
+            background-color: #007bff; /* Button color */
+            border-color: #007bff; /* Border color */
+            padding: 10px 20px; /* Button padding */
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3; /* Darker color on hover */
+                border-color: #0056b3; /* Darker border on hover */
+            }
+
+    </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .message {
+            margin: 0;
+            padding: 12px;
+            border-radius: 10px;
+            max-width: 80%;
+            font-size: 14px;
+            line-height: 1.4;
+            animation: slide-in 0.5s ease-out;
+            word-wrap: break-word; /* Allows words to break and wrap to the next line */
+            white-space: pre-wrap; /* Maintains whitespace formatting and allows text to break lines */
+        }
+        /* Nút chat */
+        #chat-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Giao diện chatbot */
+        #chatbot {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: 350px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+
+        #chat-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        #chat-content {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .message {
+            margin: 0;
+            padding: 12px;
+            border-radius: 10px;
+            max-width: 80%;
+            font-size: 14px;
+            line-height: 1.4;
+            animation: slide-in 0.5s ease-out;
+        }
+
+        .user-message {
+            background-color: #007bff;
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+            border-radius: 15px 15px 0 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .bot-message {
+            background-color: #f1f1f1;
+            color: black;
+            align-self: flex-start;
+            margin-right: auto;
+            border-radius: 15px 15px 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hiệu ứng cuộn mượt mà */
+        #chat-content {
+            scroll-behavior: smooth;
+        }
+
+        /* input[type="text"] {
+            border: none;
+            padding: 10px;
+            width: calc(100% - 20px);
+            border-top: 1px solid #ccc;
+            border-radius: 0 0 10px 10px;
+            font-size: 14px;
+        } */
+
+        @@keyframes slide-in {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" asp-page="Home">NDIS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active"><a asp-page="/user/home" class="nav-link">Trang Chủ</a></li>
+                    <li class="nav-item active"><a asp-page="/user/ListCampaignUser" class="nav-link">Chiến Dịch</a></li>
+                    <li class="nav-item active"><a asp-page="/user/home" class="nav-link">Diễn Đàn</a></li>
+                    <li class="nav-item active"><a asp-page="/user/listnews" class="nav-link">Tin Tức</a></li>
+                    <li class="nav-item active"><a asp-page="/user/home" class="nav-link">Kiến Thức</a></li>
+                    <li class="nav-item active"><a asp-page="/user/home" class="nav-link">Liên hệ</a></li>
+                    @if (roleId == "3")
+                    {
+                        <li class="nav-item active"><a asp-page="/user/registercharity" asp-route-cid="@userId" class="nav-link">Đăng Ký Tổ Chức</a></li>
+                    }
+                    else if (roleId == "2")
+                    {
+                        <li class="nav-item active"><a asp-page="/Areas/Charity/ListCampaign" asp-route-cid="@charityId" class="nav-link">Chiến Dịch Của Tôi</a></li>
+                    }
+
+
+                </ul>
+            </div>
+            <div style="display: flex; gap: 15px; align-items: center; justify-content: flex-end; padding: 10px 20px;">
+                @if (userId != null)
+                {
+                    <!-- Nếu đã đăng nhập, hiển thị link đến Profile -->
+                    <a class="nav-brand" asp-page="/Account/Profile" asp-route-uid="@userId">Profile</a>
+                    <a class="nav-brand" asp-page="/Account/Logout">Đăng Xuất</a>
+                }
+                else
+                {
+                    <!-- Nếu chưa đăng nhập, hiển thị link Đăng Nhập và Đăng Ký -->
+                    <a class="nav-brand" asp-page="/Account/Login">Đăng Nhập</a>
+                    <a class="nav-brand" asp-page="/Account/Register">Đăng Ký</a>
+                }
+            </div>
+        </div>
+
+
+    </nav>
+    <!-- END nav -->
+    @RenderBody()
+    <!-- Nút chat -->
+    <div id="chat-button" onclick="toggleChatbot()" style="z-index:100">
+        NDIS AI
+    </div>
+
+    <!-- Giao diện chatbot -->
+    <div id="chatbot" class="hidden">
+        <div id="chatbox" style="display: flex; flex-direction: column; height: 600px;z-index:100">
+            <div id="chat-header">
+                <span>Chatbot</span>
+                <button onclick="toggleChatbot()" style="background: none; border: none; color: white; font-size: 16px; cursor: pointer;">X</button>
+            </div>
+            <div id="chat-content">
+                <!-- Nội dung chat sẽ xuất hiện ở đây -->
+            </div>
+            <input type="text" style=" border: none;
+            padding: 10px;
+            width: calc(100% - 20px);
+            border-top: 1px solid #ccc;
+            border-radius: 0 0 10px 10px;
+            font-size: 14px;" id="chat-input" placeholder="Nhập tin nhắn..." onkeydown="sendMessage(event)">
+        </div>
+    </div>
+    <footer class="ftco-footer ftco-section img">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Về chúng tôi</h2>
+                        <p>Trang web Hệ thống thông tin thiên tai được phát triển với sứ mệnh trở thành nền tảng hàng đầu trong việc cung cấp thông tin liên quan đến thiên tai, 
+                            hỗ trợ các nỗ lực gây quỹ và tổ chức các sáng kiến ​​cứu trợ hiệu quả. Mục tiêu của chúng tôi là tạo ra một công cụ mạnh mẽ kết nối cộng đồng với các tổ chức cứu trợ, 
+                            cho phép phản ứng kịp thời và hiệu quả đối với các trường hợp khẩn cấp, do đó giảm thiểu thiệt hại và giúp khôi phục cuộc sống bình thường sau thảm họa.</p>
+                        <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Kiến thức</h2>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url('/uploads/images/sample_small.jpg');"></a>
+                            <div class="text">
+                                <h3 class="heading"><a href="#">Bài viết số 2</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> 22/11/2024</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                    <div><a href="#"><span class="icon-chat"></span> </a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-21 mb-4 d-flex">
+                            <a class="blog-img mr-4" style="background-image: url('/uploads/images/sample_small.jpg');"></a>
+                            <div class="text">
+                                <h3 class="heading"><a href="#">Bài viết số 1</a></h3>
+                                <div class="meta">
+                                    <div><a href="#"><span class="icon-calendar"></span> 22/11/2024</a></div>
+                                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                                    <div><a href="#"><span class="icon-chat"></span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="ftco-footer-widget mb-4 ml-md-4">
+                        <h2 class="ftco-heading-2">Liên kết</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="py-2 d-block">Trang chủ</a></li>
+                            <li><a href="#" class="py-2 d-block">Chiến dịch</a></li>
+                            <li><a href="#" class="py-2 d-block">Diễn đàn</a></li>
+                            <li><a href="#" class="py-2 d-block">Tiên tức</a></li>
+                            <li><a href="#" class="py-2 d-block">Kiên thức</a></li>
+                            <li><a href="#" class="py-2 d-block">Liên Hệ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">
+                            Bạn có thắc mắc?
+                        </h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="icon icon-map-marker"></span><span class="text">Khu Giáo dục và Đào tạo – Khu Công nghệ cao Hòa Lạc – Km29 Đại lộ Thăng Long, H. Thạch Thất, TP. Hà Nội</span></li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">0399245222</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">NDIS@gmail.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> Natural Disaster Information System <i class="icon-heart" aria-hidden="true"></i><a href="" target="_blank">NDIS</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
+
+    <script>
+        function toggleChatbot() {
+            var chatbot = document.getElementById("chatbot");
+            if (chatbot.style.display === "none" || chatbot.style.display === "") {
+                chatbot.style.display = "block";
+            } else {
+                chatbot.style.display = "none";
+            }
+        }
+
+        const YOUR_API_KEY = 'AIzaSyC53Qo9qc_3ieOI9EgN96s6vrMyAS55Md8'; // Replace with your actual API key
+
+        async function sendMessage(event) {
+            if (event.key === "Enter") {
+                var input = document.getElementById("chat-input");
+                var message = input.value;
+                if (message.trim()) {
+                    displayMessage(message, 'user'); // Display user message
+                    input.value = ''; // Clear input after sending
+
+                    // Call the Gemini API
+                    try {
+                        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-002:generateContent?key=${YOUR_API_KEY}`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                contents: [{
+                                    parts: [{ text: message }]
+                                }]
+                            })
+                        });
+
+                        // Check if the response is okay
+                        if (!response.ok) {
+                            const errorData = await response.json();
+                            console.error('API Error:', errorData);
+                            displayMessage("Sorry, there was an error with the API request. Please try again.", 'bot');
+                            return;
+                        }
+
+                        const data = await response.json();
+                        console.log(data); // Log the entire response for debugging
+
+                        // Access the response correctly based on the new structure
+                        if (data.candidates && data.candidates.length > 0 && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts.length > 0) {
+                            displayMessage(data.candidates[0].content.parts[0].text, 'bot'); // Display the response from the API
+                        } else {
+                            displayMessage("Sorry, I couldn't understand the response. Please try again.", 'bot');
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        displayMessage("Sorry, there was an error. Please try again.", 'bot');
+                    }
+                }
+            }
+        }
+
+        function displayMessage(message, sender) {
+            var chatContent = document.getElementById("chat-content");
+            var newMessage = document.createElement("div");
+            newMessage.classList.add("message");
+            newMessage.classList.add(sender === 'user' ? 'user-message' : 'bot-message'); // Add class based on sender
+            newMessage.textContent = message;
+            chatContent.appendChild(newMessage);
+            chatContent.scrollTop = chatContent.scrollHeight; // Scroll to the latest message
+        }
+    </script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/assets/js/jquery.min.js"></script>
+    <script src="~/assets/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/jquery.easing.1.3.js"></script>
+    <script src="~/assets/js/jquery.waypoints.min.js"></script>
+    <script src="~/assets/js/jquery.stellar.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/js/aos.js"></script>
+    <script src="~/assets/js/jquery.animateNumber.min.js"></script>
+    <script src="~/assets/js/bootstrap-datepicker.js"></script>
+    <script src="~/assets/js/jquery.timepicker.min.js"></script>
+    <script src="~/assets/js/scrollax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="~/assets/js/google-map.js"></script>
+    <script src="~/assets/js/main.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

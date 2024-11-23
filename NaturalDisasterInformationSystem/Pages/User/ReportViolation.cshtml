@@ -1,0 +1,160 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.User.ReportViolationModel
+@using NaturalDisasterInformationSystem.Models
+@{
+    var report = ViewData["Reports"] as FundraisingCampaign;
+}
+<style>
+    /* Tổng thể container */
+    .report-container {
+        max-width: 800px;
+        margin: 50px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        font-family: 'Arial', sans-serif;
+        color: #333;
+    }
+
+    /* Title */
+    .report-title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: center;
+        color: #007bff;
+    }
+
+    /* Thông tin chiến dịch */
+    .report-info {
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+        .report-info p {
+            font-size: 16px;
+            color: #555;
+        }
+
+            .report-info p strong {
+                color: #333;
+            }
+
+    /* Form */
+    .report-form {
+        margin-top: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+        .form-group label {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            color: #007bff;
+        }
+
+    textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #333;
+        resize: vertical;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        transition: border-color 0.3s ease;
+    }
+
+        textarea:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+
+    /* Nút gửi */
+    .form-actions {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .submit-button {
+        background: #007bff;
+        color: #fff;
+        padding: 12px 30px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .submit-button:hover {
+            background: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .submit-button:active {
+            background: #004085;
+            transform: translateY(1px);
+        }
+
+</style>
+
+<div class=""
+     style="background-image: url('/assets/images/bg_7.jpg');
+           background-size: cover; background-position: center center;
+           background-attachment: fixed; min-height: 100vh; display: flex;
+           align-items: center; justify-content: center; position: relative;">
+
+    <div class="overlay"
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+               background: rgba(0, 0, 0, 0.5); z-index: 1;">
+    </div>
+
+    <div class="container"
+         style="position: relative; z-index: 2; padding: 20px; max-width: 1400px;
+               margin: 0 auto; width: 100%; padding-top: 73px;">
+
+        <div class="report-container">
+            <!-- Title Section -->
+            <h2 class="report-title">Báo Cáo Vi Phạm</h2>
+
+            <a href="">Quay lại</a>
+
+
+            <!-- Campaign Information -->
+            <div class="report-info">
+                <p><strong>Tên tổ chức:</strong> @Model.campaign.Charity.CharityName</p>
+                <p><strong>Tên chiến dịch:</strong> @Model.campaign.CampaignName</p>
+                <p><strong>Người đăng ký tổ chức:</strong> @Model.campaign.Charity.User.FullName</p>
+                <p><strong>Ngày tạo:</strong> @Model.campaign.Charity.CreatedAt?.ToString("dd/MM/yyyy")</p>
+                <p><strong>Hiện tượng:</strong> @Model.campaign.Disaster.DisasterName</p>
+            </div>
+
+            <!-- Report Form -->
+            <form method="post" class="report-form">
+                <!-- Truyền CampaignId qua Hidden Field -->
+                <input type="hidden" name="campaignId" value="@Model.campaign.CampaignId" />
+                <input type="hidden" name="userId" value="@Model.campaign.Charity.User.UserId" />
+
+                <!-- Reason Section -->
+                <div class="form-group">
+                    <label for="reason">Lý do báo cáo:</label>
+                    <textarea id="reason" name="reason" placeholder="Hãy mô tả lý do báo cáo..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-button">Gửi Báo Cáo</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

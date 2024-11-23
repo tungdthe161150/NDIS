@@ -1,0 +1,513 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Charity.ListDonationModel
+@using NaturalDisasterInformationSystem.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var userId = HttpContext.Session.GetString("UserId") ?? Request.Cookies["UserId"];
+    var charityId = HttpContext.Session.GetString("CharityId") ?? Request.Cookies["CharityId"];
+
+    // Đảm bảo không có comment chưa kết thúc
+    var supporters = ViewData["Donations"] as List<FundraisingDonation>;
+}
+<style>
+    .btn-link {
+        background: none;
+        border: none;
+        color: #007bff;
+        text-decoration: underline;
+        cursor: pointer;
+        padding: 0;
+        margin-right: 10px;
+    }
+
+        .btn-link:hover {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .btn-link.active {
+            color: #ff0000; /* Màu đỏ để làm nổi bật nút hiện tại */
+            text-decoration: none; /* Bỏ gạch chân */
+            font-weight: bold; /* Tăng độ dày chữ */
+        }
+
+</style>
+<div style="background-image: url('/assets/images/bg_7.jpg');
+           background-size: cover; background-position: center center;
+           background-attachment: fixed; min-height: 100vh; display: flex;
+           align-items: center; justify-content: center; position: relative;">
+
+    <div class="overlay"
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+               background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+    <div class="container"
+         style="position: relative; z-index: 2; padding: 20px; max-width: 1400px;
+               margin: 0 auto; width: 100%; padding-top: 73px;">
+
+        <div class="profile-section" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin: 20px 0;">
+
+
+            <div class="text-center mb-3">
+                <button id="btnShowKhoi1" class="btn-link" active>Hiển thị Danh Sách Ủng Hộ</button>
+                <button id="btnShowKhoi2" class="btn-link">Hiển thị Danh Sách Thu Chi</button>
+                <button id="btnShowKhoi3" class="btn-link">Hiển thị Hình ảnh, file Thu Chi</button>
+
+            </div>
+
+            <!-- Khối 1 -->
+            <div id="khoi1" class="container">
+                <!-- Nội dung khối 1 -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-md-10 text-center">
+                        <h2 class="mb-4" style="color: #333; font-size: 36px; font-weight: bold;">
+                            💖 Danh Sách Người Ủng Hộ Chiến Dịch Cứu Trợ Thiên Tai 💖
+                        </h2>
+                        <p style="color: #555; font-size: 18px;">
+                            Cảm ơn tất cả những người đã đóng góp cho chiến dịch. Mọi sự ủng hộ đều vô cùng quý giá!
+                        </p>
+                    </div>
+                </div>
+                @if (charityId != null && charityId == Model.FundraisingCampaigns.CharityId.ToString())
+                {
+                    <div class="row mb-4">
+                        <div class="col-md-12 text-right">
+                            <!-- Button to open the modal -->
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#importModal" style="font-size: 18px;">
+                                ➕ Thêm mới
+                            </button>
+                        </div>
+                    </div>
+                }
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Số tiền ủng hộ</th>
+                                        <th scope="col">Ngày giao dịch</th>
+                                        <th scope="col">Nội dung</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (supporters != null && supporters.Any())
+                                    {
+                                        int index = 1;
+                                        foreach (var supporter in supporters)
+                                        {
+                                            <tr>
+                                                <th scope="row">@index</th>
+                                                <td>@supporter.Amount VND</td>
+                                                <td>@supporter.DonationDate?.ToString("dd/MM/yyyy")</td>
+                                                <td>@supporter.Description</td>
+                                            </tr>
+                                            index++;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="4" class="text-center">Chưa có thông tin ủng hộ nào được nhập.</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 2 -->
+            <div id="khoi2" class="container" style="display: none;">
+                <div class="text-center">
+                    <h2 style="color: #333; font-size: 36px; font-weight: bold;">Danh Sách Thu Chi</h2>
+                    <p style="color: #555; font-size: 18px;">
+                        Cảm ơn tất cả những người đã đóng góp cho chiến dịch. Mọi sự ủng hộ đều vô cùng quý giá!
+                    </p>
+                </div>
+                @if (charityId != null&&charityId==Model.FundraisingCampaigns.CharityId.ToString())
+                {
+                    <!-- Add Button -->
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addThuChiModal">
+                        Thêm Thu Chi
+                    </button>
+                    <a asp-page-handler="ExportToExcel" asp-route-c_id="@Model.FundraisingCampaigns.CampaignId" class="btn btn-success">Xuất Excel</a>
+                }
+
+
+                <!-- Table -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nội Dung</th>
+                                <th scope="col">Tiền Thu Được</th>
+                                <th scope="col">Chi Tiêu</th>
+                                <th scope="col">Chiến Dịch</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.RevExpDonations != null && Model.RevExpDonations.Any())
+                            {
+                                int index = 1;
+                                foreach (var donation in Model.RevExpDonations)
+                                {
+                                    <tr>
+                                        <th scope="row">@index</th>
+                                        <td>@donation.Des</td>
+                                        @if (donation.Revenue == 0)
+                                        {
+                                            <td></td>
+                                        }
+                                        else
+                                        {
+                                            <td>@donation.Revenue</td>
+                                        }
+                                        @if (donation.Expenditure == 0)
+                                        {
+                                            <td></td>
+                                        }
+                                        else
+                                        {
+                                            <td>@donation.Expenditure</td>
+                                        }
+                                        <td>@donation.Cam?.CampaignName</td>
+                                        <td>
+                                            <!-- Edit Button to open Modal -->
+                                            @*  <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal"
+                                    data-id="@donation.RevExpId"
+                                    data-description="@donation.Des"
+                                    data-revenue="@donation.Revenue"
+                                    data-expenditure="@donation.Expenditure"
+                                    data-campaign="@donation.Cam?.CampaignId">
+                                    Sửa
+                                    </button> *@
+                                            @if (charityId != null && charityId == Model.FundraisingCampaigns.CharityId.ToString())
+                                            {
+                                                <button type="submit" style=" background: none; border: none;color: #007bff;text-decoration: underline;cursor: pointer;padding: 0; margin-right: 10px;"
+                                                        onclick="showUpdateForm('@donation.RevExpId', '@Html.Raw(Html.Encode(donation.Des))', '@donation.Revenue', '@donation.Expenditure')">
+                                                    Sửa
+                                                </button>
+                                                <!-- Delete Button -->
+                                                <form method="post" asp-page-handler="Delete" asp-route-id="@donation.RevExpId" style="display:inline;">
+                                                    <button type="submit" style=" background: none; border: none;color: #007bff;text-decoration: underline;cursor: pointer;padding: 0; margin-right: 10px;" onclick="return confirm('Bạn có chắc muốn xóa không?')">Xóa</button>
+                                                </form>
+                                            }
+
+                                        </td>
+                                    </tr>
+                                    index++;
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="6" class="text-center">Chưa có dữ liệu.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <!-- Khối 3 -->
+
+            <div id="khoi3" class="container" style="display: none;">
+                <div class="text-center">
+                    <h2 style="color: #333; font-size: 36px; font-weight: bold;">Hình Ảnh,File Thu Chi</h2>
+                    <p style="color: #555; font-size: 18px;">
+                        Cảm ơn tất cả những người đã đóng góp cho chiến dịch. Mọi sự ủng hộ đều vô cùng quý giá!
+                    </p>
+
+                @if (charityId != null&&charityId==Model.FundraisingCampaigns.CharityId.ToString())
+                    {
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addimgfile">
+                            Thêm Hình Ảnh,File
+                        </button>
+                    }
+                </div>
+                <!-- Display the uploaded images/files -->
+                <div class="mt-4">
+                    <h4 style="font-size: 24px; font-weight: bold; color: #333;">Danh Sách Hình Ảnh, File</h4>
+                    @* <div class="row">
+                    @foreach (var img in Model.ImgDonations)
+                    {
+                    <div class="col-md-4 mb-4">
+                    <div class="card">
+                    @if (img.File != null && (img.File.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                    img.File.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase) ||
+                    img.File.EndsWith(".png", StringComparison.OrdinalIgnoreCase) ||
+                    img.File.EndsWith(".gif", StringComparison.OrdinalIgnoreCase)))
+                    {
+                    <!-- Display image -->
+                    <img src="@("/uploads/donation/" + img.File)" class="card-img-top" alt="Image" style="max-height: 160px; object-fit: cover;">
+                    }
+                    else
+                    {
+                    <!-- Display file -->
+                    <div class="card-body">
+                    <p class="card-text" style="font-size: 14px; color: #666;">Ngày Tạo: @img.CreateDate?.ToString("dd/MM/yyyy")</p>
+                    <p class="card-text" style="font-size: 14px; color: #666;">Nội dung: @img.Content</p>
+                    <a href="@("/uploads/donation/" + img.File)" class="btn btn-info" target="_blank">Xem File</a>
+                    </div>
+                    }
+                    </div>
+                    </div>
+                    }
+                    </div> *@
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Hình Ảnh / Tệp</th>
+                                <th>Ngày Tạo</th>
+                                <th>Nội Dung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var img in Model.ImgDonations)
+                            {
+                                <tr>
+                                    <td>
+
+                                        <!-- Display file link -->
+                                        <a href="@("/uploads/donation/" + img.File)" target="_blank">Xem File</a>
+
+                                    </td>
+                                    <td>@img.CreateDate?.ToString("dd/MM/yyyy")</td>
+                                    <td>@img.Content</td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Modal for Adding Image/File -->
+<div class="modal fade" id="addimgfile" tabindex="-1" aria-labelledby="addimgfileLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #ffc107; color: #fff;">
+                <h5 class="modal-title" id="addimgfileLabel">Thêm Hình Ảnh, File Thu Chi</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" style="color: #fff; font-size: 24px; font-weight: bold;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" enctype="multipart/form-data" asp-page-handler="AddImgFile">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="file" style="font-weight: bold;">Chọn Hình Ảnh hoặc File</label>
+                        <input type="file" class="form-control" id="file" name="file" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="Content" style="font-weight: bold;">Nội dung:</label>
+                        <input type="text" class="form-control" id="Content" name="Content" placeholder="Nhập nội dung(nếu có)" />
+                    </div>
+                    <div class="form-group" hidden>
+                        <label for="camId" style="font-weight: bold;">Chiến Dịch</label>
+                        <input type="number" class="form-control" id="camId" name="CamId" value="@Model.FundraisingCampaigns.CampaignId" hidden />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-success">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Edit Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 100px); max-width: 500px;">
+        <div class="modal-content" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); padding: 20px; background-color: #f9f9f9;">
+            <h5 class="modal-title" id="editModalLabel" style="font-size: 18px; margin: 0; text-align:center">Chỉnh Sửa </h5>
+
+            <form method="post" id="updateForm" asp-page-handler="EditDonation">
+                <input type="hidden" id="RevExpId" name="RevExpId" />
+                <div style="margin-bottom: 15px;">
+                    <label for="Des" style="display: block; font-weight: bold;">Nội Dung:</label>
+                    <input type="text" id="Des" name="Des" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;" />
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="Revenue" style="display: block; font-weight: bold;">Tiền Thu Được:</label>
+                    <input type="number" id="Revenue" name="Revenue" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;" />
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="Expenditure" style="display: block; font-weight: bold;">Chi Tiêu:</label>
+                    <input type="number" id="Expenditure" name="Expenditure" required style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;" />
+                </div>
+                <input type="hidden" id="CamId" name="CamId" value="@Model.FundraisingCampaigns?.CampaignId" />
+                <button type="submit" style="width: 100%; padding: 10px; background-color: #ffc107; border: none; border-radius: 5px; color: #fff; font-size: 16px; cursor: pointer;">Cập Nhật</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Add Thu Chi Modal -->
+<div class="modal fade" id="addThuChiModal" tabindex="-1" aria-labelledby="addThuChiModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addThuChiModalLabel">Thêm Thu Chi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form to add manually -->
+                <form method="post" asp-page-handler="Add" id="manualForm">
+                    <div class="mb-3">
+                        <label for="Des" class="form-label">Mô Tả</label>
+                        <input type="text" class="form-control" id="Des" name="Des" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="Revenue" class="form-label">Doanh Thu</label>
+                        <input type="number" class="form-control" id="Revenue" name="Revenue" step="0.01" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="Expenditure" class="form-label">Chi Tiêu</label>
+                        <input type="number" class="form-control" id="Expenditure" name="Expenditure" step="0.01" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="CampaignName" class="form-label">Chiến Dịch</label>
+                        <input type="text" class="form-control" id="CampaignName" name="CampaignName" value="@Model.FundraisingCampaigns?.CampaignName" readonly />
+                        <input type="hidden" id="CamId" name="CamId" value="@Model.FundraisingCampaigns?.CampaignId" />
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Lưu</button>
+                </form>
+
+                <!-- Form to upload Excel file -->
+                <form method="post" asp-page-handler="AddExcel" id="excelForm" enctype="multipart/form-data" style="display:none;">
+                    <div class="mb-3">
+                        <label for="ExcelFile" class="form-label">Tải lên file Excel</label>
+                        <input type="file" class="form-control" id="ExcelFile" name="ExcelFile" accept=".xlsx,.xls" required />
+                    </div>
+                    <input type="hidden" id="CamId" name="CamId" value="@Model.FundraisingCampaigns?.CampaignId" />
+
+                    <button type="submit" class="btn btn-success">Lưu từ Excel</button>
+                </form>
+
+                <div class="mb-3 mt-3">
+                    <button type="button" class="btn btn-link" id="toggleFormBtn">Thêm thu chi từ Excel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Toggle between manual entry and Excel file upload forms
+    document.getElementById('toggleFormBtn').addEventListener('click', function () {
+        var manualForm = document.getElementById('manualForm');
+        var excelForm = document.getElementById('excelForm');
+        if (manualForm.style.display === "none") {
+            manualForm.style.display = "block";
+            excelForm.style.display = "none";
+            this.innerText = "Thêm thu chi từ Excel";
+        } else {
+            manualForm.style.display = "none";
+            excelForm.style.display = "block";
+            this.innerText = "Thêm thu chi thủ công";
+        }
+    });
+</script>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="importModal" tabindex="-1" aria-labelledby="importModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="importModalLabel">Import File Excel</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data" asp-page-handler="UploadAndSave">
+                    <div class="form-group">
+                        <label for="ExcelFile">Chọn file Excel:</label>
+                        <input type="file" name="ExcelFile" id="ExcelFile" class="form-control" required />
+                    </div>
+                    <input type="hidden" id="CamId" name="CamId" value="@Model.FundraisingCampaigns?.CampaignId" />
+                    <input type="hidden" id="parsedUserId" name="parsedUserId" value="@userId" />
+
+                    <button type="submit" class="btn btn-primary">Tải lên và lưu</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Lấy các phần tử DOM
+    const khoi1 = document.getElementById("khoi1");
+    const khoi2 = document.getElementById("khoi2");
+    const khoi3 = document.getElementById("khoi3");
+    const btnShowKhoi1 = document.getElementById("btnShowKhoi1");
+    const btnShowKhoi2 = document.getElementById("btnShowKhoi2");
+    const btnShowKhoi3 = document.getElementById("btnShowKhoi3");
+
+    // Xử lý hiển thị khối 1
+    btnShowKhoi1.addEventListener("click", () => {
+        khoi1.style.display = "block"; // Hiển thị khoi1
+        khoi2.style.display = "none";  // Ẩn khoi2
+        khoi3.style.display = "none";  // Ẩn khoi3
+    });
+
+    // Xử lý hiển thị khối 2
+    btnShowKhoi2.addEventListener("click", () => {
+        khoi1.style.display = "none";  // Ẩn khoi1
+        khoi2.style.display = "block"; // Hiển thị khoi2
+        khoi3.style.display = "none";  // Ẩn khoi3
+    });
+
+    // Xử lý hiển thị khối 3
+    btnShowKhoi3.addEventListener("click", () => {
+        khoi1.style.display = "none";  // Ẩn khoi1
+        khoi2.style.display = "none";  // Ẩn khoi2
+        khoi3.style.display = "block"; // Hiển thị khoi3
+    });
+</script>
+<script>
+    function showUpdateForm(RevExpId, Des, Revenue, Expenditure) {
+        // Set form values
+        document.getElementById('RevExpId').value = RevExpId;
+        document.getElementById('Des').value = Des;
+        document.getElementById('Revenue').value = Revenue;
+        document.getElementById('Expenditure').value = Expenditure;
+
+        // Show the modal
+        $('#editModal').modal('show');
+    }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".btn-link");
+
+        buttons.forEach(button => {
+            button.addEventListener("click", function () {
+                // Loại bỏ lớp 'active' từ tất cả các nút
+                buttons.forEach(btn => btn.classList.remove("active"));
+
+                // Thêm lớp 'active' vào nút được nhấn
+                this.classList.add("active");
+
+                // Thực hiện logic hiển thị nội dung tương ứng tại đây
+                // Ví dụ:
+                console.log(`Bạn đã chọn: ${this.textContent}`);
+            });
+        });
+    });
+
+</script>

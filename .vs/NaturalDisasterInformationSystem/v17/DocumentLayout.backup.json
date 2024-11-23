@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ki9\\do an\\Report\\sep490_g95\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|d:\\ki9\\do an\\report\\sep490_g95\\naturaldisasterinformationsystem\\pages\\areas\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|solutionrelative:naturaldisasterinformationsystem\\pages\\areas\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|d:\\ki9\\do an\\report\\sep490_g95\\naturaldisasterinformationsystem\\pages\\areas\\admin\\approved\\approvedcharity.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|solutionrelative:naturaldisasterinformationsystem\\pages\\areas\\admin\\approved\\approvedcharity.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|d:\\ki9\\do an\\report\\sep490_g95\\naturaldisasterinformationsystem\\pages\\areas\\admin\\approved\\approvedcharity.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|solutionrelative:naturaldisasterinformationsystem\\pages\\areas\\admin\\approved\\approvedcharity.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|d:\\ki9\\do an\\report\\sep490_g95\\naturaldisasterinformationsystem\\pages\\user\\registercharity.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|solutionrelative:naturaldisasterinformationsystem\\pages\\user\\registercharity.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|d:\\ki9\\do an\\report\\sep490_g95\\naturaldisasterinformationsystem\\pages\\areas\\alerts\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|solutionrelative:naturaldisasterinformationsystem\\pages\\areas\\alerts\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|d:\\ki9\\do an\\report\\sep490_g95\\naturaldisasterinformationsystem\\pages\\areas\\alerts\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D38CE6DC-D8AC-4C97-AAD1-371C3B2C81F2}|NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj|solutionrelative:naturaldisasterinformationsystem\\pages\\areas\\alerts\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApprovedCharity.cshtml.cs",
+              "DocumentMoniker": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\Areas\\Admin\\approved\\ApprovedCharity.cshtml.cs",
+              "RelativeDocumentMoniker": "NaturalDisasterInformationSystem\\Pages\\Areas\\Admin\\approved\\ApprovedCharity.cshtml.cs",
+              "ToolTip": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\Areas\\Admin\\approved\\ApprovedCharity.cshtml.cs",
+              "RelativeToolTip": "NaturalDisasterInformationSystem\\Pages\\Areas\\Admin\\approved\\ApprovedCharity.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T16:28:12.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApprovedCharity.cshtml",
+              "DocumentMoniker": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\Areas\\Admin\\approved\\ApprovedCharity.cshtml",
+              "RelativeDocumentMoniker": "NaturalDisasterInformationSystem\\Pages\\Areas\\Admin\\approved\\ApprovedCharity.cshtml",
+              "ToolTip": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\Areas\\Admin\\approved\\ApprovedCharity.cshtml",
+              "RelativeToolTip": "NaturalDisasterInformationSystem\\Pages\\Areas\\Admin\\approved\\ApprovedCharity.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-23T16:26:52.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\Areas\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "NaturalDisasterInformationSystem\\Pages\\Areas\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\Areas\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "NaturalDisasterInformationSystem\\Pages\\Areas\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAAMoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-23T16:25:07.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RegisterCharity.cshtml.cs",
+              "DocumentMoniker": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\User\\RegisterCharity.cshtml.cs",
+              "RelativeDocumentMoniker": "NaturalDisasterInformationSystem\\Pages\\User\\RegisterCharity.cshtml.cs",
+              "ToolTip": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\User\\RegisterCharity.cshtml.cs",
+              "RelativeToolTip": "NaturalDisasterInformationSystem\\Pages\\User\\RegisterCharity.cshtml.cs",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T15:51:06.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\Areas\\Alerts\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "NaturalDisasterInformationSystem\\Pages\\Areas\\Alerts\\Create.cshtml.cs",
+              "ToolTip": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\Areas\\Alerts\\Create.cshtml.cs",
+              "RelativeToolTip": "NaturalDisasterInformationSystem\\Pages\\Areas\\Alerts\\Create.cshtml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAIwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T15:03:39.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\Areas\\Alerts\\Create.cshtml",
+              "RelativeDocumentMoniker": "NaturalDisasterInformationSystem\\Pages\\Areas\\Alerts\\Create.cshtml",
+              "ToolTip": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\Pages\\Areas\\Alerts\\Create.cshtml",
+              "RelativeToolTip": "NaturalDisasterInformationSystem\\Pages\\Areas\\Alerts\\Create.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-23T15:03:23.948Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

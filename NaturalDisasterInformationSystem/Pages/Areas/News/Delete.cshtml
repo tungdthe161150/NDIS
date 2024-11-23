@@ -1,0 +1,23 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.News.DeleteModel
+@{
+    ViewData["Title"] = "Management News";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <h1>Xóa Bản Tin</h1>
+
+    <h3>Bạn có chắc chắn muốn xóa bản tin này không?</h3>
+
+    <div class="alert alert-warning">
+        <strong>Tiêu đề:</strong> @Model.News.Title
+    </div>
+
+    <form method="post">
+        @Html.AntiForgeryToken()
+        <input type="hidden" asp-for="News.NewsId" />
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a asp-page="Index" class="btn btn-secondary">Hủy</a>
+    </form>
+</div>

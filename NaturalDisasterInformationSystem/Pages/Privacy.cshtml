@@ -1,0 +1,13 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+@{
+    ViewData["Title"] = "Home page";
+    var roleId = HttpContext.Session.GetString("RoleId") ?? Request.Cookies["RoleId"];
+}
+<p>RoleId của bạn là: @roleId</p>
+<h1>@ViewData["Title"]</h1>
+
+<p>Use this page to detail your site's privacy policy.</p>

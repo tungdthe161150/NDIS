@@ -1,0 +1,105 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.User.ListCampaignUserModel
+@{
+    ViewData["Title"] = "Chiến Dịch Gây Quỹ";
+    var userId = HttpContext.Session.GetString("UserId") ?? Request.Cookies["UserId"];
+    var charityId = HttpContext.Session.GetString("CharityId") ?? Request.Cookies["CharityId"];
+}
+
+<div class="" style="background-image: url('/assets/images/bg_7.jpg'); background-size: cover; background-position: center center; background-attachment: fixed; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative;">
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+    <div class="container" style="position: relative; z-index: 2; padding: 20px; max-width: 1400px; margin: 0 auto; width: 100%; padding-top: 73px;">
+        <div class="profile-section" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin: 20px 0;">
+            <h2 style="margin-bottom: 20px; font-size: 24px; color: #333; text-align: center;">Danh Sách Chiến Dịch Gây Quỹ</h2>
+            <div class="row">
+                @foreach (var campaign in Model.FundraisingCampaignsU)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-img-top" style="background-color: #ddd; height: 200px; text-align: center; display: flex; justify-content: center; align-items: center;">
+                                <img src="@(campaign.ImgCam != null && campaign.ImgCam.Split(',').Length > 0
+           ? "/uploads/campaigns/" + campaign.ImgCam.Split(',')[0]
+           : "/uploads/campaigns/sample_large.jpg")"
+                                     alt="Campaign Image"
+                                     style="width: 100%; height: 100%; object-fit: cover;" />
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-3" style="font-size: 1.25rem; font-weight: bold; color: #333;">
+                                    @campaign.CampaignName
+                                </h5>
+
+                                <!-- Charity Name -->
+                                <p class="mb-2" style="font-size: 1rem; color: #555;">
+                                    Tổ Chức: <strong>@campaign.Charity.CharityName</strong>
+                                </p>
+
+                                <!-- Campaign Dates -->
+                                <p class="card-text mb-3" style="font-size: 1rem; color: #555;">
+                                    Thời gian:
+                                    @if (campaign.StartDate == null && campaign.EndDate == null)
+                                    {
+                                        <span style="color: #e74c3c; font-weight: bold;">Đang cập nhật</span>
+                                    }
+                                    else if(campaign.EndDate == null)
+                                    {
+                                        <span>
+                                            Bắt đầu @campaign.StartDate?.ToString("dd/MM/yyyy") - Kết thúc <span style="color: #e74c3c; font-weight: bold;">Đang cập nhật</span>
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <span>Bắt đầu @campaign.StartDate?.ToString("dd/MM/yyyy") - Kết thúc @campaign.EndDate?.ToString("dd/MM/yyyy")</span>
+                                    }
+                                </p>
+
+                                <!-- Raised Amount & Goal -->
+                                <p class="mb-3" style="font-size: 1.1rem; font-weight: bold; color: #27ae60;">
+                                    @campaign.RaisedAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))
+                                    <span style="color: #aaa;"> trên </span>
+                                    @campaign.GoalAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))
+                                </p>
+
+                                <!-- Progress Bar -->
+                                <div class="progress mb-3" style="height: 8px; border-radius: 20px;">
+                                    <div class="progress-bar bg-success" role="progressbar"
+                                         style="width: @(campaign.RaisedAmount / campaign.GoalAmount * 100)%"
+                                         aria-valuenow="@(campaign.RaisedAmount / campaign.GoalAmount * 100)"
+                                         aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+
+                                <!-- Detail Button -->
+                                @if (charityId != null&&charityId==campaign.CharityId.ToString())
+                                {
+                                    
+                                    <form method="post">
+                                        <div class="form-group" hidden>
+                                            <label for="UserId">User ID</label>
+                                            <input type="number" class="form-control" id="UserId" name="UserId" value="@userId" required />
+                                        </div>
+                                        <div class="form-group" hidden>
+                                            <label for="EventId">Event ID</label>
+                                            <input type="number" class="form-control" id="EventId" name="EventId" value="@campaign.CampaignId" required />
+                                        </div>
+
+
+                                        <button type="submit" class="btn btn-primary mt-3 px-4 py-2" style="font-size: 1rem; border-radius: 20px;">  Chi Tiết.</button>
+                                    </form>
+                                }
+
+                                else
+                                {
+                                    <a asp-page="/user/DetailCampaignUser" asp-route-dcu_id="@campaign.CampaignId" class="btn btn-primary mt-3 px-4 py-2" style="font-size: 1rem; border-radius: 20px;">
+                                        Chi Tiết
+                                    </a>
+                                }
+                               
+                            </div>
+
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

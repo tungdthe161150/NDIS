@@ -1,0 +1,342 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Account.ProfileModel
+@using NaturalDisasterInformationSystem.Models
+
+@{
+    ViewData["Title"] = "Profile";
+    var roleId = HttpContext.Session.GetString("RoleId") ?? Request.Cookies["RoleId"];
+    var userId = HttpContext.Session.GetString("UserId") ?? Request.Cookies["UserId"];
+}
+<style>
+    .profile-section {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        max-width: 800px;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+    }
+
+    .profile-section img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .profile-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form-control {
+        border-radius: 4px;
+        border: 1px solid #ced4da;
+        padding: 8px;
+        transition: border-color 0.3s;
+    }
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        color: #fff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        color: #fff;
+        margin-left: 10px;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+</style>
+
+<div class=""
+     style="background-image: url('/assets/images/bg_7.jpg');
+           background-size: cover; background-position: center center;
+           background-attachment: fixed; min-height: 100vh; display: flex;
+           align-items: center; justify-content: center; position: relative;">
+
+    <div class="overlay"
+         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+               background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+    <div class="container"
+         style="position: relative; z-index: 2; padding: 20px; max-width: 1400px;
+               margin: 0 auto; width: 100%; padding-top: 73px;">
+
+        <div>
+           
+            <form method="post" enctype="multipart/form-data" class="profile-section">
+                <div class="profile-picture">
+                    @if (Model.UserProfile.Img != null)
+                    {
+                        <img src="@Model.UserProfile.Img" alt="Profile Picture Placeholder">
+                    }
+                    else
+                    {
+                        <img src="~/uploads/avatar_default.jpg" alt="Profile Picture Placeholder">
+                    }
+
+                    <div class="form-group">
+                        <label>Ảnh đại diện:</label>
+                        <input type="file" name="profileImage" class="form-control" accept="image/*" />
+                    </div>
+                </div>
+
+            <div class="profile-form">
+              
+                    <div class="form-group">
+                        <label>Tên tài khoản:</label>
+                        <input type="text" name="username" class="form-control" value="@Model.UserProfile.Username" />
+                    </div>
+                    <div class="form-group">
+                        <label>Họ và tên:</label>
+                        <input type="text" name="fullname" class="form-control" value="@Model.UserProfile.FullName" />
+                    </div>
+                  
+                    <div class="form-group">
+                        <label>Ngày sinh:</label>
+                        <input type="date" name="birthday" class="form-control" value="@Model.UserProfile.Birthday?.ToString("yyyy-MM-dd")" />
+                    </div>
+                    <div class="form-group">
+                        <label>Giới tính:</label>
+                        <select name="gender" class="form-control">
+                            <option value="true" selected="@(Model.UserProfile.Gender == true ? "selected" : null)">Nam</option>
+                            <option value="false" selected="@(Model.UserProfile.Gender == false ? "selected" : null)">Nữ</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input readonly type="email" name="email" class="form-control" value="@Model.UserProfile.Email" />
+                    </div>
+                    <div class="form-group">
+                        <label>Nghề nghiệp:</label>
+                        <input type="text" name="careers" class="form-control" value="@Model.UserProfile.Careers" />
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại:</label>
+                        <input type="text" name="phonenumber" class="form-control" value="@Model.UserProfile.PhoneNumber" />
+                    </div>
+                    <div class="form-group">
+                        <label>Địa chỉ: @Model.UserProfile.Address</label>
+
+                        <div class="form-right" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                            <div class="form-group" style="flex: 1 1 calc(25% - 10px); min-width: 150px;">
+                                <label for="province">Tỉnh/Thành phố:</label>
+                                <select id="province" name="province" class="form-control" onchange="updateAddress()" style="width: 100%; height: 30px; padding: 4px; border-radius: 5px; box-sizing: border-box;">
+                                    <option value="">Chọn tỉnh/thành phố</option>
+                                    <!-- Các tỉnh sẽ được lấy từ API -->
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="flex: 1 1 calc(25% - 10px); min-width: 150px;">
+                                <label for="district">Quận/Huyện:</label>
+                                <select id="district" name="district" class="form-control" onchange="updateAddress()" style="width: 100%; height: 30px; padding: 4px; border-radius: 5px; box-sizing: border-box;">
+                                    <option value="">Chọn quận/huyện</option>
+                                    <!-- Các quận sẽ được lấy từ API dựa trên tỉnh/thành phố đã chọn -->
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="flex: 1 1 calc(25% - 10px); min-width: 150px;">
+                                <label for="commune">Xã/Phường:</label>
+                                <select id="commune" name="commune" class="form-control" onchange="updateAddress()" style="width: 100%; height: 30px; padding: 4px; border-radius: 5px; box-sizing: border-box;">
+                                    <option value="">Chọn xã/phường</option>
+                                    <!-- Các xã sẽ được lấy từ API dựa trên quận/huyện đã chọn -->
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="flex: 1 1 calc(25% - 10px); min-width: 150px;">
+                                <label for="village">Thôn/Xóm:</label>
+                                <input type="text" id="village" name="village" class="form-control" placeholder="Nhập tên thôn/xóm" oninput="updateAddress()" style="width: 100%; height: 30px; padding: 4px; border-radius: 5px; box-sizing: border-box;" />
+                            </div>
+
+                            <!-- Trường địa chỉ ẩn -->
+                            <input type="hidden" id="address" name="address" value="@Model.UserProfile.Address" />
+                        </div>
+
+                    </div>
+                    
+                    <div class="button-group">
+                        <a asp-page="/Account/changepass" asp-route-uid="@userId" class="btn-secondary">Đổi mật khẩu</a>
+                        <button type="submit" class="btn-primary">Cập nhật</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    // Update address field with selected values
+    function updateAddress() {
+        const province = document.getElementById('province').value;
+        const district = document.getElementById('district').value;
+        const commune = document.getElementById('commune').value;
+        const village = document.getElementById('village').value;
+
+        let address = '';
+
+        if (province) {
+            address += document.getElementById('province').selectedOptions[0].text + ', ';
+        }
+
+        if (district) {
+            address += document.getElementById('district').selectedOptions[0].text + ', ';
+        }
+
+        if (commune) {
+            address += document.getElementById('commune').selectedOptions[0].text + ', ';
+        }
+
+        if (village) {
+            address += village + ', ';
+        }
+
+        // Remove last comma and space if present
+        address = address.trim().replace(/,$/, '');
+
+        // Set the address field value
+        document.getElementById('address').value = address;
+    }
+
+    // Fetch and populate the province, district, and commune dropdowns
+    fetch('https://provinces.open-api.vn/api/?depth=2')
+        .then(response => response.json())
+        .then(data => {
+            const provinceSelect = document.getElementById('province');
+            data.forEach(province => {
+                const option = document.createElement('option');
+                option.value = province.code;
+                option.textContent = province.name;
+                provinceSelect.appendChild(option);
+            });
+
+            provinceSelect.addEventListener('change', function () {
+                const selectedProvince = provinceSelect.value;
+                if (selectedProvince) {
+                    loadDistricts(selectedProvince);
+                } else {
+                    clearDistricts();
+                }
+            });
+        });
+
+    function loadDistricts(provinceCode) {
+        fetch(`https://provinces.open-api.vn/api/p/${provinceCode}?depth=2`)
+            .then(response => response.json())
+            .then(data => {
+                const districtSelect = document.getElementById('district');
+                districtSelect.innerHTML = '<option value="">Select District</option>';
+                data.districts.forEach(district => {
+                    const option = document.createElement('option');
+                    option.value = district.code;
+                    option.textContent = district.name;
+                    districtSelect.appendChild(option);
+                });
+                districtSelect.disabled = false;
+                document.getElementById('commune').disabled = true;
+                document.getElementById('village').disabled = true;
+                document.getElementById('village').value = '';
+            });
+    }
+
+    function clearDistricts() {
+        document.getElementById('district').disabled = true;
+        document.getElementById('district').innerHTML = '<option value="">Select District</option>';
+        document.getElementById('commune').disabled = true;
+        document.getElementById('commune').innerHTML = '<option value="">Select Commune</option>';
+        document.getElementById('village').disabled = true;
+        document.getElementById('village').value = '';
+    }
+
+    document.getElementById('district').addEventListener('change', function () {
+        const selectedDistrict = this.value;
+        if (selectedDistrict) {
+            loadCommunes(selectedDistrict);
+        } else {
+            document.getElementById('commune').disabled = true;
+            document.getElementById('commune').innerHTML = '<option value="">Select Commune</option>';
+            document.getElementById('village').disabled = true;
+            document.getElementById('village').value = '';
+        }
+    });
+
+    function loadCommunes(districtCode) {
+        fetch(`https://provinces.open-api.vn/api/d/${districtCode}?depth=2`)
+            .then(response => response.json())
+            .then(data => {
+                const communeSelect = document.getElementById('commune');
+                communeSelect.innerHTML = '<option value="">Select Commune</option>';
+                data.wards.forEach(commune => {
+                    const option = document.createElement('option');
+                    option.value = commune.code;
+                    option.textContent = commune.name;
+                    communeSelect.appendChild(option);
+                });
+
+                communeSelect.disabled = false;
+                document.getElementById('village').disabled = false;
+            });
+    }
+
+    document.getElementById('commune').addEventListener('change', function () {
+        const selectedCommune = this.value;
+        if (selectedCommune) {
+            document.getElementById('village').disabled = false;
+        } else {
+            document.getElementById('village').disabled = true;
+            document.getElementById('village').value = '';
+        }
+    });
+
+
+
+</script>
+
+
+
+
+
+
+
+
+

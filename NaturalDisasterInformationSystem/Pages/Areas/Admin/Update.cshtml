@@ -1,0 +1,101 @@
+﻿@page
+@using NaturalDisasterInformationSystem.Models
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.UpdateModel
+@{
+    var user = ViewData["User"] as User;
+    ViewData["Title"] = "Management Account";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container my-5">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Cập nhật thông tin tài khoản</h3>
+            <ul class="breadcrumbs mb-3 d-flex">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator mx-2">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a asp-page="List">Quay lại</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="card-title mb-0">Chi tiết tài khoản</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            <table class="table table-hover table-striped">
+                                <tr>
+                                    <th scope="row">ID</th>
+                                    <td>@Model.User.UserId</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Username</th>
+                                    <td>
+                                        <input type="text" class="form-control" name="User.Username" value="@Model.User.Username" readonly/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Password</th>
+                                    <td>
+                                        <input type="password" class="form-control" name="User.PasswordHash" value="@Model.User.PasswordHash" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email</th>
+                                    <td>
+                                        <input type="email" class="form-control" name="User.Email" value="@Model.User.Email" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Full Name</th>
+                                    <td>
+                                        <input type="text" class="form-control" name="User.FullName" value="@Model.User.FullName" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Phone Number</th>
+                                    <td>
+                                        <input type="text" class="form-control" name="User.PhoneNumber" value="@Model.User.PhoneNumber" readonly />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Role</th>
+                                    <td>
+                                        <select class="form-control" name="User.RoleId">
+                                            <option value="@Model.User.RoleId" selected>@Model.User.RoleId</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Active</th>
+                                    <td>@Model.User.Active</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Created At</th>
+                                    <td>
+                                        <input type="text" class="form-control" name="User.CreatedAt" value="@Model.User.CreatedAt" readonly />                 
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="text-center">
+                                <input type="submit" class="btn btn-primary mt-3" value="Cập nhật" />
+                                <a asp-page="List" class="btn btn-secondary mt-3">Quay lại</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

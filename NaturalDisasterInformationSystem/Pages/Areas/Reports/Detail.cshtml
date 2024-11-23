@@ -1,0 +1,77 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Reports.DetailModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using NaturalDisasterInformationSystem.Models;
+@{
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+    var report = ViewData["Report"] as Report;
+    var reportList = ViewData["ListReport"] as List<Report>;
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header d-flex align-items-center justify-content-between">
+            <h3 class="fw-bold">Chi tiết báo cáo vi phạm</h3>
+            <a href="/Areas/Reports/Index" class="btn btn-primary btn-sm">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </a>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title text-primary mb-3">Thông tin báo cáo</h5>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <p><strong>Tên tổ chức:</strong> @report.Campaign.Charity.CharityName</p>
+                        <p><strong>Email người tổ chức:</strong> @report.User.Email</p>
+                        <p><strong>Người tổ chức:</strong> @report.User.FullName</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            <strong>Tên chiến dịch:</strong>
+                            <a href="/User/DetailCampaignUser?dcu_id=@report.Campaign.CampaignId">
+                                @report.Campaign.CampaignName
+                            </a>
+                        </p>
+                        <p><strong>Tổng số báo cáo:</strong> @reportList.Count()</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 class="card-title text-primary mb-3">Chi tiết các báo cáo</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Lý do</th>
+                                <th>Ngày báo cáo</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var (list, index) in reportList.Select((value, i) => (value, i + 1)))
+                            {
+                                <tr>
+                                    <td>@index</td>
+                                    <td>@list.Reason</td>
+                                    <td>@list.CreatedAt?.ToString("dd/MM/yyyy")</td>
+                                    <td>@list.Status</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                @* asp-page-handler="SendNotification" *@
+                <form method="post" asp-route-id="@report.CampaignId">
+                    <button type="submit" class="btn btn-success">Gửi thông báo</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

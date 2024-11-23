@@ -1,0 +1,229 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Map.Map_disasterModel
+@{
+    ViewData["Title"] = "Disaster Information";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windy Map</title>
+    <style>
+        /* Set the height for the map */
+        #windy {
+            width: 100%;
+            height: 700px; /* Height of the map */
+        }
+
+        /* Style for the table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        /*-----------------------*/
+        #filterSection {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 20px 0;
+        gap: 10px;
+    }
+
+    select {
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-size: 16px;
+        width: 200px;
+        transition: all 0.3s ease;
+    }
+
+    select:hover {
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    }
+
+    input[type="text"] {
+        padding: 8px 12px;
+        width: 250px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+        border-color: #28a745;
+        box-shadow: 0 0 8px rgba(40, 167, 69, 0.3);
+        outline: none;
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+    }
+
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    @@media (max-width: 768px) {
+        #filterSection {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+   <div>
+        <div id="windy"></div> <!-- Map container -->
+    <div id="filterSection">
+    <select id="disasterTypeFilter">
+        <option value="">Tất cả</option>
+        @{
+            var uniqueDisasters = Model.Disasters
+                .Select(d => d.DisasterDetails.NameDisaster)
+                .Distinct()
+                .ToList();
+        }
+        @foreach (var disasterName in uniqueDisasters)
+        {
+            <option value="@disasterName">@disasterName</option>
+        }
+    </select>
+
+    <input type="text" id="affectedAreaSearch" placeholder="Tìm kiếm theo Khu vực bị ảnh hưởng...." />
+
+    <label>
+        <input type="checkbox" id="highestIdFilter" />
+        Thiên tai mới nhất
+    </label>
+</div>
+
+   </div>
+
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+    <script>
+        const options = {
+            key: '44phXZRSg6vYJF3qnHWy1uVVY4SIuITf',  
+            lat: 21.0285,        
+            lon: 105.8542,       
+            zoom: 5,           
+        };
+
+        windyInit(options, windyAPI => {
+            const map = windyAPI.map; // Lấy đối tượng bản đồ
+
+            // Tạo một layer group để quản lý các marker
+            const disasterLayer = L.layerGroup().addTo(map);
+
+            // Chuyển đổi dữ liệu từ Model
+            var dis = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Disasters));
+
+            console.log(dis); // Log để kiểm tra mảng disasters
+
+            // Hàm để hiển thị markers theo lựa chọn
+            function displayMarkers(filter = "", search = "", showHighestId = false) {
+                disasterLayer.clearLayers(); // Xóa tất cả marker hiện tại
+                if (dis && dis.length > 0) {
+
+                     let maxId = Math.max(...dis.map(d => d.id)); 
+                    console.log('Max ID:', maxId);
+
+                    dis.forEach(disaster => {
+                        if (disaster.lat && disaster.lon) {
+                             const affectedArea = disaster.kv_anhhuong.toLowerCase();
+                            const searchLower = search.toLowerCase();
+
+                             const matchesFilter = (filter === "" || disaster.disaster.name_disaster === filter);
+                            const matchesSearch = (search === "" || affectedArea.includes(searchLower));
+                            const isHighestId = showHighestId ? disaster.id === maxId : true; 
+
+                            console.log(`Disaster ID: ${disaster.id}, Matches: ${matchesFilter}, ${matchesSearch}, Highest ID: ${isHighestId}`);
+
+                            // Kiểm tra xem loại thiên tai có khớp với filter không
+                            if (matchesFilter && matchesSearch && isHighestId) {
+                                // Tạo marker và thêm vào layer group
+                                const marker = L.marker([disaster.lat, disaster.lon]);
+                                marker.addTo(disasterLayer);
+
+                                // Tạo nội dung popup với các thuộc tính cần thiết
+                                const popupContent = `
+                                   <div style="display: none;">
+        <strong>Loại hình thiên tai:</strong> ${disaster.id}<br>
+    </div>
+                                    <strong>Loại hình thiên tai:</strong> ${disaster.name_vn}<br>
+                                    <strong>Thời gian:</strong> ${new Date(disaster.time_update).toLocaleString()}<br>
+                                    <strong>Vị trí:</strong> ${disaster.lon}, ${disaster.lat}<br>
+                                    <strong>Affected Area:</strong> ${disaster.kv_anhhuong}<br>
+                                    <strong>Disaster Type:</strong> ${disaster.disaster.name_disaster}<br>
+                                    <strong>Level:</strong> ${disaster.level}<br>
+                                    <a href="${disaster.link_detail}" target="_blank">View Details</a>
+                                `;
+                                marker.bindPopup(popupContent);
+                            }
+                        } else {
+                            console.warn('Invalid latitude or longitude for disaster:', disaster);
+                        }
+                    });
+                } else {
+                    console.warn('No disasters found or disasters data is empty.');
+                }
+            }
+
+            // Hiển thị tất cả markers ban đầu
+            displayMarkers();
+
+            // Lắng nghe sự kiện thay đổi chọn loại thiên tai
+           document.getElementById('disasterTypeFilter').addEventListener('change', (event) => {
+                const selectedDisaster = event.target.value; 
+                const searchInput = document.getElementById('affectedAreaSearch').value; 
+                const showHighestId = document.getElementById('highestIdFilter').checked;
+                displayMarkers(selectedDisaster, searchInput, showHighestId); 
+            });
+
+            document.getElementById('affectedAreaSearch').addEventListener('input', (event) => {
+                const searchValue = event.target.value; 
+                const selectedDisaster = document.getElementById('disasterTypeFilter').value; 
+                const showHighestId = document.getElementById('highestIdFilter').checked; 
+                displayMarkers(selectedDisaster, searchValue, showHighestId); 
+            });
+
+            document.getElementById('highestIdFilter').addEventListener('change', (event) => {
+                const showHighestId = event.target.checked; 
+                const selectedDisaster = document.getElementById('disasterTypeFilter').value; 
+                const searchInput = document.getElementById('affectedAreaSearch').value; 
+                displayMarkers(selectedDisaster, searchInput, showHighestId); 
+            });
+        });
+
+
+    </script>
+
+
+</body>
+</html>

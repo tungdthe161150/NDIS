@@ -1,0 +1,50 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.User.EmailAlertsModel
+@{
+    ViewData["Title"] = "Send Email Alerts";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@section Scripts {
+    @Html.PartialAsync("_ValidationScriptsPartial")
+}
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Gửi cảnh báo qua email</h3>
+          
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <form method="post">
+                                <div class="form-group">
+                                    <label for="message">Nôi Dung:</label>
+                                    <textarea id="message" asp-for="Message" class="form-control" rows="4"></textarea>
+                                    <span asp-validation-for="Message" class="text-danger"></span>
+                                </div>
+
+                                <p>Tổng số người dùng: @ViewData["UserCount"]</p>
+
+                                <button type="submit" class="btn btn-primary">Gửi Email</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

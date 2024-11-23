@@ -1,0 +1,686 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.User.DisasterDetailModel
+@{
+    ViewData["Title"] = "Chi Tiết Thiên Tai";
+    var roleId = HttpContext.Session.GetString("RoleId") ?? Request.Cookies["RoleId"];
+    var userId = HttpContext.Session.GetString("UserId") ?? Request.Cookies["UserId"];
+    var sdt = HttpContext.Session.GetString("SDT") ?? Request.Cookies["SDT"];
+}
+
+<meta property="og:url" content="http://localhost:5064/User/DisasterDetail?dd_id=@Model.Disaster.DisasterId" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Chi Tiết Thiên Tai - @Model.Disaster.DisasterName" />
+<meta property="og:description" content="@Model.Disaster.Description" />
+<meta property="og:image" content="URL_hình_ảnh_nếu_có" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+
+<style>
+    @@media only screen and (min-width: 992px) {
+        #de_dis {
+            margin-top: 80px;
+        }
+    }
+
+    #logo-wrapper {
+        display: none;
+    }
+
+    button:hover {
+        background-color: #218838; /* Một màu xanh đậm hơn khi hover */
+    }
+
+</style>
+
+<div style="background-image: url('/assets/images/bg_7.jpg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; padding: 10px;">
+
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+
+    <div class="container" style="position: relative; z-index: 2; max-width: 1200px; width: 100%; padding: 30px; margin: 0 auto;">
+
+        <div class="profile-section" id="de_dis" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); padding: 40px;">
+            <h2 style="margin-bottom: 20px; font-size: 28px; color: #0D47A1; text-align: center;">Chi Tiết Thiên Tai <br /> @Model.Disaster.DisasterName</h2>
+
+            @if (Model.Disaster != null)
+            {
+                <h3 style="font-size: 20px; color: #333; margin-top: 20px;">Bản đồ thiên tai</h3>
+                <div style="display: flex; gap: 20px; align-items: flex-start; margin-top: 20px;">
+                    <div style="flex: 2;">
+                        <div id="windy" style="width: 100%; height: 400px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); margin-bottom: 20px;"></div>
+                    </div>
+                    <div style="flex: 1; background-color: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 8px;">
+                        <h3 style="font-size: 18px; margin-top: 0; color: #333;">Thông tin cơ bản</h3>
+                        <p style="margin: 5px 0; color: #444;"><strong>Tên Thiên Tai:</strong> @Model.Disaster.DisasterName</p>
+                        <p style="margin: 5px 0; color: #444;"><strong>Vị Trí:</strong> @Model.Disaster.Location</p>
+                        <p style="margin: 5px 0; color: #444;"><strong>Cấp Độ Thiên Tai:</strong> @Model.Disaster.SeverityLevel</p>
+                        <p style="margin: 5px 0; color: #444;"><strong>Thời Gian Cập Nhật:</strong> @Model.Disaster.ReportedAt.ToString("g")</p>
+                    </div>
+                </div>
+
+                <h3 style="font-size: 20px; color: #333; margin-top: 20px;">Thông tin chi tiết</h3>
+                <div style="font-size: 16px; line-height: 1.6; color: #444; margin-top: 10px;">
+                    @Html.Raw(Model.Disaster.Description)
+                </div>
+
+                @if (roleId == "2")
+                {
+                    <div style="margin-top: 20px; text-align: center;">
+                        <a class="btn btn-primary" asp-page="/Areas/Charity/AddCampaign" asp-route-DisasterId="@Model.Disaster.DisasterId"
+                           style="padding: 10px 20px; background-color: #0D47A1; color: #fff; border-radius: 5px; text-decoration: none;">
+                            Tạo Chiến Dịch
+                        </a>
+                    </div>
+                }
+            }
+            else
+            {
+                <p style="color: #777; text-align: center;">Không tìm thấy thông tin về thiên tai.</p>
+            }
+        </div>
+
+        <div class="profile-section" id="de_dis2"
+             style="background-color: #ffffff; border-radius: 12px;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); padding: 40px;
+      margin: 20px auto;">
+
+            <h2 style="margin-bottom: 20px; font-size: 28px; color: #333; text-align: center;
+       font-weight: bold; letter-spacing: 1px;">
+                Thông Tin Người Dùng Cung Cấp
+            </h2>
+            <div id="storyModal" class="modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center;">
+                <div class="modal-content" style="background: white; border-radius: 8px; padding: 20px; position: relative; max-width: 600px; width: 90%;">
+                    <span class="close" style="position: absolute; top: 10px; right: 20px; cursor: pointer;">&times;</span>
+                    <h3 id="modalUsername"></h3>
+                    <p id="modalCreatedAt" style="margin-top: 10px; font-size: 14px; color: #888;"></p>
+                    <p id="modalContent"></p>
+                    <div id="modalVideoContainer" style="display:none;">
+                        @* <strong>Video:</strong> *@
+                        <video id="modalVideo" width="100%" controls style="border-radius: 8px;"></video>
+                    </div>
+                    <div id="modalImageContainer" style="display:none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                        @* <strong>Hình Ảnh:</strong> *@
+                        <div id="modalImages"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reels-container" style="background-color: #ffffff; border-radius: 12px;
+         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); padding: 20px; margin-bottom: 30px;">
+
+                <!-- Reels Header -->
+                <div class="reels-header" style="display: flex; align-items: center; margin-bottom: 15px; position: relative;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+                            <path d="M19.45,3.88c1.12,1.82.48,4.15-1.42,5.22l-1.32.74.94.41c1.36.58,2.27,1.85,2.35,3.27.08,1.43-.68,2.77-1.97,3.49l-8,4.47c-1.91,1.06-4.35.46-5.48-1.35-1.12-1.82-.48-4.15,1.42-5.22l1.33-.74-.94-.41c-1.36-.58-2.27-1.85-2.35-3.27-.08-1.43.68-2.77,1.97-3.49l8-4.47c1.91-1.06,4.35-.46,5.48,1.35Z" />
+                        </svg>
+                        @* <span style="font-size: 20px; font-weight: bold;">Reels</span> *@
+                    </div>
+                    <button onclick="toggleButtons()" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); padding: 8px 16px; border: none; border-radius: 50%;  color: white; cursor: pointer; transition: background-color 0.3s; font-size: 20px; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 24px;">&#8942;</span> <!-- Ba chấm dọc -->
+                    </button>
+                    <!-- Danh sách các nút -->
+                    <ul id="button-list" style="list-style: none; display: none; flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; position: absolute; top: 50px; right: 10px; z-index: 100; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                        @if (userId != null)
+                        {
+                            <li>
+                                <button onclick="toggleAddForm()" style="padding: 10px 20px; border: none; border-radius: 10px; background-color: #; color: black; cursor: pointer; transition: background-color 0.3s; width: 100%; text-align: left; font-size: 16px;">
+                                    Thêm
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="toggleListForm()" style="padding: 10px 20px; border: none; border-radius: 10px; background-color: #; color: black; cursor: pointer; transition: background-color 0.3s; width: 100%; text-align: left; font-size: 16px;">
+                                    Danh Sách Thông Tin Tôi Cung Cấp
+                                </button>
+                            </li>
+                        }
+                        <li>
+                            <button id="share-btn" data-dd-id="@Model.Disaster?.DisasterId" style="padding: 10px 20px; border: none; border-radius: 10px; background-color: #; color: black; cursor: pointer; transition: background-color 0.3s; width: 100%; text-align: left; font-size: 16px;">
+                                Chia sẻ
+                            </button>
+                        </li>
+                    </ul>
+
+                    <!-- Add Story Form -->
+                    @if (userId != null)
+                    {
+                        <!-- Add Button -->
+                        @*  <button onclick="toggleAddForm()" style="margin-left: auto; padding: 8px 16px; border: none; border-radius: 20px; background-color: #28a745; color: white; cursor: pointer; transition: background-color 0.3s;">
+                    Thêm
+                    </button>
+                    <button onclick="toggleListForm()" style="margin-left: auto; padding: 8px 16px; border: none; border-radius: 20px; background-color: #28a745; color: white; cursor: pointer; transition: background-color 0.3s;">
+                    Danh Sách Thông Tin Tôi Cung Cấp
+                    </button> *@
+                        <!-- list Story Modal -->
+                        <div id="listStoryModal" class="modal list-modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
+                            <div class="modal-content" style="background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 100%; max-width: 900px; border-radius: 8px;">
+                                <span class="close" onclick="toggleListForm()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+                                <h3>Danh Sách Thông Tin Tôi Cung Cấp</h3>
+                                <table style="width: 100%; border-collapse: collapse; margin-top: 20px; border: 1px solid #ddd;">
+                                    <thead>
+                                        <tr style="background-color: #f4f4f4;">
+                                            @* <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">Tên Người Dùng</th> *@
+                                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">Nội Dung</th>
+                                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">Ngày Tạo</th>
+                                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">Tên Video</th>
+                                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">Tên Hình ảnh</th>
+                                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left; font-weight: bold;">---</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var story in Model.DisasterStories)
+                                        { @if (story.UserId.ToString() == userId)
+                                            {
+                                                <tr style="background-color: #fff;">
+                                                    <!-- Tên người dùng -->
+                                                    @* <td style="border: 1px solid #ddd; padding: 8px;">@story.User.Username</td> *@
+
+                                                    <!-- Nội dung -->
+                                                    <td style="border: 1px solid #ddd; padding: 8px;">@Html.Raw(story.Content)</td>
+
+                                                    <!-- Ngày tạo -->
+                                                    <td style="border: 1px solid #ddd; padding: 8px;">@story.Createdate?.ToString("g")</td>
+
+                                                    <!-- Video -->
+                                                    <td style="border: 1px solid #ddd; padding: 8px;">
+                                                        @if (!string.IsNullOrEmpty(story.Video))
+                                                        {
+                                                            @*  <video width="120" height="80" controls style="border-radius: 8px;">
+                                            <source src="@Url.Content("~/uploads/videos/" + story.Video)" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                            </video> *@
+                                                            <a href="@("/uploads/videos/"+ @story.Video)" target="_blank"> @story.Video</a>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <span>Không có video</span>
+                                                        }
+
+                                                    </td>
+                                                    <td style="border: 1px solid #ddd; padding: 8px;">
+                                                        @if (!string.IsNullOrEmpty(story.Img))
+                                                        {
+                                                            // Tách các hình ảnh từ chuỗi (nếu có nhiều hình ảnh)
+                                                            var images = story.Img.Split(',');
+
+                                                            // Lặp qua từng hình ảnh và hiển thị liên kết
+                                                            foreach (var image in images)
+                                                            {
+                                                                <a href="@("/uploads/images/" + image)" target="_blank" style="display: block; margin-bottom: 5px;">
+                                                                    @image
+                                                                </a>
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <span>Không có hình ảnh</span>
+                                                        }
+                                                    </td>
+
+                                                    <!-- Hành động -->
+                                                    <td style="border: 1px solid #ddd; padding: 8px;">
+                                                        @if (story.UserId.ToString() == userId)
+                                                        {
+                                                            <button type="button" class="btn btn-warning" style="padding: 5px 10px; margin-right: 5px; background-color: #ffc107; color: white; border: none; border-radius: 5px; cursor: pointer;"
+                                                                    onclick="showUpdateForm('@story.StoryId', '@Html.Raw(story.Content)', '@story.Video')">
+                                                                Sửa
+                                                            </button>
+                                                            <!-- Update Story Modal -->
+                                                            <div id="updateModal-@story.StoryId" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
+                                                                <div class="modal-content" style="background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 8px;">
+                                                                    <span class="close" onclick="closeUpdateForm('@story.StoryId')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+                                                                    <h3>Cập nhật câu chuyện</h3>
+                                                                    <form method="post" asp-page-handler="UpdateStory" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 15px;">
+                                                                        <input type="hidden" name="storyId" id="storyId-@story.StoryId" value="" />
+                                                                        <input type="hidden" name="disasterId" value="@Model.Disaster?.DisasterId" />
+                                                                        <input type="hidden" name="userId" value="@userId" />
+
+                                                                        <div style="display: flex; flex-direction: column;">
+                                                                            <label for="content-@story.StoryId" style="font-weight: 500; margin-bottom: 5px;">Nội Dung:</label>
+                                                                            <textarea id="content-@story.StoryId" name="content" rows="4" required
+                                                                                      style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; font-size: 16px; resize: vertical;"></textarea>
+                                                                        </div>
+
+                                                                        <div style="display: flex; flex-direction: column;">
+                                                                            <label for="video-@story.StoryId" style="font-weight: 500; margin-bottom: 5px;">Video (nếu có):</label>
+                                                                            <input type="file" id="video-@story.StoryId" name="video" accept="video/*" style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
+                                                                        </div>
+
+                                                                        <div style="display: flex; flex-direction: column;">
+                                                                            <label for="images-@story.StoryId" style="font-weight: 500; margin-bottom: 5px;">Hình Ảnh (nếu có):</label>
+                                                                            <input type="file" id="images-@story.StoryId" name="images" accept="image/*" multiple style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
+                                                                            <small style="color: #888;">(Hold Ctrl to select multiple images)</small>
+                                                                        </div>
+
+                                                                        <button type="submit" style="background-color: #007bff; color: white; padding: 12px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
+                                                                            Cập nhật
+                                                                        </button>
+                                                                    </form>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Xóa -->
+                                                            <form method="post" asp-page-handler="Delete" asp-route-storyId="@story.StoryId" style="display: inline;">
+                                                                <button type="submit" class="btn btn-danger" style="padding: 5px 10px; background-color: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                                                                    Xóa
+                                                                </button>
+                                                            </form>
+                                                        }
+                                                    </td>
+                                                </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                        <!-- Add Story Modal -->
+                        <div id="addStoryModal" class="modal add-modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
+                            <div class="modal-content" style="background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 8px;">
+                                <span class="close" onclick="toggleAddForm()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+                                <h3>Thêm Câu Chuyện Mới</h3>
+                                <form method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 15px;">
+                                    <input type="hidden" name="disasterId" value="@Model.Disaster?.DisasterId" />
+                                    <input type="hidden" name="userId" value="@userId" />
+
+                                    <textarea id="content" name="content" rows="4" required
+                                              style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; font-size: 16px; resize: vertical;"
+                                              placeholder="Nội dung câu chuyện..."></textarea>
+
+                                    <input type="file" id="video" name="video" accept="video/*"
+                                           style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
+                                    <small style="color: #888;">Thêm Video</small>
+
+                                    <input type="file" id="images" name="Images" accept="image/*" multiple required
+                                           style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
+                                    <small style="color: #888;">(Giữ Ctrl để chọn nhiều hình ảnh)</small>
+
+                                    <button type="submit"
+                                            style="background-color: #007bff; color: white; padding: 12px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
+                                        Thêm Thông Tin
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    }
+
+                    @*   <button id="share-btn" data-dd-id="@Model.Disaster?.DisasterId" style="margin-left: auto; padding: 8px 16px; border: none;
+                    border-radius: 20px; background-color: #28a745; color: white;
+                    cursor: pointer; transition: background-color 0.3s;">
+                    Chia sẻ
+                    </button>
+                    *@
+
+                </div>
+
+
+                <!-- Reels Grid -->
+                <div class="reels-grid" style="display: flex; gap: 8px; overflow-x: auto; padding: 4px;">
+                    @{
+                        bool videoDisplayed = false; // Track if a video has been displayed
+                    }
+                    <div>
+                    </div>
+                    @foreach (var story in Model.DisasterStories)
+                    {
+                        <div class="reel-item" style="flex: 0 0 180px; position: relative; border-radius: 8px; overflow: hidden;">
+                            @if (story.Video != null)
+
+                            {
+                                videoDisplayed = true; // Set to true since we're displaying the video
+                                <div onclick="openModal({ Username: '@story.User.Username', Content: '@Html.Raw(story.Content)', Video: '@story.Video', Img: '@story.Img', Createdate: '@story.Createdate?.ToString("g")' })">
+                                    @*                                     <strong>Video:</strong>
+                            *@                                    <video style="width: 100%; height: 320px; object-fit: cover; border-radius: 8px;">
+                                        <source src="@Url.Content("~/uploads/videos/" + story.Video)" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            }
+                            else if (!string.IsNullOrEmpty(story.Img))
+
+                            {
+                                // If no video has been displayed and there's an image, show the first image
+                                var firstImage = story.Img.Split(',').FirstOrDefault();
+                                if (firstImage != null)
+                                {
+                                    <img src="@Url.Content($"/uploads/images/{firstImage}")"
+                                         alt="Disaster Image"
+                                         style="width: 100%; height: 320px; object-fit: cover; border-radius: 8px;"
+                                         onclick="openModal({ Username: '@story.User.Username', Content: '@Html.Raw(story.Content)', Video: null, Img: '@story.Img', Createdate: '@story.Createdate?.ToString("g")' })" />
+                                }
+                            }
+
+                            <!-- Overlay -->
+                            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 10px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white;">
+                                <div>@story.User.Username</div>
+                                <div style="color: #ddd;">@story.Createdate?.ToString("g")</div>
+
+                                <div style="color: #ddd;">
+                                    @Html.Raw(story.Content.Length > 20
+                                             ? story.Content.Substring(0, 20) + "..."
+                                             : story.Content)
+                                </div>
+                            </div>
+                        </div>
+                        @* Hiển thị nút Sửa/Xóa nếu UserId trùng với người đăng *@
+                        @*    @if (story.UserId.ToString() == userId)
+                    {
+                    <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <button type="button" class="btn btn-warning" style="padding: 10px; color: white; height: fit-content"
+                    onclick="showUpdateForm('@story.StoryId', '@Html.Raw(story.Content)', '@story.Video')">
+                    Sửa
+                    </button>
+
+                    <!-- Update Story Modal -->
+                    <div id="updateModal-@story.StoryId" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
+                    <div class="modal-content" style="background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 8px;">
+                    <span class="close" onclick="closeUpdateForm('@story.StoryId')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+                    <h3>Cập nhật câu chuyện</h3>
+                    <form method="post" asp-page-handler="UpdateStory" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="hidden" name="storyId" id="storyId-@story.StoryId" value="" />
+                    <input type="hidden" name="disasterId" value="@Model.Disaster?.DisasterId" />
+                    <input type="hidden" name="userId" value="@userId" />
+
+                    <div style="display: flex; flex-direction: column;">
+                    <label for="content-@story.StoryId" style="font-weight: 500; margin-bottom: 5px;">Nội Dung:</label>
+                    <textarea id="content-@story.StoryId" name="content" rows="4" required
+                    style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; font-size: 16px; resize: vertical;"></textarea>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column;">
+                    <label for="video-@story.StoryId" style="font-weight: 500; margin-bottom: 5px;">Video (nếu có):</label>
+                    <input type="file" id="video-@story.StoryId" name="video" accept="video/*" style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
+                    </div>
+
+                    <div style="display: flex; flex-direction: column;">
+                    <label for="images-@story.StoryId" style="font-weight: 500; margin-bottom: 5px;">Hình Ảnh (nếu có):</label>
+                    <input type="file" id="images-@story.StoryId" name="images" accept="image/*" multiple style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
+                    <small style="color: #888;">(Hold Ctrl to select multiple images)</small>
+                    </div>
+
+                    <button type="submit" style="background-color: #007bff; color: white; padding: 12px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
+                    Cập nhật
+                    </button>
+                    </form>
+                    </div>
+                    </div>
+
+                    <form method="post" asp-page-handler="Delete" asp-route-storyId="@story.StoryId">
+                    <button type="submit" class="btn btn-danger" style="padding: 10px;">Xóa</button>
+                    </form>
+                    </div>
+                    } *@
+
+                    }
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="profile-section" id="de_dis3" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin: 20px 0;">
+            <h2 style="margin-bottom: 20px; font-size: 24px; color: #333; text-align: center;">Danh Sách Chiến Dịch Gây Quỹ</h2>
+
+            <!-- Horizontal Scrollable Container -->
+            <div class="campaigns-container" style="display: flex; gap: 16px; overflow-x: auto; padding: 4px;">
+                @foreach (var campaign in Model.FundraisingCampaignsU)
+                {
+                    <div class="card h-100" style="flex: 0 0 300px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+                        <div class="card-img-top" style="background-color: #ddd; height: 200px; text-align: center; display: flex; justify-content: center; align-items: center;">
+                            <img src="/LayoutAdmin/assets/img/kaiadmin/logo3.png" alt="Campaign Image" style="width: 100%; height: 100%; object-fit: cover;" />
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">@campaign.CampaignName</h5>
+                            <p><strong>@campaign.Charity.CharityName</strong></p>
+                            <!-- Campaign Dates -->
+                            <p class="card-text mb-3" style="font-size: 1rem; color: #555;">
+                                Thời gian:
+                                @if (campaign.StartDate == null && campaign.EndDate == null)
+                                {
+                                    <span style="color: #e74c3c; font-weight: bold;">Đang cập nhật</span>
+                                }
+                                else if (campaign.EndDate == null)
+                                {
+                                    <span>
+                                        Bắt đầu @campaign.StartDate?.ToString("dd/MM/yyyy") - Kết thúc <span style="color: #e74c3c; font-weight: bold;">Đang cập nhật</span>
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span>Bắt đầu @campaign.StartDate?.ToString("dd/MM/yyyy") - Kết thúc @campaign.EndDate?.ToString("dd/MM/yyyy")</span>
+                                }
+                            </p>
+                            <p><strong>@campaign.RaisedAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))</strong> trên <strong>@campaign.GoalAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))</strong></p>
+                            <div class="progress mb-3">
+                                <div class="progress-bar bg-success" role="progressbar"
+                                     style="width: @(campaign.RaisedAmount / campaign.GoalAmount * 100)%"
+                                     aria-valuenow="@(campaign.RaisedAmount / campaign.GoalAmount * 100)"
+                                     aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                            <a asp-page="/user/DetailCampaignUser" asp-route-dcu_id="@campaign.CampaignId" class="btn btn-primary mt-3">Chi Tiết</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function showUpdateForm(storyId, content, video) {
+        // Populate fields with existing story data
+        document.getElementById('storyId-' + storyId).value = storyId;
+        document.getElementById('content-' + storyId).value = content;
+
+        // Display the modal
+        const updateModal = document.getElementById('updateModal-' + storyId);
+        if (updateModal) {
+            updateModal.style.display = 'block';
+        }
+    }
+    function closeUpdateForm(storyId) {
+        const updateModal = document.getElementById('updateModal-' + storyId);
+        if (updateModal) {
+            updateModal.style.display = 'none';
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target.classList.contains('update-modal')) {
+            event.target.style.display = 'none';
+        }
+    }
+    //add
+    function toggleAddForm() {
+        const formModal = document.getElementById('addStoryModal');
+        if (formModal.style.display === 'none' || formModal.style.display === '') {
+            formModal.style.display = 'block';
+        } else {
+            formModal.style.display = 'none';
+        }
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function (event) {
+        const formModal = document.getElementById('addStoryModal');
+        if (event.target.classList.contains('add-modal')) {
+            formModal.style.display = 'none';
+        }
+    }
+    //list
+    function toggleListForm() {
+        const formModal = document.getElementById('listStoryModal');
+        if (formModal.style.display === 'none' || formModal.style.display === '') {
+            formModal.style.display = 'block';
+        } else {
+            formModal.style.display = 'none';
+        }
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function (event) {
+        const formModal = document.getElementById('listStoryModal');
+        if (event.target.classList.contains('list-modal')) {
+            formModal.style.display = 'none';
+        }
+    }
+
+</script>
+
+
+<script>
+    function openModal(story) {
+        document.getElementById('modalUsername').innerText = story.Username;
+        document.getElementById('modalContent').innerHTML = story.Content;
+        document.getElementById('modalCreatedAt').innerText = "Thời Gian Tạo: " + story.Createdate;
+
+        const modalVideoContainer = document.getElementById('modalVideoContainer');
+        const modalVideo = document.getElementById('modalVideo');
+        const modalImageContainer = document.getElementById('modalImageContainer');
+        const modalImages = document.getElementById('modalImages');
+
+        // Reset modal content
+        modalVideoContainer.style.display = 'none';
+        modalVideo.src = "";
+        modalImages.innerHTML = "";
+
+        // Populate video if it exists
+        if (story.Video) {
+            modalVideo.src = "@Url.Content("~/uploads/videos/")" + story.Video;
+            modalVideoContainer.style.display = 'block';
+        }
+
+        // Populate images if they exist
+        if (story.Img) {
+            const images = story.Img.split(',');
+            images.forEach(img => {
+                const imgElement = document.createElement('img');
+                imgElement.src = "@Url.Content("/uploads/images/")" + img;
+                imgElement.style.width = '180px';
+                imgElement.style.height = '180px';
+                imgElement.style.borderRadius = '8px';
+                imgElement.style.marginRight = '5px';
+                modalImages.appendChild(imgElement);
+            });
+            modalImageContainer.style.display = 'flex';
+        }
+
+        // Show the modal
+        document.getElementById('storyModal').style.display = 'flex';
+    }
+
+    // Close modal when clicking the close button
+    document.querySelector('.close').onclick = function () {
+        document.getElementById('storyModal').style.display = 'none';
+    };
+
+    // Close modal when clicking outside of the modal content
+    window.onclick = function (event) {
+        const modal = document.getElementById('storyModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+</script>
+
+<script>
+    /* share */
+    document.getElementById('share-btn').addEventListener('click', async function () {
+        const disasterId = this.getAttribute('data-dd-id');
+        const shareUrl = `http://localhost:5064/User/DisasterDetail?dd_id=${disasterId}`;
+        const shareData = {
+            title: 'Chi Tiết Thiên Tai',
+            text: `Chi Tiết Thiên Tai - ${'@Model.Disaster?.DisasterName'}`, // Update with dynamic data if needed
+            url: shareUrl
+        };
+
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+                console.log('Successfully shared');
+            } else {
+                alert('Trình duyệt không hỗ trợ tính năng chia sẻ trực tiếp.');
+            }
+        } catch (err) {
+            console.error('Error sharing:', err);
+        }
+    });
+</script>
+
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+<script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+<script>
+    const options = {
+        key: '44phXZRSg6vYJF3qnHWy1uVVY4SIuITf',  // Thay thế bằng API Key của bạn
+        lat: 21.0285,         // Vĩ độ, ở đây là Hà Nội
+        lon: 105.8542,        // Kinh độ, ở đây là Hà Nội
+        zoom: 5,              // Mức độ phóng to bản đồ
+    };
+
+    windyInit(options, windyAPI => {
+        const { picker, overlays, colors, broadcast } = windyAPI;
+
+        // Mở picker tại tọa độ Hà Nội
+        picker.open({ lat: 21.0285, lon: 105.8542 });
+
+        // Xử lý khi picker được mở
+        picker.on('pickerOpened', data => {
+            console.log('Picker opened at:', data.lat, data.lon);
+        });
+
+        // Xử lý khi picker di chuyển
+        picker.on('pickerMoved', data => {
+            console.log('Picker moved:', data);
+        });
+
+        // Đặt đơn vị cho lớp hiển thị (ví dụ: wind)
+        overlays.wind.setMetric('km/h');
+
+        // Thay đổi màu của lớp gió (wind)
+        overlays.wind.colors.changeColor([
+            { value: 0, color: '#00ff00' },
+            { value: 10, color: '#ffff00' },
+            { value: 20, color: '#ff0000' }
+        ]);
+
+        // Lắng nghe sự kiện dữ liệu thời tiết
+        broadcast.on('someEvent', data => {
+            console.log('Sự kiện:', data);
+        });
+
+        // Phát một sự kiện tùy chỉnh
+        broadcast.fire('customEvent', { message: 'Hello, Windy!' });
+    });
+</script>
+
+<script>
+    // Đặt biến global để tham chiếu đến danh sách nút
+    var buttonList = document.getElementById('button-list');
+
+    // Hàm hiển thị/ẩn danh sách nút
+    function toggleButtons() {
+        if (buttonList.style.display === 'none' || buttonList.style.display === '') {
+            buttonList.style.display = 'flex';  // Hiển thị các nút
+        } else {
+            buttonList.style.display = 'none';  // Ẩn các nút
+        }
+    }
+
+    // Thêm sự kiện để ẩn danh sách nút khi nhấn vào một nút trong danh sách
+    var buttons = buttonList.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', function () {
+            buttonList.style.display = 'none';  // Ẩn danh sách nút khi nhấn vào một nút
+        });
+    }
+
+    // Thêm sự kiện để ẩn danh sách nút khi nhấn ra ngoài
+    document.addEventListener('click', function (event) {
+        // Kiểm tra xem có phải là nút ba chấm dọc không
+        if (!event.target.closest('.reels-header') && buttonList.style.display === 'flex') {
+            buttonList.style.display = 'none';  // Ẩn danh sách nút nếu nhấn ngoài
+        }
+    });
+</script>
