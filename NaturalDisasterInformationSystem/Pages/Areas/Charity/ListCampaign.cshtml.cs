@@ -1,29 +1,69 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using NaturalDisasterInformationSystem.Models;
+using System.Linq;
 
 namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
-{
+{ 
+    [Authorize(Policy = "Charity")]
     public class ListCampaignModel : PageModel
     {
         private readonly DO_ANContext context;
 
-        public List<NaturalDisasterInformationSystem.Models.FundraisingCampaign> FundraisingCampaigns { get; set; }
 
         public ListCampaignModel(DO_ANContext context)
         {
             this.context = context;
         }
 
-        public async Task<IActionResult> OnGetAsync(int cid)
+        public List<Disaster> Disasters { get; set; } = new();
+        public List<FundraisingCampaign> FundraisingCampaigns { get; set; } = new();
+
+        public async Task<IActionResult> OnGetAsync(int cid, string? filter, string? disasterName, string? location)
         {
-            FundraisingCampaigns = await context.FundraisingCampaigns.Include(c=>c.Charity.User).ThenInclude(c=>c.VolunteerHistories).OrderByDescending(f => f.CampaignId)
-                .Where(campaign => campaign.CharityId == cid)
-                .ToListAsync();
+            // Fetch available disasters for the filter dropdown
+            Disasters = await context.Disasters.ToListAsync();
+
+            // Query the fundraising campaigns
+            var query = context.FundraisingCampaigns
+                .Include(c => c.Charity.User)
+                .ThenInclude(c => c.VolunteerHistories)
+                .Where(campaign => campaign.CharityId == cid);
+
+            // Apply "Status" filter
+            if (!string.IsNullOrEmpty(filter))
+            {
+                if (filter == "ended")
+                {
+                    query = query.Where(campaign => campaign.EndDate.HasValue && campaign.EndDate.Value <= DateTime.Now&& campaign.CharityId == cid);
+                }
+                else if (filter == "ongoing")
+                {
+                    query = query.Where(campaign => campaign.StartDate.HasValue && campaign.StartDate.Value <= DateTime.Now &&
+                                                    (!campaign.EndDate.HasValue || campaign.EndDate.Value > DateTime.Now)&& campaign.CharityId == cid);
+                }
+            }
+
+            // Apply "Disaster" filter
+            if (!string.IsNullOrEmpty(disasterName))
+            {
+                query = query.Where(campaign => campaign.Disaster.DisasterName == disasterName&& campaign.CharityId == cid);
+            }
+            // Apply "Location" filter
+            if (!string.IsNullOrEmpty(location))
+            {
+                var lowerLocation = location.ToLower();
+                query = query.Where(campaign => campaign.Disaster.Location != null && campaign.Disaster.Location.ToLower().Contains(lowerLocation) && campaign.CharityId == cid);
+            }
+            // Execute the query
+            FundraisingCampaigns = await query.OrderByDescending(f => f.CampaignId).ToListAsync();
 
             return Page();
         }
+
         public async Task<IActionResult> OnPostAsync(int UserId, int EventId)
         {
             if (!ModelState.IsValid)
@@ -38,7 +78,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             if (existingHistory != null)
             {
                 // N?u ?ã t?n t?i, có th? tr? v? thông báo ho?c ch? chuy?n h??ng
-                ModelState.AddModelError(string.Empty, "B?n ?ã tham gia s? ki?n này tr??c ?ó.");
+                ModelState.AddModelError(string.Empty, "Ban da tham gia su kien nay truoc do.");
                 return RedirectToPage("/Areas/Charity/DetailCampaign", new { dc_id = existingHistory.EventId });
             }
 

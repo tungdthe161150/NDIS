@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NaturalDisasterInformationSystem.Models;
 
 namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.News
 {
+    [Authorize(Policy = "Admin")]
+
     public class DetailModel : PageModel
     {
         private readonly DO_ANContext context;

@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using NaturalDisasterInformationSystem.Models;
 
-namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.Alerts
+namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.News
 {
+    [Authorize(Policy = "Admin")]
+
     public class DeleteModel : PageModel
     {
         private readonly DO_ANContext context;
@@ -37,8 +40,6 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.Alerts
             return Page();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (id == null || context.News == null)
@@ -60,9 +61,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.Alerts
                     context.News.Remove(News);
                     await context.SaveChangesAsync();
 
-                    //return new JsonResult(new { success = true });
-                    TempData["DeleteSuccess"] = "Xóa bản tin thành công!";
-
+                    TempData["DeleteSuccess"] = "Tin tức đã được xóa thành công!";
                     return RedirectToPage("./Index");
                 }
                 catch (Exception ex)

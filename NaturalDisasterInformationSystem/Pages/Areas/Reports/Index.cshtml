@@ -30,21 +30,13 @@
                                 <thead>
                                     <tr>
                                         <th>STT</th>
-                                        <th>Lý do</th>
+                                        <th>Chiến dịch</th>
                                         <th>Trạng thái</th>
                                         <th>Ngày tạo</th>
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>STT</th>
-                                        <th>Lý do</th>
-                                        <th>Trạng thái</th>
-                                        <th>Ngày tạo</th>
-                                        <th></th>
-                                    </tr>
-                                </tfoot>
+                               
                                 <tbody>
                                     @* @foreach (var rp in Model.reports)
                                     {
@@ -76,7 +68,7 @@
 
                                         <tr>
                                             <td>@(isNewRow ? stt++ : "")</td>
-                                            <td>@(isNewRow ? (rp.Reason.Length > 100 ? rp.Reason.Substring(0, 100) + "..." : rp.Reason) : "")</td>
+                                            <td>@(isNewRow ? rp.Campaign.CampaignName : "")</td>
                                             <td>@(isNewRow ? rp.Status : "")</td>
                                             <td>@(isNewRow ? rp.CreatedAt?.ToString("dd/MM/yyyy") : "")</td>
                                             <td>

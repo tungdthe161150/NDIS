@@ -1,7 +1,7 @@
 ﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 
 @{
-    ViewData["Title"] = "Home page";
+    
 
     var roleId = HttpContextAccessor.HttpContext?.Session.GetString("RoleId")
                  ?? HttpContextAccessor.HttpContext?.Request.Cookies["RoleId"];
@@ -221,11 +221,9 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a asp-page="/user/home" class="nav-link">Trang Chủ</a></li>
                     <li class="nav-item active"><a asp-page="/user/ListCampaignUser" class="nav-link">Chiến Dịch</a></li>
-                    <li class="nav-item active"><a asp-page="/user/home" class="nav-link">Diễn Đàn</a></li>
-                    <li class="nav-item active"><a asp-page="/user/listnews" class="nav-link">Tin Tức</a></li>
-                    <li class="nav-item active"><a asp-page="/user/home" class="nav-link">Kiến Thức</a></li>
-                    <li class="nav-item active"><a asp-page="/user/home" class="nav-link">Liên hệ</a></li>
-                    @if (roleId == "3")
+                    <li class="nav-item active"><a asp-page="/user/ListDisaster" class="nav-link">Danh Sách Thiên Tai</a></li>
+                    <li class="nav-item active"><a asp-page="/user/ListSOS" class="nav-link">Danh Sách SOS</a></li>
+                     @if (roleId == "3")
                     {
                         <li class="nav-item active"><a asp-page="/user/registercharity" asp-route-cid="@userId" class="nav-link">Đăng Ký Tổ Chức</a></li>
                     }
@@ -233,7 +231,17 @@
                     {
                         <li class="nav-item active"><a asp-page="/Areas/Charity/ListCampaign" asp-route-cid="@charityId" class="nav-link">Chiến Dịch Của Tôi</a></li>
                     }
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" style="margin:0" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Khác
+                        </a>
+                        <ul style="margin:0" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a asp-page="/user/listnews" class="dropdown-item">Tin Tức</a></li>
 
+                            <li><a asp-page="/user/ListBlog" class="dropdown-item">Blog</a></li>
+                            <li><a asp-page="/user/AboutUs" class="dropdown-item">Liên hệ</a></li>
+                        </ul>
+                    </li>
 
                 </ul>
             </div>
@@ -241,7 +249,7 @@
                 @if (userId != null)
                 {
                     <!-- Nếu đã đăng nhập, hiển thị link đến Profile -->
-                    <a class="nav-brand" asp-page="/Account/Profile" asp-route-uid="@userId">Profile</a>
+                    <a class="nav-brand" asp-page="/Account/Profile" asp-route-uid="@userId">Hồ Sơ</a>
                     <a class="nav-brand" asp-page="/Account/Logout">Đăng Xuất</a>
                 }
                 else
@@ -280,14 +288,14 @@
             font-size: 14px;" id="chat-input" placeholder="Nhập tin nhắn..." onkeydown="sendMessage(event)">
         </div>
     </div>
-    <footer class="ftco-footer ftco-section img">
+    <footer class="ftco-footer ftco-section img" style="height:auto">
         <div class="overlay"></div>
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-3">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="ftco-heading-2">Về chúng tôi</h2>
-                        <p>Trang web Hệ thống thông tin thiên tai được phát triển với sứ mệnh trở thành nền tảng hàng đầu trong việc cung cấp thông tin liên quan đến thiên tai, 
+                        <p style="text-align:justify">Trang web Hệ thống thông tin thiên tai được phát triển với sứ mệnh trở thành nền tảng hàng đầu trong việc cung cấp thông tin liên quan đến thiên tai, 
                             hỗ trợ các nỗ lực gây quỹ và tổ chức các sáng kiến ​​cứu trợ hiệu quả. Mục tiêu của chúng tôi là tạo ra một công cụ mạnh mẽ kết nối cộng đồng với các tổ chức cứu trợ, 
                             cho phép phản ứng kịp thời và hiệu quả đối với các trường hợp khẩn cấp, do đó giảm thiểu thiệt hại và giúp khôi phục cuộc sống bình thường sau thảm họa.</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
@@ -299,7 +307,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Kiến thức</h2>
+                        <h2 class="ftco-heading-2">Bài viết</h2>
                         <div class="block-21 mb-4 d-flex">
                             <a class="blog-img mr-4" style="background-image: url('/uploads/images/sample_small.jpg');"></a>
                             <div class="text">
@@ -330,10 +338,10 @@
                         <ul class="list-unstyled">
                             <li><a href="#" class="py-2 d-block">Trang chủ</a></li>
                             <li><a href="#" class="py-2 d-block">Chiến dịch</a></li>
-                            <li><a href="#" class="py-2 d-block">Diễn đàn</a></li>
-                            <li><a href="#" class="py-2 d-block">Tiên tức</a></li>
-                            <li><a href="#" class="py-2 d-block">Kiên thức</a></li>
-                            <li><a href="#" class="py-2 d-block">Liên Hệ</a></li>
+                            @* <li><a href="#" class="py-2 d-block">Diễn đàn</a></li> *@
+                            <li><a href="#" class="py-2 d-block">Tin tức</a></li>
+                            @* <li><a href="#" class="py-2 d-block">Kiên thức</a></li> *@
+                            @* <li><a href="#" class="py-2 d-block">Liên Hệ</a></li> *@
                         </ul>
                     </div>
                 </div>
@@ -377,7 +385,7 @@
             }
         }
 
-        const YOUR_API_KEY = 'AIzaSyC53Qo9qc_3ieOI9EgN96s6vrMyAS55Md8'; // Replace with your actual API key
+        const YOUR_API_KEY = 'AIzaSyCFDbRWsjUvJ9kX7CWmyC_3eQj1CVkw-Yw'; // Replace with your actual API key
 
         async function sendMessage(event) {
             if (event.key === "Enter") {

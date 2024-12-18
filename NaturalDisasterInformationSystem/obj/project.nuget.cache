@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OWQyAd6c7zc=",
+  "dgSpecHash": "uDPpFVgxcV4=",
   "success": true,
-  "projectFilePath": "D:\\ki9\\do an\\Report\\sep490_g95\\NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Code_final\\sep490_g95\\NaturalDisasterInformationSystem\\NaturalDisasterInformationSystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",

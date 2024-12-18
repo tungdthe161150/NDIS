@@ -1,0 +1,148 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.Story.ListStoryAdminModel
+@{
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Danh sách Story</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li>
+                    <span>/ Danh sách Story</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Filter Form -->
+        <form method="get" class="mb-3">
+            <div class="input-group">
+                <select name="disasterIdFilter" class="form-control">
+                    <option value="">-- Chọn Disaster --</option>
+                    @foreach (var disaster in Model.AvailableDisasters)
+                    {
+                        @*             var isSelected = Model.DisasterIdFilter == disaster.DisasterId.ToString() ? "selected=\"selected\"" : "";
+                    *@
+                        <option value="@disaster.DisasterId">
+                            @disaster.DisasterName
+                        </option>
+                    }
+                </select>
+                <button type="submit" class="btn btn-primary">Lọc</button>
+            </div>
+
+        </form>
+
+        <!-- Story Table -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="basic-datatables"
+                                   class="display table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Người gửi</th>
+                                        <th>Nội dung</th>
+                                        <th>Hình ảnh</th>
+                                        <th>Video</th>
+                                        <th>Thời gian tạo</th>
+                                        <th>Disaster ID</th>
+                                        <th>Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model.DisasterStory_.Any())
+                                    {
+                                        int count = 1;
+                                        foreach (var story in Model.DisasterStory_)
+                                        {
+                                            <tr>
+                                                <td>@count</td>
+                                                <td>@story.User.Username</td>
+                                                <td>@story.Content</td>
+                                                <td>
+                                                    @if (!string.IsNullOrEmpty(story.Img))
+                                                    {
+                                                        <a href="~/uploads/images/@story.Img" target="_blank">Xem ảnh</a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>Không có</span>
+                                                    }
+                                                </td>
+                                                <td>
+                                                    @if (!string.IsNullOrEmpty(story.Video))
+                                                    {
+                                                        <a href="~/uploads/videos/@story.Video" target="_blank">Xem video</a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>Không có</span>
+                                                    }
+                                                </td>
+                                                <td>@story.Createdate?.ToString("MMM dd, yyyy HH:mm:ss")</td>
+                                                <td>@story.Disaster.DisasterName</td>
+                                                <td>
+                                                    <form method="post" style="display:inline;" asp-page-handler="Delete">
+                                                        <input type="hidden" name="id" value="@story.StoryId" />
+                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa story này?');">Xóa</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                            count++;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <tr>
+                                            <td colspan="8" class="text-center">Không tìm thấy story nào.</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Khi cần cập nhật dữ liệu
+    var table = $('#basic-datatables').DataTable();
+    table.ajax.reload();
+
+    $(document).ready(function () {
+        $('#basic-datatables').DataTable({
+            language: {
+                "sProcessing": "Đang xử lý...",
+                "sLengthMenu": "Hiển thị _MENU_ mục",
+                "sZeroRecords": "Không tìm thấy dòng nào phù hợp",
+                "sInfo": "Đang hiển thị _START_ đến _END_ trong tổng số _TOTAL_ mục",
+                "sInfoEmpty": "Đang hiển thị 0 đến 0 trong tổng số 0 mục",
+                "sInfoFiltered": "(được lọc từ _MAX_ mục)",
+                "sSearch": "Tìm kiếm:",
+                "oPaginate": {
+                    "sFirst": "Đầu",
+                    "sPrevious": "Trước",
+                    "sNext": "Tiếp",
+                    "sLast": "Cuối"
+                }
+            }
+        });
+    });
+
+</script>

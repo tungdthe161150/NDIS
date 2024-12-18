@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NaturalDisasterInformationSystem.Models;
@@ -6,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace NaturalDisasterInformationSystem.Pages.User
 {
+    [Authorize]
+
     public class VolunteerSignupModel : PageModel
     {
         private readonly DO_ANContext _context;
@@ -37,7 +40,7 @@ namespace NaturalDisasterInformationSystem.Pages.User
             if (Campaign == null)
             {
                 // N?u không tìm th?y Campaign, ??t m?t thông báo ho?c chuy?n h??ng ng??i dùng
-                Message = "Không tìm th?y chi?n d?ch gây qu?!";
+                Message = "Khong tim thay chien dich gay quy!";
             }
         }
 

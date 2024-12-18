@@ -73,8 +73,25 @@
 
 
                 <div class="mt-4">
-                    <a asp-page="/Areas/Charity/Update_Information" asp-route-pi_id="@Model.Campaign.CampaignId" asp-route-vh_id="@userId" class="btn btn-outline-primary">Cập nhật thông tin cho dự án</a>
+                    <a asp-page="/Areas/Charity/Update_Information" asp-route-pi_id="@Model.Campaign.CampaignId" asp-route-vh_id="@userId" class="btn btn-outline-primary">Thông tin cập nhật về dự án</a>
                     <a asp-page="/Areas/Charity/listdonation"  asp-route-c_id="@Model.Campaign.CampaignId" class="btn btn-outline-primary">Cập nhật ủng hộ</a>
+                    @if (TempData["UpdateCamMessage"] != null)
+                    {
+                        <div class="alert alert-success" id="updateCamMessage">
+                            @TempData["UpdateCamMessage"]
+                        </div>
+                    }
+
+
+                    <script>
+                        // Tự động ẩn thông báo sau 5 giây
+                        setTimeout(() => {
+                            const messageDiv = document.getElementById("updateCamMessage");
+                            if (messageDiv) {
+                                messageDiv.style.display = "none";
+                            }
+                        }, 5000);
+                    </script>
 
                     <h4 class="fw-bold">1. Mục tiêu chiến dịch</h4>
                     <p>@Html.Raw(@Model.Campaign.Description)</p>

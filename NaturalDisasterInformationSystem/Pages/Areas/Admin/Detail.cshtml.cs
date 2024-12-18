@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -5,6 +6,8 @@ using NaturalDisasterInformationSystem.Models;
 
 namespace NaturalDisasterInformationSystem.Pages.Areas.Admin
 {
+    [Authorize(Policy = "Admin")]
+
     public class DetailModel : PageModel
     {
         private readonly DO_ANContext context;
@@ -24,8 +27,9 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin
                 return NotFound();
             }
 
-            User = await context.Users.FirstOrDefaultAsync(u => u.UserId == id);
-            if (User == null)
+            User = await context.Users
+                           .Include(r => r.Role)
+                           .FirstOrDefaultAsync(u => u.UserId == id); if (User == null)
             {
                 return NotFound();
             }

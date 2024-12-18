@@ -1,0 +1,142 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.Blog.IndexModel
+@using NaturalDisasterInformationSystem.Models
+@{
+    ViewData["Title"] = "Management Blog";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Quản lý blog</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+            </ul>
+            <!-- Nút tạo blog mới -->
+            <a asp-page="CreateBlog">Thêm</a>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"></h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="basic-datatables" class="display table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th>Tiêu đề</th>
+                                        @*                                         <th>Content</th>
+                                        *@
+                                        <th>Ngày tạo</th>
+                                        <th>Ngày cập nhật</th>
+                                        <th>---</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @foreach (var blog in Model.DisasterBlogs)
+                                    {
+                                        <tr>
+                                            <td>@blog.BlogId</td>
+                                            <td>@blog.Title</td>
+                                            @*                                             <td>@Html.Raw(blog.Content)</td>
+                                        *@
+                                            <td>@blog.CreatedAt?.ToString("dd/MM/yyyy")</td>
+                                            <td>@(blog.UpdatedAt?.ToString("dd/MM/yyyy") ?? "Chưa có")</td>
+                                            <td>
+                                                <a  asp-page="./DetailBlog" asp-route-id="@blog.BlogId">Chi tiết</a>
+                                                <a  asp-page="./EditBlog" asp-route-id="@blog.BlogId">Cập nhật</a>
+                                                <a asp-page="./DeleteBlog" asp-route-id="@blog.BlogId">Xóa</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@if (TempData["DeleteSuccess"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Thành công!</strong> 
+        @* @TempData["DeleteSuccess"] *@
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["UpdateSuccess"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Thành công!</strong> @TempData["UpdateSuccess"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<script>
+    function showDetailModal(newsId) {
+        $.ajax({
+            url: '/Areas/News/Detail?id=' + newsId,
+            type: 'GET',
+            success: function (result) {
+                Swal.fire({
+                    title: '',
+                    html: result,
+                    showCloseButton: true,
+                    confirmButtonText: 'Đóng',
+                    width: 'auto',
+                    heightAuto: true,
+                    background: 'transparent',
+                    padding:0,
+                    customClass: {
+                        popup: 'custom-swal-popup',
+                        title: 'custom-swal-title',
+                        content: 'custom-swal-content'
+                    }
+                });
+            },
+            error: function (xhr, status, error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lỗi',
+                    text: 'Không thể tải chi tiết blog.'
+                });
+            }
+        });
+    }
+</script>
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <script>
+        // Hiển thị thông báo nếu có từ TempData
+        @if (TempData["UpdateSuccess"] != null)
+        {
+            <text>
+                    Swal.fire('Thành công!', '@TempData["UpdateSuccess"]', 'success');
+            </text>
+        }
+        @if (TempData["DeleteSuccess"] != null)
+        {
+            <text>
+                        Swal.fire('Thành công!', '@TempData["DeleteSuccess"]', 'success');
+            </text>
+        }
+    </script>
+}

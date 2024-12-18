@@ -39,7 +39,7 @@ namespace NaturalDisasterInformationSystem.Pages.User
             {
                 var disasters = await response.Content.ReadFromJsonAsync<List<DisasterDTO>>();
 
-                // L?c ra các s? ki?n không có id là 3052
+                // L?c ra cï¿½c s? ki?n khï¿½ng cï¿½ id lï¿½ 3052
                 return disasters?.Where(d => d.Id != 3052).ToList() ?? new List<DisasterDTO>();
             }
             else
@@ -160,7 +160,8 @@ namespace NaturalDisasterInformationSystem.Pages.User
                     }
                 }
             }
-
+ TimeZoneInfo vietnamTimeZone = TimeZoneInfo.FindSystemTimeZoneById("SE Asia Standard Time");
+ DateTime vietnamTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, vietnamTimeZone);
             try
             {
                 var newReport = new So
@@ -169,7 +170,7 @@ namespace NaturalDisasterInformationSystem.Pages.User
                     Longitude = longitude,
                     Latitude = latitude,
                     UserId = userId,
-                    CreateTime = DateTime.Now,
+                    CreateTime = vietnamTime,
                     ImgSos = string.Join(",", imgSosPaths), // Store paths as comma-separated string
                     Address = address
                 };

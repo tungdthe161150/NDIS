@@ -52,11 +52,16 @@
                 if (!string.IsNullOrEmpty(Model.CharityDetail.Comment))
                 {
                     <div class="alert alert-info mt-3">
-                        <strong>Lý Do Không Được Duyệt:</strong> @Model.CharityDetail.Comment
+                        <strong>Đơn đăng ký bị từ chối</strong><br />
+                        <strong>Lý Do:</strong> @Model.CharityDetail.Comment
                     </div>
                 }
+                else
+                {
+                    <h4 style="color:red">Bạn đã gửi đăng kí thành tổ chức từ thiện và đang chờ xét duyệt.</h4>
 
-                <h4 style="color:red">Bạn đã đăng kí thành tổ chức từ thiện và đang chờ xét duyệt.</h4>
+                }
+
                     <div asp-validation-summary="All" class="text-danger"></div>
                                     <form method="post" enctype="multipart/form-data" asp-page-handler="Update">
 
@@ -122,7 +127,7 @@
 
                 <div class="form-group" style="margin-bottom: 1.5rem;">
                     <label for="PhoneNumber" style="font-weight: bold; color: #333;">Số điện thoại</label>
-                    <input type="text" class="form-control" id="PhoneNumber" asp-for="PhoneNumber" value="@Model.CharityDetail.PhoneNumber"  style="border-radius: 8px; border: 1px solid #ddd; padding: 10px; font-size: 1rem; color: #333; background-color: #f9f9f9;" />
+                    <input type="tel" class="form-control" id="PhoneNumber" asp-for="PhoneNumber" value="@Model.CharityDetail.PhoneNumber"  style="border-radius: 8px; border: 1px solid #ddd; padding: 10px; font-size: 1rem; color: #333; background-color: #f9f9f9;" />
                 </div>
                     <button type="submit" class="btn btn-primary">Cập nhật</button>
                 </form>
@@ -164,7 +169,7 @@
 
                     <div class="form-group">
                         <label for="PhoneNumber">Số điện thoại</label>
-                        <input type="text" class="form-control" id="PhoneNumber" asp-for="PhoneNumber" />
+                        <input type="tel" class="form-control" id="PhoneNumber" asp-for="PhoneNumber" />
                     </div>
 
                     <button type="submit" class="btn btn-primary">Đăng ký</button>
@@ -179,7 +184,7 @@
 </div>
 
 
-<section class="ftco-section">
+@* <section class="ftco-section">
     <div class="container">
         <div class="row">
             <div class="col-md-4 d-flex align-self-stretch ftco-animate">
@@ -313,4 +318,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> *@

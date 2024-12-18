@@ -1,11 +1,16 @@
+using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using MimeKit;
 using NaturalDisasterInformationSystem.Models;
 using System.Threading.Tasks;
 
 namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.approved
 {
+    [Authorize(Policy = "Admin")]
+
     public class DetailApprovedCharityModel : PageModel
     {
         private readonly DO_ANContext _context;
@@ -44,7 +49,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.approved
 
             charity.Reliability = true;
             charity.Comment = Comment;  // Save the comment
-
+            SendConfirmationEmail(charity.ContactEmail, Comment);
             // Ensure that RoleId exists on the User model
             if (charity.User != null)
             {
@@ -54,7 +59,26 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.approved
             await _context.SaveChangesAsync();
             return RedirectToPage("ApprovedCharity");
         }
+        private void SendConfirmationEmail(string email,string content)
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("Natural Disaster System", "no-reply@nds.com"));
+            message.To.Add(new MailboxAddress("", email));
+            message.Subject = "Charity Registration Confirmation";
 
+            message.Body = new TextPart("plain")
+            {
+                Text = content
+            };
+
+            using (var client = new SmtpClient())
+            {
+                client.Connect("smtp.gmail.com", 587, false);
+                client.Authenticate("ledungb12509@gmail.com", "bdog vxel qcwk bbqh");
+                client.Send(message);
+                client.Disconnect(true);
+            }
+        }
         public async Task<IActionResult> OnPostHidAsync(int dac_id, string? Comment)
         {
             var charity = await _context.Charities
@@ -68,6 +92,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.approved
 
             charity.Reliability = false;
             charity.Comment = Comment;  // Save the comment
+            SendConfirmationEmail(charity.ContactEmail, Comment);
 
             // Ensure that RoleId exists on the User model
             if (charity.User != null)

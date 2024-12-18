@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NaturalDisasterInformationSystem.Models;
 
 namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
 {
+    [Authorize(Policy = "Charity")]
+
     public class DetailCampaignModel : PageModel
     {
         private readonly DO_ANContext _context;

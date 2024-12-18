@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.approved
 {
+    [Authorize(Policy = "Admin")]
+
     public class ApprovedCharityModel : PageModel
     {
         private readonly DO_ANContext _context;
@@ -22,6 +25,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.approved
         {
             ListCharity = await _context.Charities
                 .Include(d => d.DocumentImgs)
+                .OrderByDescending(c=>c.CreatedAt)
                 .ToListAsync();
         }
     }

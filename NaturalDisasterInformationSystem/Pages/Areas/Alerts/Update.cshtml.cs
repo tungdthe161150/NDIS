@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using NaturalDisasterInformationSystem.Models;
 
-namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.News
+namespace NaturalDisasterInformationSystem.Pages.Areas.Alerts
 {
+    [Authorize(Policy = "Admin")]
+
     public class UpdateModel : PageModel
     {
         private readonly DO_ANContext context;
@@ -15,24 +18,24 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.News
         }
 
         [BindProperty]
-        public Models.News News { get; set; } = default!;
+        public Models.EmergencyAlert Alert { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || context.News == null)
+            if (id == null || context.EmergencyAlerts == null)
             {
                 return NotFound();
             }
 
-            var newList = await context.News.FirstOrDefaultAsync(u => u.NewsId == id);
+            var alert = await context.EmergencyAlerts.FirstOrDefaultAsync(u => u.AlertId == id);
 
-            if (newList == null)
+            if (alert == null)
             {
                 return NotFound();
             }
 
-            News = newList;
-            ViewData["News"] = News;
+            Alert = alert;
+            ViewData["News"] = Alert;
 
             return Page();
         }
@@ -49,24 +52,21 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.News
                 return Page();
             }
 
-            var newInDb = context.News.Find(id);
+            var alertDb = context.EmergencyAlerts.Find(id);
 
-            if (newInDb == null)
+            if (alertDb == null)
             {
                 return NotFound();
             }
 
             // Cập nhật các thuộc tính
-            newInDb.Title = News.Title;
-            newInDb.Content = News.Content;
-            newInDb.Source = News.Source;
-            newInDb.PublishedAt = News.PublishedAt;
+            alertDb.AlertMessage = Alert.AlertMessage;
 
-            News = newInDb;
+            Alert = alertDb;
 
-            ViewData["News"] = News;
+            ViewData["News"] = Alert;
 
-            context.News.Update(newInDb);
+            context.EmergencyAlerts.Update(alertDb);
             context.SaveChanges();
 
             TempData["UpdateSuccess"] = "Cập nhật thành công!";

@@ -9,7 +9,17 @@
     <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
     <div class="container" style="position: relative; z-index: 2; padding: 20px; max-width: 1400px; margin: 0 auto; width: 100%; padding-top: 73px;">
         <div class="profile-section" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin: 20px 0;">
-            <h1 style="margin-bottom: 20px; font-size: 24px; color: #333; text-align: center;">Tin tức</h1>
+            <h1 style="margin-bottom: 20px; font-size: 24px; color: #333; text-align: center;font-weight:bold">Tin tức</h1>
+            <div style="margin-bottom: 20px; text-align: center;">
+                <form method="get">
+                    <input type="text" name="searchNews" value="@Request.Query["searchNews"]"
+                           placeholder="Nhập tiêu đề tin tức cần tìm..."
+                           style="padding: 10px; border-radius: 5px; border: 1px solid #ccc; width: 300px;" />
+                    <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 5px;">
+                        Lọc
+                    </button>
+                </form>
+            </div>
             <div class="row">
                 @foreach (var news in Model.List)
                 {
@@ -34,7 +44,7 @@
             <nav aria-label="Page navigation">
                 <ul class="pagination justify-content-center">
                     <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
-                        <a class="page-link" asp-page="/user/ListNews" asp-route-pageNumber="@(Model.CurrentPage - 1)">Previous</a>
+                        <a class="page-link" asp-page="/user/ListNews" asp-route-pageNumber="@(Model.CurrentPage - 1)">Trước</a>
                     </li>
                     @for (int i = 1; i <= Model.TotalPages; i++)
                     {
@@ -43,7 +53,7 @@
                         </li>
                     }
                     <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
-                        <a class="page-link" asp-page="/user/ListNews" asp-route-pageNumber="@(Model.CurrentPage + 1)">Next</a>
+                        <a class="page-link" asp-page="/user/ListNews" asp-route-pageNumber="@(Model.CurrentPage + 1)">Tiếp</a>
                     </li>
                 </ul>
             </nav>

@@ -1,0 +1,22 @@
+﻿@page "{id:int}"
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.Blog.DetailBlogModel
+
+@{
+    ViewData["Title"] = "Blog Details";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <h3 class="fw-bold mb-3">Chi tiết</h3>
+    <div class="card">
+        <div class="card-header">
+            <h4>@Model.Blog.Title</h4>
+            <p><strong>Ngày tạo:</strong> @Model.Blog.CreatedAt?.ToString("dd/MM/yyyy")</p>
+            <p><strong>Ngày cập nhật:</strong> @(Model.Blog.UpdatedAt?.ToString("dd/MM/yyyy") ?? "Chưa có")</p>
+        </div>
+        <div class="card-body">
+            <p><strong></strong> @Html.Raw(Model.Blog.Content)</p>
+           
+        </div>
+    </div>
+</div>

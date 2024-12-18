@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -7,6 +8,8 @@ using System.Composition;
 
 namespace NaturalDisasterInformationSystem.Pages.User
 {
+    [Authorize]
+
     public class ReportViolationModel : PageModel
     {
         private readonly DO_ANContext context;
@@ -36,7 +39,7 @@ namespace NaturalDisasterInformationSystem.Pages.User
             // Ki?m tra n?u campaign không t?n t?i
             if (campaign == null)
             {
-                return NotFound("Chi?n d?ch không t?n t?i.");
+                return NotFound("Chien dich khong ton tai.");
             }
 
             ViewData["Reports"] = campaign;
@@ -52,19 +55,19 @@ namespace NaturalDisasterInformationSystem.Pages.User
             }
 
             reports.CreatedAt = DateTime.Now;
-            reports.Status = "pending";
+            reports.Status = "dang xu ly";
             reports.Reason = Reason;
             try
             {
                 context.Reports.Add(reports);
                 context.SaveChanges();
 
-                TempData["SuccessMessage"] = "Báo cáo c?a b?n ?ã ???c g?i thành công.";
-                return RedirectToPage("./ListCampaignUser");
+                TempData["SuccessMessage"] = "Bao cao da gui thanh cong";
+                return RedirectToPage("/User/DetailCampaignUser", new { dcu_id = reports.CampaignId });
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError(string.Empty, $"L?i khi g?i báo cáo: {ex.Message}");
+                ModelState.AddModelError(string.Empty, $"Loi gui bao cao: {ex.Message}");
                 return Page();
             }
         }

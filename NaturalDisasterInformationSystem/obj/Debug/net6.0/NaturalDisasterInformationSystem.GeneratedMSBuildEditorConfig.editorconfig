@@ -9,243 +9,299 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = NaturalDisasterInformationSystem
 build_property.RootNamespace = NaturalDisasterInformationSystem
-build_property.ProjectDir = D:\ki9\do an\Report\sep490_g95\NaturalDisasterInformationSystem\
+build_property.ProjectDir = C:\Users\Admin\Desktop\Code_final\sep490_g95\NaturalDisasterInformationSystem\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\ki9\do an\Report\sep490_g95\NaturalDisasterInformationSystem
+build_property.MSBuildProjectDirectory = C:\Users\Admin\Desktop\Code_final\sep490_g95\NaturalDisasterInformationSystem
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/ChangePass.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/ChangePass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxDaGFuZ2VQYXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/ForgotPassword.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/Denied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/Login.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/Logout.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/Profile.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/Register.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/reset_pass.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/reset_pass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxyZXNldF9wYXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/VerifyOTP.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Account/VerifyOTP.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxWZXJpZnlPVFAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/approved/ApprovedCharity.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/approved/ApprovedCharity.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cYXBwcm92ZWRcQXBwcm92ZWRDaGFyaXR5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/approved/DetailApprovedCharity.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/approved/DetailApprovedCharity.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cYXBwcm92ZWRcRGV0YWlsQXBwcm92ZWRDaGFyaXR5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Detail.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Blog/CreateBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cQmxvZ1xDcmVhdGVCbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Blog/DeleteBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cQmxvZ1xEZWxldGVCbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Blog/DetailBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cQmxvZ1xEZXRhaWxCbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Blog/EditBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cQmxvZ1xFZGl0QmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Blog/ListBlogAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cQmxvZ1xMaXN0QmxvZ0FkbWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cRGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Index.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/List.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cTGlzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Profile.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Update.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/SOS/ListSosAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cU09TXExpc3RTb3NBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Story/ListStoryAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cU3RvcnlcTGlzdFN0b3J5QWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Admin/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWRtaW5cVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Alerts/Create.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Alerts/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWxlcnRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Alerts/Delete.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Alerts/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWxlcnRzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Alerts/Detail.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Alerts/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWxlcnRzXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Alerts/Index.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Alerts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWxlcnRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Alerts/Update.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Alerts/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQWxlcnRzXFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/AddCampaign.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/AddCampaign.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQ2hhcml0eVxBZGRDYW1wYWlnbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/DetailCampaign.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/DetailCampaign.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQ2hhcml0eVxEZXRhaWxDYW1wYWlnbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/ListCampaign.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/ListCampaign.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQ2hhcml0eVxMaXN0Q2FtcGFpZ24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/ListDonation.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/ListDonation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQ2hhcml0eVxMaXN0RG9uYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/UpdateCampaign.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/UpdateCampaign.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQ2hhcml0eVxVcGRhdGVDYW1wYWlnbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/Update_Information.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/Update_Information.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQ2hhcml0eVxVcGRhdGVfSW5mb3JtYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/VolunteerRegistrationDetail.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/VolunteerRegistrationDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQ2hhcml0eVxWb2x1bnRlZXJSZWdpc3RyYXRpb25EZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/VolunteerRegistrationList.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Charity/VolunteerRegistrationList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcQ2hhcml0eVxWb2x1bnRlZXJSZWdpc3RyYXRpb25MaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/News/Create.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/News/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcTmV3c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/News/Delete.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/News/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcTmV3c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/News/Detail.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/News/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcTmV3c1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/News/Index.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/News/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcTmV3c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/News/Update.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/News/Update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcTmV3c1xVcGRhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Reports/Detail.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Reports/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcUmVwb3J0c1xEZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Reports/Index.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Reports/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcUmVwb3J0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcVmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Views/Shared/_LayoutUser.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Areas/Views/Shared/_LayoutUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJlYXNcVmlld3NcU2hhcmVkXF9MYXlvdXRVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Error.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Index.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Map/Map_disaster.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Map/Map_disaster.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFwXE1hcF9kaXNhc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Privacy.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/DetailCampaignUser.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxBYm91dFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/DetailBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxEZXRhaWxCbG9nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/DetailCampaignUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxEZXRhaWxDYW1wYWlnblVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/DetailSos.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/DetailNews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxEZXRhaWxOZXdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/DetailSos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxEZXRhaWxTb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/DisasterDetail.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/DisasterDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxEaXNhc3RlckRldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/EmailAlerts.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/EmailAlerts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxFbWFpbEFsZXJ0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/FinanceReport.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/FinanceReport.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxGaW5hbmNlUmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/Home.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/Home.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxIb21lLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ListCampaignUser.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ListBlog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMaXN0QmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ListCampaignUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMaXN0Q2FtcGFpZ25Vc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ListNews.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ListDisaster.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMaXN0RGlzYXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ListNews.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMaXN0TmV3cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ProfileCharity.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ListSos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxMaXN0U29zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ProfileCharity.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxQcm9maWxlQ2hhcml0eS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/RegisterCharity.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/RegisterCharity.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxSZWdpc3RlckNoYXJpdHkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ReportViolation.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/ReportViolation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxSZXBvcnRWaW9sYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/SupportCampaignU.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/SupportCampaignU.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxTdXBwb3J0Q2FtcGFpZ25VLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/User/VolunteerSignup.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/User/VolunteerSignup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxWb2x1bnRlZXJTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/_ViewImports.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/_ViewStart.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/ki9/do an/Report/sep490_g95/NaturalDisasterInformationSystem/Pages/Shared/_Layout.cshtml]
+[C:/Users/Admin/Desktop/Code_final/sep490_g95/NaturalDisasterInformationSystem/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2npv5y9y92

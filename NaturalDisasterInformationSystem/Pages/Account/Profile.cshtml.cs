@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -6,6 +7,7 @@ using NaturalDisasterInformationSystem.Models;
 
 namespace NaturalDisasterInformationSystem.Pages.Account
 {
+    [Authorize]
     public class ProfileModel : PageModel
     {
         private readonly DO_ANContext _context;
@@ -41,7 +43,27 @@ namespace NaturalDisasterInformationSystem.Pages.Account
             {
                 return NotFound();
             }
+            // Check if the username is already taken by another user
+            var existingUser = _context.Users.FirstOrDefault(u => u.Username == username && u.UserId != uid);
+            if (existingUser != null)
+            {
+                TempData["ErrorMessage"] = "Ten tai khoan da ton tai.Vui long chon ten khac.";
+                return RedirectToPage("Profile", new { uid = user.UserId });
+            }
+            string phoneNumberInput = phonenumber?.Trim(); // Lo?i b? kho?ng tr?ng n?u có
 
+            // Ki?m tra xem s? ?i?n tho?i có ???c nh?p vào hay không
+            if (string.IsNullOrWhiteSpace(phoneNumberInput))
+            {
+                return RedirectToPage("Profile", new { uid = user.UserId });
+            }
+
+            // Ki?m tra ?? dài và các ký t? h?p l?
+            if (phoneNumberInput.Length != 10 || !phoneNumberInput.All(char.IsDigit))
+            {
+                TempData["ErrorMessage"] = "So dien thoai phai co 10 chu so va khong co ki tu dac biet";
+                return RedirectToPage("Profile", new { uid = user.UserId });
+            }
             // Update user properties
             user.Email = email;
             user.Username = username;

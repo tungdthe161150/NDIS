@@ -59,7 +59,7 @@
 
                     <div class="form-group">
                         <label for="GoalAmount">Số tiền mục tiêu (VND)</label>
-                        <input type="text" name="GoalAmount" class="form-control" value="@Model.Campaign.GoalAmount" required />
+                        <input type="number" name="GoalAmount" class="form-control" value="@Model.Campaign.GoalAmount" required min="0" />
 
                     </div>
                     <div class="form-group">
@@ -80,7 +80,7 @@
 
                     <div class="form-group">
                         <label for="RaisedAmount">Số tiền đã huy động (VND)</label>
-                        <input type="text" name="RaisedAmount" class="form-control" value="@Model.Campaign.RaisedAmount" required />
+                        <input type="number" name="RaisedAmount" class="form-control" value="@Model.Campaign.RaisedAmount" required min="0" />
 
                     </div>
 
@@ -96,6 +96,7 @@
                         <label for="Description">Mô Tả</label>
                         <div id="editor" style="min-height: 200px;overflow-y: auto;">@Html.Raw(Model.Campaign.Description)</div>
                         <input type="hidden" id="Description" name="Description" value="@Model.Campaign.Description" required />
+                        <span id="descriptionError" style="color: red; display: none;">Bạn phải nhập mô tả!</span>
 
                     </div>
 
@@ -131,8 +132,19 @@
     // Set initial content in Quill editor
     quill.clipboard.dangerouslyPasteHTML(`@Html.Raw(Model.Campaign.Description ?? "")`);
 
-    // Update hidden input whenever editor content changes
+    // Cập nhật nội dung vào input ẩn khi có thay đổi trong editor
     quill.on('text-change', function () {
-        document.getElementById('Description').value = quill.root.innerHTML;
+        document.getElementById('Description').value = quill.root.innerHTML.trim();
+        document.getElementById('descriptionError').style.display = 'none'; // Ẩn lỗi khi người dùng nhập
+    });
+
+    // Kiểm tra trước khi gửi biểu mẫu
+    document.querySelector('form').addEventListener('submit', function (e) {
+        const descriptionValue = quill.root.innerHTML.trim();
+        if (!descriptionValue || descriptionValue === '<p><br></p>') { // Kiểm tra nếu trống
+            e.preventDefault(); // Ngăn gửi biểu mẫu
+            document.getElementById('descriptionError').style.display = 'block'; // Hiển thị lỗi
+            quill.focus(); // Đưa con trỏ vào editor
+        }
     });
 </script>

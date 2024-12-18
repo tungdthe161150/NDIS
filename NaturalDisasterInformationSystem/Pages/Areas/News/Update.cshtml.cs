@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using NaturalDisasterInformationSystem.Models;
 
-namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.Alerts
+namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.News
 {
+    [Authorize(Policy = "Admin")]
+
     public class UpdateModel : PageModel
     {
         private readonly DO_ANContext context;
@@ -60,7 +63,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.Alerts
             newInDb.Title = News.Title;
             newInDb.Content = News.Content;
             newInDb.Source = News.Source;
-            newInDb.PublishedAt = News.PublishedAt;
+            newInDb.PublishedAt = DateTime.Now;
 
             News = newInDb;
 

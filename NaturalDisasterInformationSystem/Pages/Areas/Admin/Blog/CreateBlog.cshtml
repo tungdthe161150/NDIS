@@ -1,0 +1,52 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.Blog.CreateBlogModel
+@{
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+    var userId = HttpContext.Session.GetString("UserId") ?? Request.Cookies["UserId"];
+
+}
+
+<div class="container">
+    <h1>Thêm Blog mới</h1>
+    <a asp-page="./Index">Quay lại</a>
+    <form method="post" asp-page-handler="CB">
+        <div class="form-group">
+            <label asp-for="DisasterBlog.Title">Tiêu đề (Title):</label>
+            <input asp-for="DisasterBlog.Title" class="form-control" required />
+            <input asp-for="DisasterBlog.UserId" value="@userId" class="form-control" required hidden />
+            <span asp-validation-for="DisasterBlog.Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DisasterBlog.Content">Nội dung (Content):</label>
+            <div id="editor" style="min-height: 200px; overflow-y: auto;"></div>
+            <input id="ContentInput" asp-for="DisasterBlog.Content" rows="5" class="form-control" hidden required>
+            <span asp-validation-for="DisasterBlog.Content" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Lưu (Save)</button>
+    </form>
+</div>
+
+<!-- Quill stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<!-- Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        modules: {
+            toolbar: [
+                [{ 'header': [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['link', 'image'],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                ['clean']
+            ]
+        }
+    });
+
+    // Update hidden input with Quill content
+    quill.on('text-change', function () {
+        document.getElementById('ContentInput').value = quill.root.innerHTML;
+    });
+</script>

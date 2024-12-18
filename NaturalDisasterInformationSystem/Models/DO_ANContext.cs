@@ -99,7 +99,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<CharityEvent>(entity =>
             {
                 entity.HasKey(e => e.EventId)
-                    .HasName("PK__charity___2370F727D9408A9B");
+                    .HasName("PK__charity___2370F7275A6FBE2A");
 
                 entity.ToTable("charity_events");
 
@@ -165,7 +165,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<DisasterBlog>(entity =>
             {
                 entity.HasKey(e => e.BlogId)
-                    .HasName("PK__disaster__2975AA28780536FB");
+                    .HasName("PK__disaster__2975AA2814FAC7BC");
 
                 entity.ToTable("disaster_blogs");
 
@@ -198,7 +198,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<DisasterStory>(entity =>
             {
                 entity.HasKey(e => e.StoryId)
-                    .HasName("PK__disaster__66339C562CA50300");
+                    .HasName("PK__disaster__66339C56BDA135DE");
 
                 entity.ToTable("disaster_story");
 
@@ -234,7 +234,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<DisasterStoryComment>(entity =>
             {
                 entity.HasKey(e => e.CommentId)
-                    .HasName("PK__disaster__E79576878BE336B3");
+                    .HasName("PK__disaster__E795768794440485");
 
                 entity.ToTable("disaster_story_comments");
 
@@ -271,7 +271,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<DocumentImg>(entity =>
             {
                 entity.HasKey(e => e.PhotoId)
-                    .HasName("PK__document__CB48C83D6A8204AC");
+                    .HasName("PK__document__CB48C83D10558331");
 
                 entity.ToTable("document_img");
 
@@ -293,7 +293,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<EmergencyAlert>(entity =>
             {
                 entity.HasKey(e => e.AlertId)
-                    .HasName("PK__emergenc__4B8FB03A320C810F");
+                    .HasName("PK__emergenc__4B8FB03AB5D1967E");
 
                 entity.ToTable("emergency_alerts");
 
@@ -310,7 +310,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<ForumComment>(entity =>
             {
                 entity.HasKey(e => e.CommentId)
-                    .HasName("PK__forum_co__E7957687C4E3C0C4");
+                    .HasName("PK__forum_co__E7957687AFC6FA92");
 
                 entity.ToTable("forum_comments");
 
@@ -345,7 +345,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<ForumPost>(entity =>
             {
                 entity.HasKey(e => e.PostId)
-                    .HasName("PK__forum_po__3ED78766B70E53FD");
+                    .HasName("PK__forum_po__3ED78766700CA192");
 
                 entity.ToTable("forum_posts");
 
@@ -384,7 +384,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<FundraisingCampaign>(entity =>
             {
                 entity.HasKey(e => e.CampaignId)
-                    .HasName("PK__fundrais__905B681CE6F508FD");
+                    .HasName("PK__fundrais__905B681C8CF2ED5E");
 
                 entity.ToTable("fundraising_campaigns");
 
@@ -438,7 +438,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<FundraisingDonation>(entity =>
             {
                 entity.HasKey(e => e.DonationId)
-                    .HasName("PK__fundrais__296B91DC9E035E55");
+                    .HasName("PK__fundrais__296B91DC22B4ED9C");
 
                 entity.ToTable("fundraising_donations");
 
@@ -565,9 +565,7 @@ namespace NaturalDisasterInformationSystem.Models
                     .HasColumnType("datetime")
                     .HasColumnName("created_at");
 
-                entity.Property(e => e.Reason)
-                    .HasColumnType("text")
-                    .HasColumnName("reason");
+                entity.Property(e => e.Reason).HasColumnName("reason");
 
                 entity.Property(e => e.Status)
                     .HasMaxLength(50)
@@ -625,7 +623,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<So>(entity =>
             {
                 entity.HasKey(e => e.SosId)
-                    .HasName("PK__sos__1B03286400D822C9");
+                    .HasName("PK__sos__1B0328646BA27958");
 
                 entity.ToTable("sos");
 
@@ -661,7 +659,7 @@ namespace NaturalDisasterInformationSystem.Models
             {
                 entity.ToTable("users");
 
-                entity.HasIndex(e => e.Email, "UQ__users__AB6E61645C1C78F9")
+                entity.HasIndex(e => e.Email, "UQ__users__AB6E61647574D679")
                     .IsUnique();
 
                 entity.Property(e => e.UserId).HasColumnName("user_id");
@@ -725,7 +723,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<VolunteerHistory>(entity =>
             {
                 entity.HasKey(e => e.ProfileId)
-                    .HasName("PK__voluntee__AEBB701F3FF2DF1A");
+                    .HasName("PK__voluntee__AEBB701F29B494E2");
 
                 entity.ToTable("volunteer_history");
 
@@ -770,7 +768,7 @@ namespace NaturalDisasterInformationSystem.Models
             modelBuilder.Entity<VolunteersRegistration>(entity =>
             {
                 entity.HasKey(e => e.VolunteerRegistrationId)
-                    .HasName("PK__voluntee__A83983E86E867026");
+                    .HasName("PK__voluntee__A83983E86E62D109");
 
                 entity.ToTable("volunteers_registrations");
 

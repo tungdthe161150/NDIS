@@ -1,4 +1,4 @@
-﻿@page
+@page
 @model NaturalDisasterInformationSystem.Pages.User.HomeModel
 @{
 
@@ -169,19 +169,18 @@
     }
 
     .scroll-container {
-        display: inline-block;
-        width: max-content;
+      
     }
 </style>
   
-<nav class=" navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar1" style="margin-top:50px">
+<nav class=" navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar1" style="margin-top:50px;z-index:2">
     <div>
         <h2>
             @if (Model.Disasters != null && Model.Disasters.Count > 0)
             {
                 var dateNow = DateTime.Now; // Get the current date and time
                 <div style="overflow: hidden; white-space: nowrap; width: 100%;">
-                    <div style="display: inline-block; opacity: 1; animation: scroll 30s linear infinite;color:wheat">
+                    <div style="display: inline-block; opacity: 1; animation: scroll 50s linear infinite;color:#FFD700">
                         @foreach (var disaster in Model.Disasters)
                         {
                             // Check if TimeUpdate is within the last 5 days
@@ -192,8 +191,8 @@
                                     {
                                         <strong>@disaster.DisasterDetails.NameDisaster</strong>
                                     } ở @disaster.AffectedArea .Đây là thiên tai cấp @disaster.Level .
-                                    <strong>Thời gian bắt đầu:</strong> @disaster.TimeStart.ToString("g")
-                                    <strong>Thời gian cập nhật:</strong> @disaster.TimeUpdate.ToString("g")
+@*                                      <strong>Thời gian bắt đầu:</strong> @disaster.TimeStart.ToString("g")
+ *@                                    <strong>Thời gian cập nhật:</strong> @disaster.TimeUpdate.ToString("g")
 
                                 </div>
                             }
@@ -221,7 +220,7 @@
                background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
 
     <div class="container"
-         style="position: relative; z-index: 2; padding: 20px; max-width: 1400px;
+         style="position: relative; z-index: 1; padding: 20px; max-width: 1400px;
                margin: 0 auto; width: 100%; padding-top: 73px;">
         @* <div class="container">
             <h2>Submit Your Report</h2>
@@ -310,9 +309,9 @@
          }
       
         <div>
-            <div id="windy" style="width: 75%; height: 700px; float: right; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);"></div> <!-- Vùng chứa bản đồ -->
+            <div id="windy" style="width: 100%; height: 700px; float: right; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);"></div> <!-- Vùng chứa bản đồ -->
 
-            <div id="warningPanel" style="width: 25%; height: 700px; overflow-y: auto; float: left; background-color: #f5f5f5; padding: 15px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+@*             <div id="warningPanel" style="width: 25%; height: 700px; overflow-y: auto; float: left; background-color: #f5f5f5; padding: 15px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
                 <div class="scrolling-container" style="animation: scrollUp 20s linear infinite; position: relative;">
                     <!-- Kiểm tra và hiển thị cảnh báo nếu có dữ liệu thiên tai -->
                     @if (Model.Disasters != null && Model.Disasters.Count > 0)
@@ -355,7 +354,7 @@
 
                 </div>
             </div>
-        </div>
+ *@        </div>
 
        
         
@@ -394,69 +393,143 @@
     </div>
 </div>
 
-<section class="ftco-section" style="background-color: #330000; padding: 30px 0;">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-            <div class="col-md-10 heading-section ftco-animate text-center">
-                <div class="emergency-banner" style="background-color: #ff0000; padding: 20px; border-radius: 10px;">
-                    <h2 class="mb-4" style="color: #fff; font-size: 36px; font-weight: bold; animation: pulse 1s infinite;">
-                        ⚠️ KHẨN CẤP! DANH SÁCH NGƯỜI CẦN HỖ TRỢ ⚠️
-                    </h2>
-                    <p style="color: #fff; font-size: 18px; font-weight: bold;">
-                        Nếu bạn ở gần, vui lòng giúp đỡ ngay lập tức! Mọi sự hỗ trợ đều vô cùng quý giá!
-                    </p>
+<section class="ftco-section" style="background-color: #181818; padding: 30px 0;">
+    <div class="container-fluid" style="display:flex;justify-content:center">
+        <div class="row" style="max-width:1360px">
+            <!-- Panel Cảnh Báo -->
+            <div class="col-lg-4" style="background-color: #;  border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); overflow-y: auto;max-width:410px;padding:inherit">
+                <div class="">
+                    <div class="">
+                        <div class="" style="background-color: #FFF0F5; padding: 11px; border-radius: 10px;text-align:center">
+                            <h2 style="color: #FF0000; font-size: 30px; font-weight: bold; animation: pulse 1s infinite;">
+                                ⚠️CẢNH BÁO THIÊN TAI⚠️
+                            </h2>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="row d-flex" style="overflow-x: auto; white-space: nowrap; display: flex; flex-wrap: nowrap; gap: 10px; padding: 10px;">
-            @if (Model.Reports != null && Model.Reports.Any())
-            {                @foreach (var report in Model.Reports)
-                {
-                    var currentTime = DateTime.Now;
-                    var reportTime = report.CreateTime ?? DateTime.MinValue;
-                    var daysDifference = (currentTime - reportTime).TotalDays;
+                <div >
+                    @if (Model.Disasters != null && Model.Disasters.Count > 0)
+                    {
+                        var dateNow = DateTime.Now;
+                        var recentDisasters = Model.Disasters
+                        .OrderByDescending(d => d.TimeUpdate) // Sắp xếp giảm dần theo thời gian cập nhật
+                        .Take(4) // Lấy tối đa 5 phần tử
+                        .ToList();
 
-                    string backgroundColor;
-                    if (daysDifference < 1)
-                    {
-                        backgroundColor = "#ff0000";
-                    }
-                    else if (daysDifference < 2)
-                    {
-                        backgroundColor = "#F7FF00";
+                        var hasRecentDisaster = recentDisasters.Any();
+                        @if (hasRecentDisaster)
+                        {
+                            foreach (var disaster in recentDisasters)
+                            {
+                                var levelClass = disaster.Level <= 3 ? "low-level" :
+                                (disaster.Level > 3 && disaster.Level <= 7) ? "moderate-level" : "high-level";
+
+                                <div class=" @levelClass" style=" border-radius: 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); font-size: 0.9rem;border-top: solid;padding-left:10px;
+background-color: @(disaster.Level <= 3 ? "#d4edda" : (disaster.Level <= 7 ? "#fff3cd" : "#f8d7da"));
+border-left: 5px solid @(disaster.Level <= 3 ? "#28a745" : (disaster.Level <= 7 ? "#ffc107" : "#dc3545"));">
+
+                                    <strong>Loại hình:</strong> @disaster.DisasterDetails?.NameDisaster <br>
+                                    <strong>Khu vực:</strong> @disaster.AffectedArea <br>
+                                    <strong>Thời gian:</strong> @disaster.TimeUpdate.ToString("g") <br>
+                                    <strong>Cấp độ:</strong> @disaster.Level
+                                    <form method="post" asp-page-handler="AddDisaster">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="disasterName" value="@disaster.DisasterDetails?.NameDisaster" />
+                                        <input type="hidden" name="location" value="@disaster.AffectedArea" />
+                                        <input type="hidden" name="description" value="@disaster.Description" />
+                                        <input type="hidden" name="severityLevel" value="@disaster.Level" />
+                                        <input type="hidden" name="idjson" value="@disaster.Id" />
+                                        <button type="submit" style=" background: none; border: none;color:blue;text-decoration: underline;cursor: pointer;padding: 0; margin-right: 10px;">Chi tiết</button>
+                                    </form>
+
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div style="display: flex; justify-content: center; align-items: center; height: 200px;">
+                                <p style="color: #666; font-size: 0.9rem; text-align: center;">Không có thông tin thiên tai gần đây.</p>
+                            </div>
+                        }
                     }
                     else
                     {
-                        backgroundColor = "#13EF4D";
+                        <p style="color: #666; font-size: 0.9rem; text-align: center;">Không có thông tin thiên tai gần đây.</p>
                     }
-                    <div class="emergency-card" style="border: 3px solid @backgroundColor; border-radius: 8px; animation: alertBlink 1s infinite; margin-right: 10px; flex: 0 0 250px; max-width: 300px; background-color: #f5f5f5; padding: 10px;">
-                        <!-- Phần đầu báo cáo -->
-                        <div class="block-20" style="background-color: #ffcccc; height: 30px; text-align: center; display: flex; justify-content: center; align-items: center; position: relative; font-size: 16px; color: #666; padding: 5px;">
-                            <span>🚨</span>
-                            <div class="badge badge-danger" style="position: absolute; top: 5px; right: 5px; font-size: 12px; color: white; background-color: red; padding: 3px 6px; border-radius: 5px; animation: pulse 1s infinite;">KHẨN CẤP</div>
-                        </div>
+                </div>
+<div style="padding-top:10px">
+                    <a asp-page="/User/ListDisaster" style="color: white; font-weight: bold; text-decoration: underline; font-size: 12px;"> Xem Tất Cả</a>
 
-                        <!-- Nội dung -->
-                        <div class="text" style="font-size: 12px; color: #333; font-weight: bold; margin-top: 10px;">
-                            <div style="margin-bottom: 5px;">
-                                <span style="color: #ff0000; font-weight: bold;">🕒 Thời gian: @report.CreateTime?.ToString("'Ngày 'd' Tháng' MM, yyyy 'lúc' HH:mm")</span>
-                            </div>
-                            <p style="color: #555; margin-bottom: 10px; font-size: 14px; word-wrap: break-word; white-space: normal; overflow-wrap: break-word;">@report.Content</p>
-                            <a asp-page="/User/DetailSos" asp-route-s_id="@report.SosId" style="color: blue; font-weight: bold; text-decoration: underline; font-size: 12px;">Chi Tiết</a>
+</div>
+            </div>
+
+            <!-- Danh sách khẩn cấp -->
+            <div class="col-lg-8" style="max-width:950px">
+                <div class="">
+                    <div class="">
+                        <div class="" style="background-color: #FFF0F5; padding: 16px; border-radius: 10px;text-align:center">
+                            <h2 style="color: #FF0000; font-size: 34px; font-weight: bold; animation: pulse 1s infinite;">
+                                ⚠️ KHẨN CẤP! DANH SÁCH NGƯỜI CẦN HỖ TRỢ ⚠️
+                            </h2>
+                            <p style="color: #FF0000; font-size: 18px; font-weight: bold;">
+                                Nếu bạn ở gần, vui lòng giúp đỡ ngay lập tức! Mọi sự hỗ trợ đều vô cùng quý giá!
+                            </p>
                         </div>
                     </div>
-                }
-
-            }
-            else
-            {
-                <div style="width: 100%; text-align: center; font-size: 16px; font-weight: bold; color: #888; padding: 20px; background-color: #fff; border-radius: 8px;">
-                    Không Có Lời Kêu Cứu Trong Mấy Ngày Gần Đây
                 </div>
-            }
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: start; width: 100%;">
+                    @if (Model.Reports != null && Model.Reports.Any())
+                    {
+                        int count = 0;
+                        @foreach (var report in Model.Reports)
+                        {
+                            if (count >= 6)
+                            {
+                                break;
+                            }
+                            var currentTime = DateTime.Now;
+                            var reportTime = report.CreateTime ?? DateTime.MinValue;
+                            var daysDifference = (currentTime - reportTime).TotalDays;
+
+                            string backgroundColor;
+                            if (daysDifference < 1)
+                            {
+                                backgroundColor = "#ff0000";
+                            }
+                            else if (daysDifference < 2)
+                            {
+                                backgroundColor = "#F7FF00";
+                            }
+                            else
+                            {
+                                backgroundColor = "#13EF4D";
+                            }
+                            <div class="emergency-card" style="flex: 0 0 calc(33.33% - 10px); border: 3px solid @backgroundColor; border-radius: 8px; animation: alertBlink 1s infinite; background-color: #f5f5f5; padding: 10px; margin-bottom: 10px;">
+                                <div class="block-20" style="background-color: #ffcccc; height: 30px; text-align: center; display: flex; justify-content: center; align-items: center; position: relative; font-size: 16px; color: #666; padding: 5px;">
+                                    <span>🚨</span>
+                                    <div class="badge badge-danger" style="position: absolute; top: 5px; right: 5px; font-size: 12px; color: white; background-color: red; padding: 3px 6px; border-radius: 5px; animation: pulse 1s infinite;">KHẨN CẤP</div>
+                                </div>
+                                <div class="text" style="font-size: 12px; color: #333; font-weight: bold; margin-top: 10px;">
+                                    <div style="margin-bottom: 5px;">
+                                        <span style="color: #ff0000; font-weight: bold;">🕒 Thời gian: @report.CreateTime?.ToString("'Ngày 'dd' Tháng' MM, yyyy 'lúc' HH:mm")</span>
+                                    </div>
+                                    <p style="color: #555; margin-bottom: 10px; font-size: 14px; word-wrap: break-word; white-space: normal; overflow-wrap: break-word;">@report.Content</p>
+                                    <a asp-page="/User/DetailSos" asp-route-s_id="@report.SosId" style="color: blue; font-weight: bold; text-decoration: underline; font-size: 12px;">Chi Tiết</a>
+                                </div>
+                            </div>
+                            count++;
+                        }
+                    }
+                    else
+                    {
+                        <div style="width: 100%; text-align: center; font-size: 16px; font-weight: bold; color: #888; padding: 20px; background-color: #fff; border-radius: 8px;">
+                            Không Có Lời Kêu Cứu Trong Mấy Ngày Gần Đây
+                        </div>
+                    }
+                </div>                    <a asp-page="/User/ListSos" style="color: white; font-weight: bold; text-decoration: underline; font-size: 12px;"> Xem Tất Cả</a>
+
+            </div>
         </div>
-
-
     </div>
 </section>
 
@@ -561,7 +634,7 @@
         <input type="hidden" name="description" value="${disaster.description}" />
         <input type="hidden" name="severityLevel" value="${disaster.level}" />
             <input type="hidden" name="idjson" value="${disaster.id}" />
-        <button type="submit" class="btn btn-primary">View Details</button>
+        <button type="submit" class="btn btn-primary">Chi tiết</button>
     </form>
 
            

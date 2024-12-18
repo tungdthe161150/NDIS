@@ -1,5 +1,5 @@
 ﻿@page
-@model NaturalDisasterInformationSystem.Pages.Areas.Admin.News.UpdateModel
+@model NaturalDisasterInformationSystem.Pages.Areas.Alerts.UpdateModel
 @{
     ViewData["Title"] = "Management News";
     Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
@@ -14,31 +14,22 @@
             <form id="updateForm" method="post">
                 <!-- Username -->
                 <div class="form-group mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="News.Title" value="@Model.News.Title" required placeholder="Enter title" />
+                    <label for="title" class="form-label">Nội dung</label>
+                    <input type="text" class="form-control" id="title" name="Alert.AlertMessage" value="@Model.Alert.AlertMessage" required placeholder="Enter title" />
                 </div>
 
                 <!-- Email -->
                 <div class="form-group mb-3">
-                    <label for="content" class="form-label">Content</label>
-                    <input type="text" class="form-control" id="content" name="News.Content" value="@Model.News.Content" required placeholder="Enter content" />
+                    <label for="content" class="form-label">Ngày tạo</label>
+                    <input type="text" class="form-control" id="content" name="Alert.CreatedAt" value="@Model.Alert.CreatedAt" required placeholder="Enter content" />
                 </div>
 
-                <!-- Full Name -->
-                <div class="form-group mb-3">
-                    <label for="source" class="form-label">Source</label>
-                    <input type="text" class="form-control" id="source" name="News.Source" value="@Model.News.Source" required placeholder="Enter source" />
-                </div>
-
-                <!-- Phone Number -->
-                <div class="form-group mb-3">
-                    <label for="publishedAt" class="form-label">Published At</label>
-                    <input type="text" class="form-control" id="publishedAt" name="News.PublishedAt" value="@Model.News.PublishedAt" required placeholder="Enter published at" />
-                </div>
                 <!-- Submit Button -->
                 <div class="text-center">
                     <input type="submit" class="btn btn-success px-5 py-2" value="Cập nhật" id="saveBtn" />
-                    <input type="submit" asp-page="./Index" class="btn btn-success px-5 py-2" value="Quay lại" />
+                    <a asp-page="./Index" class="btn btn-secondary px-4 py-2">
+                        <i class="fas fa-arrow-left"></i> Quay lại
+                    </a>
                 </div>
             </form>
         </div>

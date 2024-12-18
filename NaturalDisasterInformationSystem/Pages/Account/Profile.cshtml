@@ -119,10 +119,14 @@
                 </div>
 
             <div class="profile-form">
-              
+                    @if (TempData["ErrorMessage"] != null)
+                    {
+                        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+                    }
+
                     <div class="form-group">
                         <label>Tên tài khoản:</label>
-                        <input type="text" name="username" class="form-control" value="@Model.UserProfile.Username" />
+                        <input type="text" name="username" class="form-control" value="@Model.UserProfile.Username" required/>
                     </div>
                     <div class="form-group">
                         <label>Họ và tên:</label>

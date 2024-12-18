@@ -8,7 +8,7 @@
 <div class="container">
     <div class="page-inner">
         <div class="page-header">
-            <h3 class="fw-bold mb-3">Quản lý thông báo</h3>
+            <h3 class="fw-bold mb-3">Quản lý cảnh báo</h3>
             <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                     <a href="#">
@@ -36,14 +36,7 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>STT</th>
-                                        <th>Nội dung</th>
-                                        <th>Ngày tạo</th>
-                                        <th></th>
-                                    </tr>
-                                </tfoot>
+                              
                                 <tbody>
                                     @foreach (var alerts in Model.EmergencyAlerts)
                                     {
@@ -52,10 +45,9 @@
                                             <td>@(alerts.AlertMessage.Length > 100 ? alerts.AlertMessage.Substring(0, 100) + "..." : alerts.AlertMessage)</td>
                                             <td>@alerts.CreatedAt?.ToString("dd/MM/yyyy")</td>
                                             <td>
-                                                <a href="javascript:void(0)" onclick="showDetailModal('@alerts.AlertId')">Detail</a>
-                                                <a asp-page="./Update" asp-route-id="@alerts.AlertId">Update</a>
-                                                <a asp-page="./Delete" asp-route-id="@alerts.AlertId">Delete</a>
-                                                <a href="javascript:void(0)" onclick="confirmDelete('@alerts.AlertId')">Delete</a>
+                                                <a href="javascript:void(0)" onclick="showDetailModal('@alerts.AlertId')">Chi tiết</a>
+                                                @* <a asp-page="./Update" asp-route-id="@alerts.AlertId">Cập nhật</a> *@
+                                                <a asp-page="./Delete" asp-route-id="@alerts.AlertId">Xóa</a>
                                             </td>
                                         </tr>
                                     }
@@ -94,46 +86,6 @@
                     icon: 'error',
                     title: 'Lỗi',
                     text: 'Không thể tải chi tiết tin tức.'
-                });
-            }
-        });
-    }
-
-    function confirmDelete(newsId) {
-        Swal.fire({
-            title: '',
-            text: "Bạn muốn xóa thông tin này đúng không",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Đồng ý',
-            cancelButtonText: 'Hủy bỏ'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    url: '/Areas/News/Delete?id=' + newsId,
-                    method: 'POST',
-                    headers: {
-                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
-                    },
-                    success: function (response) {
-                        Swal.fire(
-                            'Đã xóa',
-                            'Thông tin đã được xóa',
-                            'success'
-                        ).then(() => {
-                            // Reload lại trang sau khi xóa thành công
-                            location.reload();
-                        });
-                    },
-                    error: function () {
-                        Swal.fire(
-                            'Lỗi!',
-                            'Đã xảy ra sự cố khi xóa tin tức.',
-                            'error'
-                        );
-                    }
                 });
             }
         });

@@ -1,0 +1,54 @@
+﻿@page "{id:int}"
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.Blog.EditBlogModel
+
+@{
+    ViewData["Title"] = "Edit Blog";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    <h3 class="fw-bold mb-3">Chỉnh sửa</h3>
+    <form method="post">
+        <input type="text" hidden name="Blog.BlogId" value="@Model.Blog.BlogId" class="form-control" />
+
+        <div class="form-group">
+            <label for="Blog_Title">Tiêu đề</label>
+            <input type="text" id="Blog_Title" name="Blog.Title" value="@Model.Blog.Title" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="Blog_Content">Nội dung</label>
+            <div id="editor" style="min-height: 200px; overflow-y: auto;">
+                @Html.Raw(Model.Blog.Content) <!-- Display initial value -->
+            </div>
+            <input id="ContentInput" name="Blog.Content" class="form-control" hidden>
+        </div>
+        <button type="submit" class="btn btn-success">Save Changes</button>
+    </form>
+
+</div>
+<!-- Quill stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<!-- Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        modules: {
+            toolbar: [
+                [{ 'header': [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['link', 'image'],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                ['clean']
+            ]
+        }
+    });
+
+    // Populate Quill editor with initial content
+    quill.root.innerHTML = '@Html.Raw(Model.Blog.Content)';
+
+    // Update hidden input with Quill content
+    quill.on('text-change', function () {
+        document.getElementById('ContentInput').value = quill.root.innerHTML;
+    });
+</script>

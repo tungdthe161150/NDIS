@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using NaturalDisasterInformationSystem.Models;
 
-namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.News
+namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.Alerts
 {
+    [Authorize(Policy = "Admin")]
+
     public class DeleteModel : PageModel
     {
         private readonly DO_ANContext context;
@@ -15,7 +18,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.News
         }
 
         [BindProperty]
-        public Models.News News { get; set; } = default!;
+        public Models.EmergencyAlert Alert { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -24,31 +27,29 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.News
                 return NotFound();
             }
 
-            var news = await context.News.FirstOrDefaultAsync(m => m.NewsId == id);
+            var alert = await context.EmergencyAlerts.FirstOrDefaultAsync(m => m.AlertId == id);
 
-            if (news == null)
+            if (alert == null)
             {
                 return NotFound();
             }
             else
             {
-                News = news;
+                Alert = alert;
             }
             return Page();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || context.News == null)
+            if (id == null || context.EmergencyAlerts == null)
             {
                 return BadRequest("ID không hợp lệ.");
             }
 
-            var news = await context.News.FindAsync(id);
+            var alert = await context.EmergencyAlerts.FindAsync(id);
 
-            if (news == null)
+            if (alert == null)
             {
                 return NotFound("Không tìm thấy bản tin.");
             }
@@ -56,8 +57,8 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.News
             {
                 try
                 {
-                    News = news;
-                    context.News.Remove(News);
+                    Alert = alert;
+                    context.EmergencyAlerts.Remove(Alert);
                     await context.SaveChangesAsync();
 
                     //return new JsonResult(new { success = true });

@@ -1,0 +1,54 @@
+﻿@page
+@model NaturalDisasterInformationSystem.Pages.Account.DeniedModel
+@{
+    ViewData["Title"] = "Opps";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutUser.cshtml";
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    .container {
+        text-align: center;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    .logo img {
+        width: 150px;
+    }
+    .error-code {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .error-message {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .back-link {
+        font-size: 16px;
+        color: #3c8dbc;
+        text-decoration: none;
+    }
+    .back-link:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="container">
+    <div class="logo">
+        <img src="~/uploads/images/logo3.png" alt="Logo">
+    </div>
+    <div class="error-code">404! Oops...</div>
+    <div class="error-message">Rất tiếc trang này không tồn tại.</div>
+    <a href="/User/Home" class="back-link">Quay lại trang chủ</a>
+</div>

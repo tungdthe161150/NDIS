@@ -14,31 +14,35 @@
             <form id="updateForm" method="post">
                 <!-- Username -->
                 <div class="form-group mb-3">
-                    <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title" name="News.Title" value="@Model.News.Title" required placeholder="Enter title" />
+                    <label for="title" class="form-label">Tiêu đề</label>
+                    <input type="text" class="form-control" id="title" name="News.Title" value="@Model.News.Title" required placeholder="Nhập tiêu đề" />
                 </div>
 
                 <!-- Email -->
                 <div class="form-group mb-3">
-                    <label for="content" class="form-label">Content</label>
-                    <input type="text" class="form-control" id="content" name="News.Content" value="@Model.News.Content" required placeholder="Enter content" />
+                    <label for="content" class="form-label">Nội dung</label>
+                    <div id="editor" style="min-height: 200px; overflow-y: auto;"></div>
+
+                    <input type="text" class="form-control" id="Description" name="News.Content" value="@Model.News.Content" required placeholder="Nhập nội dung" hidden />
                 </div>
 
                 <!-- Full Name -->
                 <div class="form-group mb-3">
-                    <label for="source" class="form-label">Source</label>
-                    <input type="text" class="form-control" id="source" name="News.Source" value="@Model.News.Source" required placeholder="Enter source" />
+                    <label for="source" class="form-label">Nguồn</label>
+                    <input type="text" class="form-control" id="source" name="News.Source" value="@Model.News.Source" required placeholder="Nhập Nguồn" />
                 </div>
 
                 <!-- Phone Number -->
                 <div class="form-group mb-3">
-                    <label for="publishedAt" class="form-label">Published At</label>
-                    <input type="text" class="form-control" id="publishedAt" name="News.PublishedAt" value="@Model.News.PublishedAt" required placeholder="Enter published at" />
+                    <label for="publishedAt" class="form-label">Ngày tạo</label>
+                    <input type="text" class="form-control" id="publishedAt" name="News.PublishedAt" value="@Model.News.PublishedAt" readonly required placeholder="Enter published at" />
                 </div>
                 <!-- Submit Button -->
                 <div class="text-center">
                     <input type="submit" class="btn btn-success px-5 py-2" value="Cập nhật" id="saveBtn" />
-                    <input type="submit" asp-page="./Index" class="btn btn-success px-5 py-2" value="Quay lại" />
+                    <a asp-page="./Index" class="btn btn-secondary px-4 py-2">
+                        <i class="fas fa-arrow-left"></i> Quay lại
+                    </a>
                 </div>
             </form>
         </div>
@@ -51,7 +55,15 @@
         document.getElementById('saveBtn').addEventListener('click', function (event) {
             event.preventDefault();
 
-            // Hiển thị SweetAlert2 để xác nhận
+            // Trigger HTML form validation
+            var form = document.getElementById('updateForm');
+            if (form.checkValidity() === false) {
+                // If form is invalid, show an alert or a custom message
+                Swal.fire('Thông báo', 'Vui lòng điền đầy đủ thông tin.', 'error');
+                return;  // Stop the process if the form is not valid
+            }
+
+            // Show SweetAlert2 to confirm submission
             Swal.fire({
                 title: 'Bạn có chắc chắn muốn cập nhật?',
                 icon: 'warning',
@@ -60,13 +72,47 @@
                 cancelButtonText: 'Hủy bỏ'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Nếu người dùng xác nhận, submit form
-                    document.getElementById('updateForm').submit();
+                    // If user confirms, submit the form
+                    form.submit();
                 } else {
-                    // Nếu người dùng nhấn 'Hủy bỏ', hiển thị thông báo đã hủy
+                    // If user cancels, show a cancel message
                     Swal.fire('Đã hủy', 'Cập nhật đã bị hủy', 'info');
                 }
             });
         });
+
     </script>
 }
+<!-- Quill stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<!-- Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+    // Initialize Quill editor
+    var quill = new Quill('#editor', {
+        theme: 'snow',
+        modules: {
+            toolbar: [
+                [{ 'header': [1, 2, false] }],
+                ['bold', 'italic', 'underline'],
+                ['link', 'image'],
+                [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                ['clean']
+            ]
+        }
+    });
+
+    // Load the content into Quill if the input field has a value (pre-populating from @Model.News.Content)
+    var content = '@Html.Raw(@Model.News.Content ?? "")';
+    quill.root.innerHTML = content; // Pre-populate Quill editor with existing content
+
+    // Sync Quill content with hidden input when content changes
+    quill.on('text-change', function () {
+        document.getElementById('Description').value = quill.root.innerHTML; // Sync the content with the hidden input
+    });
+
+    // Ensure that the hidden input is updated when the form is submitted
+    document.getElementById('updateForm').addEventListener('submit', function () {
+        document.getElementById('Description').value = quill.root.innerHTML;
+    });
+</script>

@@ -1,17 +1,73 @@
 ﻿@page
-@model NaturalDisasterInformationSystem.Pages.Areas.Admin.News.DeleteModel
+@model NaturalDisasterInformationSystem.Pages.Areas.Admin.Alerts.DeleteModel
 @{
-    ViewData["Title"] = "Management News";
+    ViewData["Title"] = "Management Alert";
     Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h1>Xóa</h1>
+<div class="container my-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-danger text-white text-center">
+        </div>
+        <div class="card-body">
+            <h5 class="text-center mb-4 text-danger">
+                <i class="fas fa-exclamation-circle"></i> Bạn có chắc chắn muốn xóa cảnh báo này không?
+            </h5>
 
-<h3>Bạn có muốn xóa không?</h3>
+            <!-- Thông tin bản tin -->
+            <div class="alert alert-warning">
+                <p><strong>Tiêu đề:</strong> <span class="text-dark">@Model.Alert.AlertMessage</span></p>
+            </div>
+            <div class="alert alert-light">
+                <p><strong>Nội dung:</strong> <span class="text-secondary">@Model.Alert.CreatedAt</span></p>
+            </div>
 
-<form method="post">
-    @Html.AntiForgeryToken()
-    <input type="hidden" asp-for="News.NewsId" />
-    <button type="submit" class="btn btn-danger">Xóa</button>
-    <a asp-page="Index" class="btn btn-secondary">Hủy</a>
-</form>
+            <!-- Form hành động -->
+            <div class="d-flex justify-content-center gap-3 mt-4">
+                <form method="post" id="deleteForm">
+                    <input type="hidden" asp-for="Alert.AlertId" />
+                    <button type="submit" class="btn btn-danger px-4 py-2" id="saveBtn">
+                        <i class="fas fa-trash"></i> Xóa
+                    </button>
+                </form>
+                <a asp-page="./Index" class="btn btn-secondary px-4 py-2">
+                    <i class="fas fa-arrow-left"></i> Quay lại
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (TempData["DeleteSuccess"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Thành công!</strong> @TempData["DeleteSuccess"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        document.getElementById('saveBtn').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Hiển thị SweetAlert2 để xác nhận
+            Swal.fire({
+                title: 'Bạn có chắc chắn muốn xóa?',
+                text: "Hành động này không thể hoàn tác!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Có, xóa!',
+                cancelButtonText: 'Hủy bỏ'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Nếu người dùng xác nhận, submit form
+                    document.getElementById('deleteForm').submit();
+                } else {
+                    Swal.fire('Đã hủy', 'Bạn đã hủy xóa cảnh báo.', 'info');
+                }
+            });
+        });
+    </script>
+}

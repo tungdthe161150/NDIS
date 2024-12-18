@@ -62,8 +62,12 @@ namespace NaturalDisasterInformationSystem.Pages.Account
             TempData["Password"] = Password;
             TempData["Email"] = Email;
             TempData["PhoneNumber"] = PhoneNumber;
-            TempData["OTP"] = otpCode;
-            TempData["OTPExpiry"] = DateTime.UtcNow.AddMinutes(10);
+            // Lưu OTP và thời gian hết hạn
+            var generatedOtp = otpCode;
+            HttpContext.Session.SetString("OTP", generatedOtp);
+            HttpContext.Session.SetString("OTPExpiry", DateTime.UtcNow.AddMinutes(5).ToString());
+            HttpContext.Session.SetString("Email", Email);
+
 
             // Gửi OTP qua email
             SendOtpEmail(Email, otpCode);

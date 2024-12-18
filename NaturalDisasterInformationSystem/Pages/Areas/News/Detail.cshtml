@@ -3,7 +3,7 @@
 @{
     var newList = ViewData["News"] as Models.News;
     ViewData["Title"] = "Management News";
-    Layout = "~/Pages/Areas/Views/Shared/_LayoutUser.cshtml";
+    Layout = "~/Pages/Areas/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <div class="container">
@@ -16,7 +16,7 @@
             <div class="card-body p-4">
                 <div class="info-container">
                     <div class="info-item">
-                        <h6 class="info-label">Mã Tin Tức</h6>
+                        <h6 class="info-label">STT</h6>
                         <p class="info-value">@newList.NewsId</p>
                     </div>
                     <div class="info-item">
@@ -25,10 +25,9 @@
                     </div>
                     <div class="info-item">
                         <h6 class="info-label">Nội Dung</h6>
-                        <div class="info-content">
-                            <p class="info-value">@newList.Content</p>
-                        </div>
+                        <p class="info-value">@Html.Raw(newList.Content)</p>
                     </div>
+
                     <div class="info-item">
                         <h6 class="info-label">Nguồn</h6>
                         <p class="info-value">@newList.Source</p>

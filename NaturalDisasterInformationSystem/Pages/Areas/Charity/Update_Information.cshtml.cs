@@ -29,7 +29,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
 
         public void OnGet(int pi_id, int vh_id)
         {
-            VolunteerHistory = _context.VolunteerHistories.FirstOrDefault(e => e.UserId == vh_id);
+            VolunteerHistory = _context.VolunteerHistories.FirstOrDefault(e => e.UserId == vh_id&&e.EventId==pi_id);
             Campaign = _context.FundraisingCampaigns.FirstOrDefault(c => c.CampaignId == pi_id);
             if (VolunteerHistory != null)
             {
@@ -50,7 +50,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
         }
 
         [HttpPost]
-        public async Task<IActionResult> OnPostAsync(List<IFormFile>? video, List<IFormFile>? images, string content, int profileId, int campaignId,int charityid,string Status)
+        public async Task<IActionResult> OnPostAsync(List<IFormFile>? video, List<IFormFile>? images, string content, int profileId, int campaignId,int charityid,string Status, int uid)
         {
             if (string.IsNullOrEmpty(content) || profileId == 0 || campaignId == 0)
             {
@@ -127,7 +127,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             _context.ProjectInformations.Add(addInfo);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage(new { pi_id = addInfo.CampaignId, vh_id = addInfo.ProfileId });
+            return RedirectToPage(new { pi_id = addInfo.CampaignId, vh_id = uid });
         }
 
         [HttpPost]
@@ -214,7 +214,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             return RedirectToPage(new { pi_id = info.CampaignId, vh_id = uid}); // Redirect to the same page after deletion
         } 
         [HttpPost]
-        public async Task<IActionResult> OnPostApproveAsync(int projectId)
+        public async Task<IActionResult> OnPostApproveAsync(int projectId, int uid)
         {
             var info = await _context.ProjectInformations.FindAsync(projectId);
 
@@ -227,7 +227,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             _context.ProjectInformations.Update(info);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage(new { pi_id = info.CampaignId, vh_id = info.ProfileId }); 
+            return RedirectToPage(new { pi_id = info.CampaignId, vh_id = uid }); 
         }
         [HttpPost]
         public async Task<IActionResult> OnPostUnApproveAsync(int projectId, int uid)

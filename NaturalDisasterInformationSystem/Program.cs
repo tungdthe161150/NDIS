@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using NaturalDisasterInformationSystem.Models;
 using NaturalDisasterInformationSystem.Services;
 using OfficeOpenXml;
+using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Set license context
@@ -31,6 +33,21 @@ builder.Services.AddScoped<SMSService>(provider =>
 
     return new SMSService(apiKey, secretKey, context);
 });
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Account/Login";
+        options.AccessDeniedPath = "/Account/Denied";
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+        options.SlidingExpiration = true;
+    });
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole("1"));
+    options.AddPolicy("Charity", policy => policy.RequireRole("2"));
+    options.AddPolicy("User", policy => policy.RequireRole("3"));
+});
 
 var app = builder.Build();
 
@@ -45,6 +62,7 @@ app.UseSession(); // Kích ho?t Session
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();
 
 app.UseAuthorization();
 app.Use(async (context, next) =>

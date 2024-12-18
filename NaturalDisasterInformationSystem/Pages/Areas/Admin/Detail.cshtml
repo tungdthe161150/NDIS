@@ -10,16 +10,8 @@
 <div class="container">
     <div class="page-inner">
         <div class="page-header">
-            <h3 class="fw-bold mb-3">DataTables.Net</h3>
+            <h3 class="fw-bold mb-3">Chi tiết tài khoản</h3>
             <ul class="breadcrumbs mb-3">
-                <li class="nav-home">
-                    <a href="#">
-                        <i class="icon-home"></i>
-                    </a>
-                </li>
-                <li class="separator">
-                    <i class="icon-arrow-right"></i>
-                </li>
                 <li class="nav-item">
                     <a asp-page="List">Quay lại</a>
                 </li>
@@ -34,16 +26,16 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered">
-                                <tr>
+                             @*    <tr>
                                     <th>ID</th>
                                     <td>@Model.User.UserId</td>
-                                </tr>
+                                </tr> *@
                                 <tr>
-                                    <th>Username</th>
+                                    <th>Tên tài khoản</th>
                                     <td>@Model.User.Username</td>
                                 </tr>
                                 <tr>
-                                    <th>Password</th>
+                                    <th>Mật khẩu</th>
                                     <td>@Model.User.PasswordHash</td>
                                 </tr>
                                 <tr>
@@ -51,23 +43,23 @@
                                     <td>@Model.User.Email</td>
                                 </tr>
                                 <tr>
-                                    <th>Full Name</th>
+                                    <th>Họ tên</th>
                                     <td>@Model.User.FullName</td>
                                 </tr>
                                 <tr>
-                                    <th>Phone Number</th>
+                                    <th>Số điện thoại</th>
                                     <td>@Model.User.PhoneNumber</td>
                                 </tr>
                                 <tr>
                                     <th>Role</th>
-                                    <td>@Model.User.RoleId</td>
+                                    <td>@Model.User.Role.RoleName</td>
                                 </tr>
                                 <tr>
-                                    <th>Active</th>
+                                    <th>Trạng thái</th>
                                     <td>@Model.User.Active</td>
                                 </tr>
                                 <tr>
-                                    <th>Created At</th>
+                                    <th>Ngày tạo</th>
                                     <td>@Model.User.CreatedAt</td>
                                 </tr>
                             </table>

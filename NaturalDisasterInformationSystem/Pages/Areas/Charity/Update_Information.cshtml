@@ -13,24 +13,27 @@
             <h2 class="fw-bold text-uppercase mb-4" style="margin-bottom: 20px; font-size: 24px; color: #333; text-align: center;">
                 Danh sách cập nhật thông tin chiến dịch từ thiện
             </h2>
-            @if (Model.VolunteerHistory != null && Model.VolunteerHistory.ProfileId != null && Model.VolunteerHistory.EventId == Model.Campaign.CampaignId && Model.VolunteerHistory.Status == "hoàn thành")
+            @if (Model.VolunteerHistory != null && Model.VolunteerHistory.ProfileId != null && Model.VolunteerHistory.EventId == Model.Campaign.CampaignId && Model.VolunteerHistory.Status == "hoàn thành" && userId != null)
             {
                 <button id="addButton" class="btn btn-outline-primary">Thêm Thông Tin</button>
+                <button id="listButton" class="btn btn-outline-primary">Danh sách bài đăng của tôi</button>
+
             }
             else if (int.TryParse(charityId, out int parsedCharityId))
             {
                 if (Model.Campaign.CharityId == parsedCharityId)
                 {
                     <button id="addButton" class="btn btn-outline-primary">Thêm Thông Tin</button>
+                    <button id="listButton" class="btn btn-outline-primary">Danh sách bài đăng của tôi</button>
+
                 }
             }
-            <button id="listButton" class="btn btn-outline-primary">Danh sách thông tin tôi đã cập nhật</button>
             <!-- Add Information Modal -->
             <div id="listModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
                 <div class="modal-content" style="background-color: #fefefe; margin: 5% auto; padding: 20px; border: 1px solid #888; width: 90%; max-width: 1000px; overflow-x: auto;">
                     <span class="close" onclick="document.getElementById('listModal').style.display='none'" style="color: #aaa; float: right; font-size: 28px; font-weight: bold;">&times;</span>
                     <div class="container">
-                        <h2>Danh sách thông tin tôi đã cập nhật</h2>
+                        <h2>Danh sách bài đăng của tôi</h2>
                         <table class="table table-striped" style="width: 100%; table-layout: fixed; word-wrap: break-word;">
                             <thead>
                                 <tr>
@@ -48,7 +51,19 @@
                                         <td style="word-wrap: break-word; white-space: normal; overflow: hidden; text-overflow: ellipsis; width: 40%;">
                                             @(info.Content.Length > 100 ? info.Content.Substring(0, 100) + "..." : info.Content)
                                         </td>
-                                        <td style="word-wrap: break-word; white-space: normal; overflow: hidden; text-overflow: ellipsis;width: 30%;">@info.Img</td>
+                                        <td style="word-wrap: break-word; white-space: normal; overflow: hidden; text-overflow: ellipsis;width: 30%;">
+                                            @{
+                                                // Giả sử info.Img là chuỗi như "image1.jpg,image2.jpg,image3.jpg"
+                                                var imagePaths = info.Img?.Split(",") ?? Array.Empty<string>();
+                                            }
+
+                                            @foreach (var imagePath in imagePaths)
+                                            {
+                                                <a href="@($"/uploads/projectInformation/{imagePath.Trim()}")" target="_blank">@imagePath.Trim()</a>
+
+                                                <br />
+                                            }
+                                        </td>
                                         <td style="word-wrap: break-word; white-space: normal; overflow: hidden; text-overflow: ellipsis;width: 20%;">@info.CreateDate.ToString("dd MM yyyy, HH:mm")</td>
                                         <td style="word-wrap: break-word; white-space: normal; overflow: hidden; text-overflow: ellipsis;width: 10%;">
                                             @if (info.Status == "0")
@@ -63,12 +78,12 @@
                                         <td style="word-wrap: break-word; white-space: normal; overflow: hidden; text-overflow: ellipsis;width: 10%;">
                                             @if (info.Profile.UserId.ToString() == userId)
                                             {
-                                                
-                                                    <button type="submit" style="background:#ffc107;" class="btn btn-sm"
-                                                            onclick="showUpdateForm('@info.InformationId', '@Html.Raw(Html.Encode(info.Content))', '@info.Img', '@info.Video')">
-                                                        Sửa
-                                                    </button>
-                                                
+
+                                                <button type="submit" style="background:#ffc107;" class="btn btn-sm"
+                                                        onclick="showUpdateForm('@info.InformationId', '@Html.Raw(Html.Encode(info.Content))', '@info.Img', '@info.Video')">
+                                                    Sửa
+                                                </button>
+
 
                                                 <!-- Update Project Modal -->
                                                 <div id="updateModal-@info.InformationId" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
@@ -141,7 +156,7 @@
                                 <input type="text" id="Content" name="Content" class="form-control" required />
                                 @if (charityId != null)
                                 {
-                                    <input type="text" id="charityid" name="charityid" value="@charityId" class="form-control" />
+                                    <input type="text" id="charityid" name="charityid" value="@charityId" class="form-control" hidden/>
                                 }
                             </div>
                             <div class="form-group" hidden>
@@ -160,6 +175,8 @@
                                 <label for="Images">Hình ảnh</label>
                                 <input type="file" id="Images" name="Images" class="form-control" accept="image/*,video/*" multiple />
                             </div>
+                            <input type="hidden" name="uid" value="@userId" />
+
                             <button type="submit" class="btn btn-primary">Thêm</button>
                         </form>
                     </div>
@@ -197,7 +214,7 @@
                 </div>
                 @if (Model.ProjectInformationList != null && Model.ProjectInformationList.Count > 0)
                 {
-                    if (charityId != null && userId != null)
+                    if (charityId != null && userId != null && Model.Campaign.CharityId.ToString() == charityId)
                     {
                         foreach (var info in Model.ProjectInformationList)
                         {
@@ -214,7 +231,7 @@
 
                                     <form method="post" asp-page-handler="Delete" style="display:inline-block; margin-left: 10px;">
                                         <input type="hidden" name="id" value="@info.InformationId" />
-                                        <input type="hidden" name="uid" value="@info.Profile.UserId" />
+                                        <input type="hidden" name="uid" value="@userId" />
 
                                         <button type="submit" style="background:#dc3545" class="btn btn-sm">Từ chối</button>
                                     </form>
@@ -229,7 +246,7 @@
                                     </form>
                                 }
                                 <h3 style="font-size: 18px; color: #333; margin-bottom: 10px;"> @info.Profile.User.Username</h3>
-                                <p class="date" style="font-size: 14px; color: #555; margin: 5px 0;">Date: @info.CreateDate.ToShortDateString()</p>
+                                <p class="date" style="font-size: 14px; color: #555; margin: 5px 0;">Ngày đăng: @info.CreateDate.ToShortDateString()</p>
                                 <h4 hidden style="font-size: 18px; color: #333; margin-bottom: 10px;text-align: justify;">@info.Content</h4>
                                 <h2 style="font-size: 18px; color: #333; margin-bottom: 10px; text-align: justify;">
                                     @Html.Raw(!string.IsNullOrEmpty(info.Content) && info.Content.Length > 150
@@ -375,52 +392,52 @@
                         {
                             <div class="info-item" style="background-color: #f9f9f9; border-radius: 8px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); text-align: center;" data-content="@info.Content" data-profile="@info.Profile.User.Username" data-date="@info.CreateDate.ToShortDateString()">
 
-                               @*  @if (info.Profile.UserId.ToString() == userId)
-                                {
-                                    <button type="button" class="btn btn-warning" style="padding: 10px; color: white; height: fit-content"
-                                            onclick="showUpdateForm('@info.InformationId', '@Html.Raw(Html.Encode(info.Content))', '@info.Img', '@info.Video')">
-                                        Sửa
-                                    </button>
+                                @*  @if (info.Profile.UserId.ToString() == userId)
+                    {
+                    <button type="button" class="btn btn-warning" style="padding: 10px; color: white; height: fit-content"
+                    onclick="showUpdateForm('@info.InformationId', '@Html.Raw(Html.Encode(info.Content))', '@info.Img', '@info.Video')">
+                    Sửa
+                    </button>
 
-                                    <!-- Update Project Modal -->
-                                    <div id="updateModal-@info.InformationId" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
-                                        <div class="modal-content" style="background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 8px;">
-                                            <span class="close" onclick="closeUpdateForm('@info.InformationId')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
-                                            <h3>Cập nhật thông tin dự án</h3>
-                                            <form method="post" asp-page-handler="Update" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 15px;">
-                                                <input type="hidden" name="projectId" id="projectId-@info.InformationId" value="@info.InformationId" />
+                    <!-- Update Project Modal -->
+                    <div id="updateModal-@info.InformationId" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
+                    <div class="modal-content" style="background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 8px;">
+                    <span class="close" onclick="closeUpdateForm('@info.InformationId')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+                    <h3>Cập nhật thông tin dự án</h3>
+                    <form method="post" asp-page-handler="Update" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 15px;">
+                    <input type="hidden" name="projectId" id="projectId-@info.InformationId" value="@info.InformationId" />
 
-                                                <div style="display: flex; flex-direction: column;">
-                                                    <label for="content-@info.InformationId" style="font-weight: 500; margin-bottom: 5px;">Mô Tả:</label>
-                                                    <textarea id="content-@info.InformationId" name="content" rows="4" required
-                                                              style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; font-size: 16px; resize: vertical;">@info.Content</textarea>
-                                                </div>
+                    <div style="display: flex; flex-direction: column;">
+                    <label for="content-@info.InformationId" style="font-weight: 500; margin-bottom: 5px;">Mô Tả:</label>
+                    <textarea id="content-@info.InformationId" name="content" rows="4" required
+                    style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; font-size: 16px; resize: vertical;">@info.Content</textarea>
+                    </div>
 
-                                                <div style="display: flex; flex-direction: column;">
-                                                    <label for="video-@info.InformationId" style="font-weight: 500; margin-bottom: 5px;">Video (nếu có):</label>
-                                                    <input type="file" id="video-@info.InformationId" name="video" accept="video/*" multiple style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
-                                                </div>
+                    <div style="display: flex; flex-direction: column;">
+                    <label for="video-@info.InformationId" style="font-weight: 500; margin-bottom: 5px;">Video (nếu có):</label>
+                    <input type="file" id="video-@info.InformationId" name="video" accept="video/*" multiple style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
+                    </div>
 
-                                                <div style="display: flex; flex-direction: column;">
-                                                    <label for="images-@info.InformationId" style="font-weight: 500; margin-bottom: 5px;">Hình Ảnh (nếu có):</label>
-                                                    <input type="file" id="images-@info.InformationId" name="images" accept="image/*" multiple style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
-                                                    <small style="color: #888;">(Hold Ctrl to select multiple images)</small>
-                                                </div>
+                    <div style="display: flex; flex-direction: column;">
+                    <label for="images-@info.InformationId" style="font-weight: 500; margin-bottom: 5px;">Hình Ảnh (nếu có):</label>
+                    <input type="file" id="images-@info.InformationId" name="images" accept="image/*" multiple style="padding: 8px; border-radius: 8px; border: 1px solid #ddd;" />
+                    <small style="color: #888;">(Hold Ctrl to select multiple images)</small>
+                    </div>
 
-                                                <button type="submit" style="background-color: #007bff; color: white; padding: 12px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
-                                                    Cập nhật
-                                                </button>
-                                            </form>
-                                        </div>
-                                    </div>
+                    <button type="submit" style="background-color: #007bff; color: white; padding: 12px; font-size: 16px; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s;">
+                    Cập nhật
+                    </button>
+                    </form>
+                    </div>
+                    </div>
 
 
 
-                                    <form method="post" asp-page-handler="Delete" style="display:inline-block; margin-left: 10px;">
-                                        <input type="hidden" name="id" value="@info.InformationId" />
-                                        <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
-                                    </form>
-                                } *@
+                    <form method="post" asp-page-handler="Delete" style="display:inline-block; margin-left: 10px;">
+                    <input type="hidden" name="id" value="@info.InformationId" />
+                    <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                    </form>
+                    } *@
                                 @if (info.Campaign.CharityId.ToString() == @charityId && info.Status == "0")
                                 {
                                     <form method="post" asp-page-handler="Approve" style="display:inline-block; margin-left: 10px;">
@@ -434,7 +451,7 @@
                                     </form>
                                 }
                                 <h3 style="font-size: 18px; color: #333; margin-bottom: 10px;"> @info.Profile.User.Username</h3>
-                                <p class="date" style="font-size: 14px; color: #555; margin: 5px 0;">Date: @info.CreateDate.ToShortDateString()</p>
+                                <p class="date" style="font-size: 14px; color: #555; margin: 5px 0;">Ngày: @info.CreateDate.ToShortDateString()</p>
                                 <h4 hidden style="font-size: 18px; color: #333; margin-bottom: 10px;text-align: justify;">@info.Content</h4>
                                 <h2 style="font-size: 18px; color: #333; margin-bottom: 10px; text-align: justify;">
                                     @Html.Raw(!string.IsNullOrEmpty(info.Content) && info.Content.Length > 150
@@ -526,6 +543,10 @@
                                 }
                             </div>
                         }
+                        @if (Model.ProjectInformationList1.Count == 0)
+                        {
+                            <p>Không có thông tin nào được cập nhật.</p>
+                        }
                     }
 
                 }
@@ -589,7 +610,7 @@
                 const images = this.querySelector('.images')?.innerHTML || '';
 
                 modalProfile.innerHTML = `<h2>${profile}</h2>`;
-                modalDate.innerHTML = `<p><strong>Ngày Đăng:</strong> ${date}</p>`;
+                modalDate.innerHTML = `<p><strong></strong> ${date}</p>`;
                 modalContent.innerHTML = `<h3>${content}</h3>`;
                 modalMedia.innerHTML = `${videos}${images}`;
 

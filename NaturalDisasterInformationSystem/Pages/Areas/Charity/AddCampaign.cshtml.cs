@@ -1,4 +1,5 @@
 using MailKit.Net.Smtp;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MimeKit;
@@ -9,6 +10,8 @@ using System.Threading.Tasks;
 
 namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
 {
+    [Authorize(Policy = "Charity")]
+
     public class AddCampaignModel : PageModel
     {
         private readonly DO_ANContext _context;
@@ -116,8 +119,70 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
 
             // Send notification emails to all users
             var users = _context.Users.Select(u => u.Email).ToList();
-            var campaignLink = $"http://localhost:5064/User/DetailCampaignUser?dcu_id={Campaign.CampaignId}";
-            var emailBody = $"Chào b?n chúng tôi v?a có m?t chi?n d?ch m?i mang tên là:'{CampaignName}'.Chi?n d?ch ?ang c?n s? ?ng h? c?a các nhà h?o tâm và ?ang trong quá trình tuy?n tình nguy?n viên cho d? án. ?? bi?t thêm chi ti?t vui lòng ?n vào ?ây: {campaignLink}";
+            var campaignLink = $"https://ndis.cloud/User/DetailCampaignUser?dcu_id={Campaign.CampaignId}";
+            var emailBody = $@"
+<!DOCTYPE html>
+<html lang=""vi"">
+<head>
+    <meta charset=""UTF-8"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1.0"">
+    <style>
+        body {{
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }}
+        .container {{
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }}
+        h1 {{
+            color: #4CAF50;
+            text-align: center;
+        }}
+        p {{
+            margin: 15px 0;
+        }}
+        .button {{
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }}
+        .footer {{
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #777;
+            text-align: center;
+        }}
+    </style>
+</head>
+<body>
+    <div class=""container"">
+        <h1>Thong bao tu to chuc</h1>
+        <p>Chao ban,</p>
+        <p>Chung toi vua co mot chien dich moi co ten la: <strong>{CampaignName}</strong>.</p>
+        <p>Chien dich dang can su ung ho cua cac nha hao tam va hien dang trong qua trinh tuyen tinh nguyen vien cho du an.</p>
+        <p>De biet them chi tiet, vui long nhan vao lien ket duoi day:</p>
+        <p><a href=""{campaignLink}"" class=""button"">Xem Chi Tiet Chien Dich</a></p>
+        <div class=""footer"">
+            <p>Cam on ban da dong hanh cung chung toi!</p>
+            <p>Tran trong,<br>To chuc</p>
+        </div>
+    </div>
+</body>
+</html>
+";
 
             foreach (var userEmail in users)
             {
@@ -133,12 +198,14 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("Natural Disaster System", "no-reply@nds.com"));
             message.To.Add(new MailboxAddress("", email));
-            message.Subject = "Thông Báo M?i";
+            message.Subject = "Thong Bao Moi";
 
-            message.Body = new TextPart("plain")
+            var bodyBuilder = new BodyBuilder
             {
-                Text = messageBody
+                HtmlBody = messageBody
             };
+            message.Body = bodyBuilder.ToMessageBody();
+
 
             using (var client = new SmtpClient())
             {

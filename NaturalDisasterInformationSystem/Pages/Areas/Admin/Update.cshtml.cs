@@ -1,10 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using NaturalDisasterInformationSystem.Models;
+using System.Data;
 
 namespace NaturalDisasterInformationSystem.Pages.Areas.Admin
 {
+    [Authorize(Policy = "Admin")]
+
     public class UpdateModel : PageModel
     {
         private readonly DO_ANContext context;
@@ -15,7 +20,8 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin
         }
 
         [BindProperty]
-        public NaturalDisasterInformationSystem.Models.User User { get; set; }
+        public NaturalDisasterInformationSystem.Models.User User { get; set; } = default!;
+
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -24,57 +30,69 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Admin
                 return NotFound();
             }
 
-            User = await context.Users.FirstOrDefaultAsync(u => u.UserId == id);
-            if (User == null)
+            // Tìm người dùng theo ID và kèm theo thông tin Role
+            var user = await context.Users
+                .Include(r => r.Role) // Lấy thông tin role của người dùng
+                .FirstOrDefaultAsync(u => u.UserId == id);
+
+            if (user == null)
             {
                 return NotFound();
             }
+            User = user;
+
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
+            ModelState.Remove("User.PasswordHash");
+            ModelState.Remove("User.Role");
+
             if (!ModelState.IsValid)
             {
+                var errors = ModelState
+        .Where(x => x.Value.Errors.Count > 0)
+        .Select(x => new { x.Key, x.Value.Errors })
+        .ToList();
+
+                foreach (var error in errors)
+                {
+                    Console.WriteLine($"Key: {error.Key}, Error: {string.Join(", ", error.Errors.Select(e => e.ErrorMessage))}");
+                }
+
+                TempData["ErrorMessage"] = "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại.";
                 return Page();
             }
 
-            var userInDb = await context.Users.FirstOrDefaultAsync(u => u.UserId == User.UserId);
+            var userInDb = await context.Users.FindAsync(User.UserId);
             if (userInDb == null)
             {
-                return NotFound();
+                TempData["ErrorMessage"] = "Không tìm thấy tài khoản cần cập nhật.";
+                return RedirectToPage("./List");
             }
-
-            // Cập nhật các thuộc tính
-            userInDb.Username = User.Username;
-            userInDb.Email = User.Email;
-            userInDb.FullName = User.FullName;
-            userInDb.PhoneNumber = User.PhoneNumber;
-            userInDb.RoleId = User.RoleId;
-            userInDb.Active = User.Active;
 
             try
             {
+                // Chỉ cập nhật trường RoleId
+                userInDb.RoleId = User.RoleId;
+                userInDb.Active = User.Active;
+                context.Users.Update(userInDb);
                 await context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(User.UserId))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
 
-            return RedirectToPage("List");
+                TempData["SuccessMessage"] = "Cập nhật quyền tài khoản thành công!";
+                return RedirectToPage("./List");
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Đã xảy ra lỗi: {ex.Message}";
+                return Page();
+            }
         }
 
         private bool UserExists(int id)
         {
-            return context.Users.Any(e => e.UserId == id);
+            return (context.Users?.Any(e => e.UserId == id)).GetValueOrDefault();
         }
     }
 }

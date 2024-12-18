@@ -30,36 +30,28 @@
                                    class="display table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Username</th>
-                                        <th>Fullname</th>
-                                        <th>Active</th>
-                                        <th>Created_at</th>
+                                        @* <th>ID</th> *@
+                                        <th>Tên tài khoản</th>
+                                        <th>Họ tên</th>
+                                        <th>Trạng thái</th>
+                                        <th>Ngày tạo</th>
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Username</th>
-                                        <th>Fullname</th>
-                                        <th>Active</th>
-                                        <th>Created_at</th>
-                                        <th></th>
-                                    </tr>
-                                </tfoot>
+                           
                                 <tbody>
                                     @foreach (var user in Model.Users)
                                     {
                                         <tr>
-                                            <td>@user.UserId</td>
+                                            @* <td>@user.UserId</td> *@
                                             <td>@user.Username</td>
                                             <td>@user.FullName</td>
-                                            <td>@user.Active</td>
+                                            <td>@(user.Active.HasValue ? (user.Active.Value ? "Đang hoạt động" : "Cấm") : "Chưa xác định")</td>
+
                                             <td>@user.CreatedAt.Value.ToString("dd/MM/yyyy")</td>
                                             <td>
-                                                <a asp-page="./Detail" asp-route-id="@user.UserId">Detail</a>
-                                                <a asp-page="./Update" asp-route-id="@user.UserId">Update</a>
+                                                <a asp-page="./Detail" asp-route-id="@user.UserId">Chi Tiết</a>
+                                                <a asp-page="./Update" asp-route-id="@user.UserId">Cập Nhật</a>
                                             </td>
                                         </tr>
                                     }
@@ -72,3 +64,22 @@
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <!-- Import thư viện SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Hiển thị thông báo nếu có TempData -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Thành công!',
+                text: 'Cập nhật thành công',
+                timer: 3000,
+                showConfirmButton: false
+            });
+        </script>
+    }
+}

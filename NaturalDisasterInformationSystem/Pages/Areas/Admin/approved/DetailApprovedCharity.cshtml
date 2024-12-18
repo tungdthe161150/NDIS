@@ -108,16 +108,16 @@
                         @if (Model.CharityDetail.Reliability == false){
                             <form method="post" asp-page-handler="Approve" asp-route-dac_id="@Model.CharityDetail.CharityId">
                                 <div class="form-group">
-                                    <label for="CommentApprove">Lý Do Phê Duyệt (Nếu có):</label>
-                                    <textarea id="CommentApprove" name="Comment" class="form-control" rows="3"></textarea>
+                                    <label for="CommentApprove">Lý Do Phê Duyệt:</label>
+                                    <textarea id="CommentApprove" name="Comment" class="form-control" rows="3" required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-success">Phê Duyệt</button>
                             </form>
 
                             <form method="post" asp-page-handler="Hid" asp-route-dac_id="@Model.CharityDetail.CharityId">
                                 <div class="form-group">
-                                    <label for="CommentReject">Lý Do Từ Chối (Nếu có):</label>
-                                    <textarea id="CommentReject" name="Comment" class="form-control" rows="3"></textarea>
+                                    <label for="CommentReject">Lý Do Từ Chối:</label>
+                                    <textarea id="CommentReject" name="Comment" class="form-control" rows="3" required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-danger">Từ Chối</button>
                             </form>
@@ -127,6 +127,10 @@
                         }
                        else{
                         <form method="post" asp-page-handler="Hid" asp-route-dac_id="@Model.CharityDetail.CharityId">
+                                <div class="form-group">
+                                    <label for="CommentReject">Lý Do Hủy Bỏ:</label>
+                                    <textarea id="CommentReject" name="Comment" class="form-control" rows="3" required></textarea>
+                                </div>
                             <button type="submit" class="btn btn-danger">Hủy Bỏ Quyền Tổ Chức Từ Thiện</button>
                         </form>
                        }

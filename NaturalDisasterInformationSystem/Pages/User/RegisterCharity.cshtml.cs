@@ -7,9 +7,12 @@ using MimeKit;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Asn1.Ocsp;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NaturalDisasterInformationSystem.Pages.User
 {
+    [Authorize]
+
     public class RegisterCharityModel : PageModel
     {
         private readonly DO_ANContext _context;
@@ -54,12 +57,17 @@ namespace NaturalDisasterInformationSystem.Pages.User
                 ModelState.AddModelError(string.Empty, "Charity not found.");
                 return Page();
             }
-
+            if (string.IsNullOrWhiteSpace(PhoneNumber) || PhoneNumber.Length != 10 || !PhoneNumber.All(char.IsDigit))
+            {
+                ModelState.AddModelError(nameof(PhoneNumber), "So dien thoai phai co 10 chu so.");
+                return Page();
+            }
             charity.CharityName = CharityName;
             charity.Description = Description;
             charity.Website = Website;
             charity.ContactEmail = ContactEmail;
             charity.PhoneNumber = PhoneNumber;
+            charity.CreatedAt = DateTime.Now;
 
             if (Images != null && Images.Count > 0)
             {
@@ -123,7 +131,11 @@ namespace NaturalDisasterInformationSystem.Pages.User
                 ModelState.AddModelError(string.Empty, "Charity Name or Email already exists.");
                 return Page();
             }
-
+            if (string.IsNullOrWhiteSpace(PhoneNumber) || PhoneNumber.Length != 10 || !PhoneNumber.All(char.IsDigit))
+            {
+                ModelState.AddModelError(nameof(PhoneNumber), "So dien thoai phai co 10 chu so.");
+                return Page();
+            }
             var charity = new Charity
             {
                 UserId = int.Parse(UserId),

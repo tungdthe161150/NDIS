@@ -10,68 +10,104 @@
     <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
     <div class="container" style="position: relative; z-index: 2; padding: 20px; max-width: 1400px; margin: 0 auto; width: 100%; padding-top: 73px;">
         <div class="profile-section" style="background-color: #ffffff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); padding: 20px; margin: 20px 0;">
-            <h2 style="margin-bottom: 20px; font-size: 24px; color: #333; text-align: center;">Danh Sách Chiến Dịch Gây Quỹ</h2>
-            <div class="row">
-                @foreach (var campaign in Model.FundraisingCampaignsU)
+            <h2 style="margin-bottom: 20px; font-size: 24px; color: #333; text-align: center;font-weight:bold">Danh Sách Chiến Dịch Gây Quỹ</h2>
+            <div class="filter-section" style="text-align: center; margin-bottom: 20px;">
+                <form method="get">
+                    <label for="filter">Lọc theo Trạng thái:</label>
+                    <select id="filter" name="filter" class="form-control" style="display: inline-block; width: 170px;">
+                        <option value="">Tất cả Chiến dịch</option>
+                        <option value="ended">Chiến dịch đã kết thúc</option>
+                        <option value="ongoing">Chiến dịch đang diễn ra</option>
+                    </select>
+
+                    <label for="disasterName" style="margin-left: 20px;">Lọc theo Thiên tai:</label>
+                    <select id="disasterName" name="disasterName" class="form-control" style="display: inline-block; width: 170px;">
+                        <option value="">Tất cả Thiên tai</option>
+                        @foreach (var disaster in Model.Disasters) // Thêm danh sách các thiên tai có sẵn vào model
+                        {
+                            <option value="@disaster.DisasterName">@disaster.DisasterName</option>
+                        }
+                    </select>
+                    <label for="location" style="margin-left: 20px;">Tìm kiếm theo Địa điểm:</label>
+                    <input type="text" id="location" name="location" class="form-control" placeholder="Nhập địa điểm"
+                           style="display: inline-block; width: 200px;" value="@Request.Query["location"]" />
+                    <button type="submit" class="btn btn-primary">Áp dụng bộ lọc</button>
+                </form>
+
+            </div>
+
+            <div id="campaign-container" class="row">
+                @foreach (var campaign in Model.FundraisingCampaignsU.Select((value, index) => new { value, index }))
                 {
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4 mb-4 campaign-item" style="display: none;" data-index="@campaign.index">
                         <div class="card h-100">
-                            <div class="card-img-top" style="background-color: #ddd; height: 200px; text-align: center; display: flex; justify-content: center; align-items: center;">
-                                <img src="@(campaign.ImgCam != null && campaign.ImgCam.Split(',').Length > 0
-           ? "/uploads/campaigns/" + campaign.ImgCam.Split(',')[0]
-           : "/uploads/campaigns/sample_large.jpg")"
+                            <!-- Campaign Image -->
+                            <div class="card-img-top" style="background-color: #ddd; height: 200px; text-align: center;">
+                                <img src="@(campaign.value.ImgCam != null && campaign.value.ImgCam.Split(',').Length > 0
+                        ? "/uploads/campaigns/" + campaign.value.ImgCam.Split(',')[0]
+                        : "/uploads/campaigns/sample_large.jpg")"
                                      alt="Campaign Image"
-                                     style="width: 100%; height: 100%; object-fit: cover;" />
+                                     style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
+
+                            <!-- Campaign Content -->
                             <div class="card-body text-center">
+                                <!-- Campaign Title -->
                                 <h5 class="card-title mb-3" style="font-size: 1.25rem; font-weight: bold; color: #333;">
-                                    @campaign.CampaignName
+                                    @campaign.value.CampaignName
                                 </h5>
 
                                 <!-- Charity Name -->
                                 <p class="mb-2" style="font-size: 1rem; color: #555;">
-                                    Tổ Chức: <strong>@campaign.Charity.CharityName</strong>
+                                    Tổ Chức: <a asp-page="/User/ProfileCharity" asp-route-pc_id="@campaign.value.Charity.CharityId">
+                                        <strong>@campaign.value.Charity.CharityName</strong>
+                                    </a>
                                 </p>
 
                                 <!-- Campaign Dates -->
                                 <p class="card-text mb-3" style="font-size: 1rem; color: #555;">
                                     Thời gian:
-                                    @if (campaign.StartDate == null && campaign.EndDate == null)
+                                    @if (campaign.value.StartDate == null && campaign.value.EndDate == null)
                                     {
                                         <span style="color: #e74c3c; font-weight: bold;">Đang cập nhật</span>
                                     }
-                                    else if(campaign.EndDate == null)
+                                    else if (campaign.value.EndDate == null)
                                     {
-                                        <span>
-                                            Bắt đầu @campaign.StartDate?.ToString("dd/MM/yyyy") - Kết thúc <span style="color: #e74c3c; font-weight: bold;">Đang cập nhật</span>
-                                        </span>
+                                        <span>Bắt đầu @campaign.value.StartDate?.ToString("dd/MM/yyyy") - Kết thúc <span style="color: #e74c3c; font-weight: bold;">Đang cập nhật</span></span>
                                     }
                                     else
                                     {
-                                        <span>Bắt đầu @campaign.StartDate?.ToString("dd/MM/yyyy") - Kết thúc @campaign.EndDate?.ToString("dd/MM/yyyy")</span>
+                                        <span>Bắt đầu @campaign.value.StartDate?.ToString("dd/MM/yyyy") - Kết thúc @campaign.value.EndDate?.ToString("dd/MM/yyyy")</span>
+                                        @if (campaign.value.EndDate < DateTime.Now)
+                                        {
+                                            <span style="color: #e74c3c; font-weight: bold;">(Đã kết thúc)</span>
+                                        }
+                                        else if (campaign.value.StartDate <= DateTime.Now && campaign.value.EndDate > DateTime.Now)
+                                        {
+                                            <span style="color: #e74c3c; font-weight: bold;">(Đang diễn ra)</span>
+                                        }
                                     }
                                 </p>
 
-                                <!-- Raised Amount & Goal -->
+                                <!-- Raised Amount and Goal -->
                                 <p class="mb-3" style="font-size: 1.1rem; font-weight: bold; color: #27ae60;">
-                                    @campaign.RaisedAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))
+                                    @campaign.value.RaisedAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))
                                     <span style="color: #aaa;"> trên </span>
-                                    @campaign.GoalAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))
+                                    @campaign.value.GoalAmount?.ToString("C", new System.Globalization.CultureInfo("vi-VN"))
                                 </p>
 
                                 <!-- Progress Bar -->
                                 <div class="progress mb-3" style="height: 8px; border-radius: 20px;">
                                     <div class="progress-bar bg-success" role="progressbar"
-                                         style="width: @(campaign.RaisedAmount / campaign.GoalAmount * 100)%"
-                                         aria-valuenow="@(campaign.RaisedAmount / campaign.GoalAmount * 100)"
+                                         style="width: @(campaign.value.RaisedAmount / campaign.value.GoalAmount * 100)%"
+                                         aria-valuenow="@(campaign.value.RaisedAmount / campaign.value.GoalAmount * 100)"
                                          aria-valuemin="0" aria-valuemax="100">
                                     </div>
                                 </div>
 
                                 <!-- Detail Button -->
-                                @if (charityId != null&&charityId==campaign.CharityId.ToString())
+                                @if (charityId != null && charityId == campaign.value.CharityId.ToString())
                                 {
-                                    
                                     <form method="post">
                                         <div class="form-group" hidden>
                                             <label for="UserId">User ID</label>
@@ -79,27 +115,84 @@
                                         </div>
                                         <div class="form-group" hidden>
                                             <label for="EventId">Event ID</label>
-                                            <input type="number" class="form-control" id="EventId" name="EventId" value="@campaign.CampaignId" required />
+                                            <input type="number" class="form-control" id="EventId" name="EventId" value="@campaign.value.CampaignId" required />
                                         </div>
-
-
-                                        <button type="submit" class="btn btn-primary mt-3 px-4 py-2" style="font-size: 1rem; border-radius: 20px;">  Chi Tiết.</button>
+                                        <button type="submit" class="btn btn-primary mt-3 px-4 py-2" style="font-size: 1rem; border-radius: 20px;">Chi Tiết</button>
                                     </form>
                                 }
-
                                 else
                                 {
-                                    <a asp-page="/user/DetailCampaignUser" asp-route-dcu_id="@campaign.CampaignId" class="btn btn-primary mt-3 px-4 py-2" style="font-size: 1rem; border-radius: 20px;">
+                                    <a asp-page="/user/DetailCampaignUser" asp-route-dcu_id="@campaign.value.CampaignId" class="btn btn-primary mt-3 px-4 py-2" style="font-size: 1rem; border-radius: 20px;">
                                         Chi Tiết
                                     </a>
                                 }
-                               
                             </div>
-
                         </div>
                     </div>
                 }
             </div>
+            <div class="pagination-container text-center mt-4">
+                <nav>
+                    <ul class="pagination" id="pagination"></ul>
+                </nav>
+            </div>
+
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const itemsPerPage = 6; // Số lượng mục trên mỗi trang
+        const items = document.querySelectorAll(".campaign-item");
+        const paginationContainer = document.getElementById("pagination");
+
+        const totalItems = items.length;
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+        let currentPage = 1;
+
+        // Hiển thị các mục của trang hiện tại
+        function showPage(page) {
+            items.forEach((item, index) => {
+                if (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+
+        // Tạo các nút phân trang
+        function createPagination() {
+            paginationContainer.innerHTML = "";
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageItem = document.createElement("li");
+                pageItem.className = "page-item";
+
+                if (i === currentPage) {
+                    pageItem.classList.add("active");
+                }
+
+                const pageLink = document.createElement("a");
+                pageLink.className = "page-link";
+                pageLink.href = "#";
+                pageLink.textContent = i;
+
+                pageLink.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    currentPage = i;
+                    showPage(currentPage);
+                    createPagination();
+                });
+
+                pageItem.appendChild(pageLink);
+                paginationContainer.appendChild(pageItem);
+            }
+        }
+
+        // Khởi tạo
+        showPage(currentPage);
+        createPagination();
+    });
+</script>

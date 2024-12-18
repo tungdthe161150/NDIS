@@ -29,7 +29,7 @@ namespace NaturalDisasterInformationSystem.Services
 
             var bodyBuilder = new BodyBuilder
             {
-                TextBody = body
+                HtmlBody = body
             };
             message.Body = bodyBuilder.ToMessageBody();
 

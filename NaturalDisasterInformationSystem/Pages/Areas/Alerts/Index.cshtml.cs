@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -5,6 +6,8 @@ using NaturalDisasterInformationSystem.Models;
 
 namespace NaturalDisasterInformationSystem.Pages.Areas.Admin.Alerts
 {
+    [Authorize(Policy = "Admin")]
+
     public class IndexModel : PageModel
     {
         private readonly DO_ANContext context;

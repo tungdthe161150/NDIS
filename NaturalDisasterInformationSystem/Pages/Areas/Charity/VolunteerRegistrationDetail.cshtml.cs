@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,8 @@ using System.Collections.Generic;
 
 namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
 {
+    [Authorize(Policy = "Charity")]
+
     public class VolunteerRegistrationDetailModel : PageModel
     {
         private readonly DO_ANContext _context;
@@ -40,7 +43,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             if (Volun != null)
             {
                 // Update fields
-                Volun.Status = "ho‡n th‡nh";
+                Volun.Status = "ho√†n th√†nh";
 
 
                 // **Mark entity as updated**

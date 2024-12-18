@@ -124,6 +124,11 @@
                                             <span class="sub-item">Trang Chủ</span>
                                         </a>
                                     </li>
+                                     <li>
+                                        <a asp-page="/Account/Logout">
+                                            <span class="sub-item">Đăng xuất</span>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -142,7 +147,7 @@
                             <div class="collapse" id="base">
                                 <ul class="nav nav-collapse">
                                     <li>
-                                        <a asp-page="List">
+                                        <a href="/Areas/Admin/List">
                                             <span class="sub-item">Quản lý tài khoản</span>
                                         </a>
                                     </li>
@@ -152,8 +157,13 @@
                                         </a>
                                     </li>
                                     <li>
+                                        <a href="/Areas/Admin/Blog/listBlogAdmin">
+                                            <span class="sub-item">Quản lý blog</span>
+                                        </a>
+                                    </li>
+                                    <li>
                                         <a href="/Areas/Alerts/Index">
-                                            <span class="sub-item">Quản lý thông báo</span>
+                                            <span class="sub-item">Quản lý cảnh báo</span>
                                         </a>
                                     </li>
                                     <li>
@@ -202,7 +212,7 @@
                             </div>
                         </li> *@
                         <li class="nav-item">
-                            <a data-bs-toggle="collapse" href="#tables">
+                       @*      <a data-bs-toggle="collapse" href="#tables">
                                 <i class="fas fa-table"></i>
                                 <p>Alerts</p>
                                 <span class="caret"></span>
@@ -221,50 +231,39 @@
                                     </li>
                                 </ul>
                             </div>
-                        </li>
-                        @*    <li class="nav-item">
-                        <a data-bs-toggle="collapse" href="#maps">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Maps</p>
-                        <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="maps">
-                        <ul class="nav nav-collapse">
-                        <li>
-                        <a href="maps/googlemaps.html">
-                        <span class="sub-item">Google Maps</span>
-                        </a>
-                        </li>
-                        <li>
-                        <a href="maps/jsvectormap.html">
-                        <span class="sub-item">Jsvectormap</span>
-                        </a>
-                        </li>
-                        </ul>
-                        </div>
+                        </li> *@
+                        <li class="nav-item">
+                            <a data-bs-toggle="collapse" href="#maps">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>SOS</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="maps">
+                                <ul class="nav nav-collapse">
+                                    <a asp-page="/areas/admin/sos/listsosadmin">
+                                        <span class="sub-item">Danh sách SOS</span>
+                                    </a>
+                                </ul>
+                            </div>
                         </li>
                         <li class="nav-item">
-                        <a data-bs-toggle="collapse" href="#charts">
-                        <i class="far fa-chart-bar"></i>
-                        <p>Charts</p>
-                        <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="charts">
-                        <ul class="nav nav-collapse">
-                        <li>
-                        <a href="charts/charts.html">
-                        <span class="sub-item">Chart Js</span>
-                        </a>
+                            <a data-bs-toggle="collapse" href="#charts">
+                                <i class="far fa-chart-bar"></i>
+                                <p>Quản lý thông tin thiên tai</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="charts">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a asp-page="/areas/admin/story/liststoryadmin">
+                                            <span class="sub-item">Danh sách</span>
+                                        </a>
+                                    </li>
+                                  
+                                </ul>
+                            </div>
                         </li>
-                        <li>
-                        <a href="charts/sparkline.html">
-                        <span class="sub-item">Sparkline</span>
-                        </a>
-                        </li>
-                        </ul>
-                        </div>
-                        </li>
-                        <li class="nav-item">
+                        @* <li class="nav-item">
                         <a href="widgets.html">
                         <i class="fas fa-desktop"></i>
                         <p>Widgets</p>
@@ -364,14 +363,14 @@
                     <div class="container-fluid">
                         <nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
                             <div class="input-group">
-                                <div class="input-group-prepend">
+                                @* <div class="input-group-prepend">
                                     <button type="submit" class="btn btn-search pe-1">
                                         <i class="fa fa-search search-icon"></i>
                                     </button>
                                 </div>
                                 <input type="text"
                                        placeholder="Search ..."
-                                       class="form-control" />
+                                       class="form-control" /> *@
                             </div>
                         </nav>
 

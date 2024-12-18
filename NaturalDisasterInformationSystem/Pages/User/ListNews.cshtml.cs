@@ -20,19 +20,26 @@ namespace NaturalDisasterInformationSystem.Pages.User
 
         private const int PageSize = 6;
 
-        public async Task<IActionResult> OnGetAsync(int pageNumber = 1)
+        public async Task<IActionResult> OnGetAsync(string? searchNews, int pageNumber = 1)
         {
-            // Đếm tổng số bản ghi
-            int totalItems = await context.News.CountAsync();
+            IQueryable<News> newsQuery = context.News
+                .OrderByDescending(f => f.NewsId);
+
+            if (!string.IsNullOrEmpty(searchNews))
+            {
+                newsQuery = newsQuery.Where(b => b.Title.ToLower().Contains(searchNews.ToLower()));
+            }
+
+            int totalItems = await newsQuery.CountAsync();
 
             // Tính tổng số trang
             TotalPages = (int)Math.Ceiling(totalItems / (double)PageSize);
             CurrentPage = pageNumber;
 
-            var newList = context.News.OrderByDescending(n => n.PublishedAt) // Sắp xếp theo ngày đăng (mới nhất trước)
+            var newList = await newsQuery.OrderByDescending(n => n.PublishedAt) // Sắp xếp theo ngày đăng (mới nhất trước)
                 .Skip((pageNumber - 1) * PageSize)
                 .Take(PageSize)
-                .ToList();
+                .ToListAsync();
 
             List = newList;
 

@@ -33,30 +33,27 @@
                                     <tr>
                                         <th>STT</th>
                                         <th>Tiêu đề</th>
-                                        <th>Nội dung</th>
+                                        @* <th>Nội dung</th> *@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>STT</th>
-                                        <th>Tiêu đề</th>
-                                        <th>Nội dung</th>
-                                        <th></th>
-                                    </tr>
-                                </tfoot>
+                               
                                 <tbody>
                                     @foreach (var news in Model.News)
                                     {
                                         <tr>
                                             <td>@news.NewsId</td>
                                             <td>@news.Title</td>
-                                            <td>@(news.Content.Length > 100 ? news.Content.Substring(0, 100) + "..." : news.Content)</td>
+                                         @*    <td>
+                                                @(!string.IsNullOrEmpty(news.Content) && news.Content.Length > 100
+                                                    ? @Html.Raw(news.Content.Substring(0, 100) + "...")
+                                                    : @Html.Raw(news.Content))
+                                            </td> *@
+
                                             <td>
-                                                <a href="javascript:void(0)" onclick="showDetailModal('@news.NewsId')">Detail</a>
-                                                <a asp-page="./Update" asp-route-id="@news.NewsId">Update</a>
-                                                <a asp-page="./Delete" asp-route-id="@news.NewsId">Delete</a>
-                                                <a href="javascript:void(0)" onclick="confirmDelete('@news.NewsId')">Delete</a>
+                                                <a asp-page="./Detail" asp-route-id="@news.NewsId">Chi tiết</a>
+                                                <a asp-page="./Update" asp-route-id="@news.NewsId">Cập nhật</a>
+                                                <a asp-page="./Delete" asp-route-id="@news.NewsId">Xóa</a>
                                             </td>
                                         </tr>
                                     }
@@ -69,6 +66,20 @@
         </div>
     </div>
 </div>
+@if (TempData["DeleteSuccess"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Thành công!</strong> @TempData["DeleteSuccess"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+@if (TempData["UpdateSuccess"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Thành công!</strong> @TempData["UpdateSuccess"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
 
 <script>
     function showDetailModal(newsId) {
@@ -101,46 +112,6 @@
             }
         });
     }
-
-    function confirmDelete(newsId) {
-        Swal.fire({
-            title: '',
-            text: "Bạn muốn xóa thông tin này đúng không",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Đồng ý',
-            cancelButtonText: 'Hủy bỏ'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    url: '/Areas/News/Delete?id=' + newsId,
-                    method: 'POST',
-                    headers: {
-                        'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
-                    },
-                    success: function (response) {
-                        Swal.fire(
-                            'Đã xóa',
-                            'Thông tin đã được xóa',
-                            'success'
-                        ).then(() => {
-                            // Reload lại trang sau khi xóa thành công
-                            location.reload();
-                        });
-                    },
-                    error: function () {
-                        Swal.fire(
-                            'Lỗi!',
-                            'Đã xảy ra sự cố khi xóa tin tức.',
-                            'error'
-                        );
-                    }
-                });
-            }
-        });
-    }
 </script>
 @section Scripts {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -156,17 +127,14 @@
         @if (TempData["UpdateSuccess"] != null)
         {
             <text>
-                Swal.fire('Success', '@TempData["UpdateSuccess"]', 'success');
+                Swal.fire('Thành công!', '@TempData["UpdateSuccess"]', 'success');
             </text>
         }
-
         @if (TempData["DeleteSuccess"] != null)
         {
             <text>
-                Swal.fire('Thành công', '@TempData["DeleteSuccess"]', 'success');
+                    Swal.fire('Thành công!', '@TempData["DeleteSuccess"]', 'success');
             </text>
         }
-
-
     </script>
 }

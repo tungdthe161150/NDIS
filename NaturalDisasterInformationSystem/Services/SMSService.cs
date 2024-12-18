@@ -21,10 +21,23 @@ namespace NaturalDisasterInformationSystem.Services
             httpClient = new HttpClient();
         }
 
-        public async Task<List<string>> SendSmsAsync(string message)
+        public async Task<List<string>> SendSmsAsync(string message,string? AddressFilter)
         {
-            var phoneNumbers = await context.Users.Select(p => p.PhoneNumber).ToListAsync();
-            var results = new List<string>();
+            IQueryable<Models.User> usersQuery = context.Users;
+
+            if (!string.IsNullOrEmpty(AddressFilter))
+            {
+                // Use EF.Functions.Like for case-insensitive comparison
+                usersQuery = usersQuery.Where(u => EF.Functions.Like(u.Address, "%" + AddressFilter + "%"));
+            }
+
+            // Get the list of phone numbers of users whose address matches the filter
+            var phoneNumbers = await usersQuery
+                .Where(u => !string.IsNullOrEmpty(u.PhoneNumber)) // Make sure phone number is not null or empty
+                .Select(u => u.PhoneNumber)
+                .ToListAsync();
+/*            var phoneNumbers = await context.Users.Select(p => p.PhoneNumber).ToListAsync();
+*/            var results = new List<string>();
 
             foreach (var phoneNumber in phoneNumbers)
             {

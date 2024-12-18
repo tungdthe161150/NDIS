@@ -37,7 +37,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             if (int.TryParse(userId, out int id))
             {
                 // Th?c hi?n truy v?n n?u chuy?n ??i thành công
-                var donations = context.FundraisingDonations
+                var donations = context.FundraisingDonations.OrderByDescending(c=>c.DonationId)
                     .Where(x => x.CampaignId == c_id)
                     .ToList();
                 Donations = donations;
@@ -45,13 +45,13 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             else
             {
                 // X? lý khi không l?y ???c UserId ho?c UserId không h?p l?
-                Console.WriteLine("UserId không t?n t?i ho?c không h?p l?.");
+                Console.WriteLine("UserId khong ton tai hoac khong hop le.");
             }
 
             ViewData["Donations"] = Donations;
             FundraisingCampaigns = context.FundraisingCampaigns.FirstOrDefault(c=>c.CampaignId==c_id);
             RevExpDonations = context.RevExpDonations
-                .Where(c => c.CamId == c_id)
+                .Where(c => c.CamId == c_id).OrderByDescending(c=>c.RevExpId)
                 .Include(c => c.Cam)
                 .ToList();
 
@@ -59,9 +59,25 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             .Where(img => img.CamId == c_id)
             .OrderByDescending(img => img.CreateDate) // Optional: Order by the latest uploaded
             .ToList();
+            // Đảm bảo các thuộc tính không bị null
+            Donations ??= new List<FundraisingDonation>();
+            RevExpDonations ??= new List<RevExpDonation>();
+            ImgDonations ??= new List<ImgDonation>();
+            FundraisingCampaigns ??= new FundraisingCampaign();
         }
 
         //Khoi 3
+        public async Task<IActionResult> OnPostDeleteImgDonationsAsync(int id)
+        {
+            var donation = await context.ImgDonations.FindAsync(id);
+            if (donation != null)
+            {
+                context.ImgDonations.Remove(donation);
+                await context.SaveChangesAsync();
+            }
+
+            return RedirectToPage(new { c_id = donation.CamId }); // Refresh the page with the same c_id
+        }
         public async Task<IActionResult> OnPostAddImgFileAsync(IFormFile file, int CamId,string Content)
         {
             if (file != null && file.Length > 0)
@@ -151,8 +167,8 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
                     foreach (var donation in revExpDonations)
                     {
                         worksheet.Cells[row, 1].Value = donation.Des;
-                        worksheet.Cells[row, 2].Value = donation.Revenue?.ToString("C", new System.Globalization.CultureInfo("vi-VN"));
-                        worksheet.Cells[row, 3].Value = donation.Expenditure?.ToString("C", new System.Globalization.CultureInfo("vi-VN"));
+                        worksheet.Cells[row, 2].Value = donation.Revenue?.ToString();
+                        worksheet.Cells[row, 3].Value = donation.Expenditure?.ToString();
                         worksheet.Cells[row, 4].Value = donation.Cam?.CampaignName;
                         row++;
                     }
@@ -195,7 +211,19 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             if (ExcelFile == null || ExcelFile.Length == 0)
             {
                 ModelState.AddModelError("", "Vui lòng chọn file Excel.");
-                return Page();
+                return RedirectToPage("/Areas/Charity/ListDonation", new { c_id = CamId });
+            }
+            var allowedExtensions = new[] { ".xls", ".xlsx" };
+            var fileExtension = Path.GetExtension(ExcelFile.FileName).ToLower();
+
+            // Check if the uploaded file is an Excel file
+            if (!allowedExtensions.Contains(fileExtension))
+            {
+                // Store the error message in TempData
+                TempData["ErrorMessagekhoi2"] = "Chỉ hỗ trợ file Excel (.xls, .xlsx).";
+
+                // Redirect to the ListDonation page with the Campaign ID
+                return RedirectToPage("/Areas/Charity/ListDonation", new { c_id = CamId });
             }
             var donations = new List<RevExpDonation>();
 
@@ -209,8 +237,12 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
                 {
                     var worksheet = package.Workbook.Worksheets[0];
                     var rowCount = worksheet.Dimension.Rows;
-
-                    for (int row = 2; row <= rowCount; row++)
+                    if (rowCount < 6)
+                    {
+                        TempData["ErrorMessagekhoi2"] = "Dữ liệu không hợp lệ. Vui lòng dùng mẫu chúng tôi cung cấp.";
+                        return RedirectToPage("/Areas/Charity/ListDonation", new { c_id = CamId });
+                    }
+                    for (int row = 6; row <= rowCount; row++)
                     {
                         var des = worksheet.Cells[row, 1].Text.Trim();
                         var revenueText = worksheet.Cells[row, 2].Text.Trim();
@@ -221,25 +253,36 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
                             ? (double?)null
                             : double.TryParse(revenueText, NumberStyles.Any, CultureInfo.InvariantCulture, out double parsedRevenue)
                                 ? parsedRevenue
-                                : (double?)null;
+                                : null;
 
                         // Kiểm tra và chuyển đổi Expenditure
                         double? expenditure = string.IsNullOrEmpty(expenditureText)
                             ? (double?)null
                             : double.TryParse(expenditureText, NumberStyles.Any, CultureInfo.InvariantCulture, out double parsedExpenditure)
                                 ? parsedExpenditure
-                                : (double?)null;
+                                : null;
 
-                        // Thêm vào danh sách, không cần kiểm tra giá trị null vì mô hình hỗ trợ nullable
-                        var donation = new RevExpDonation
+                        // Kiểm tra điều kiện trước khi thêm vào danh sách
+                        if (revenue.HasValue && expenditure.HasValue)
                         {
-                            CamId = CamId,
-                            Revenue = revenue,
-                            Expenditure = expenditure,
-                            Des = des
-                        };
+                            var donation = new RevExpDonation
+                            {
+                                CamId = CamId,
+                                Revenue = revenue,
+                                Expenditure = expenditure,
+                                Des = des
+                            };
 
-                        donations.Add(donation);
+                            donations.Add(donation);
+                        }
+                        else
+                        {
+                            TempData["ErrorMessagekhoi2"] = "Dữ liệu không hợp lệ. Vui lòng dùng mẫu chúng tôi cung cấp.";
+
+                            // Redirect to the ListDonation page with the Campaign ID
+                            return RedirectToPage("/Areas/Charity/ListDonation", new { c_id = CamId });
+
+                        }
                     }
 
                 }
@@ -261,12 +304,35 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
         }
 
         //khoi 1
+        public async Task<IActionResult> OnPostDeleteDonationsAsync(int id)
+        {
+            var donation = await context.FundraisingDonations.FindAsync(id);
+            if (donation != null)
+            {
+                context.FundraisingDonations.Remove(donation);
+                await context.SaveChangesAsync();
+            }
+
+            return RedirectToPage(new { c_id = donation.CampaignId }); // Refresh the page with the same c_id
+        }
         public async Task<IActionResult> OnPostUploadAndSaveAsync(IFormFile ExcelFile, int CamId)
         {
             if (ExcelFile == null || ExcelFile.Length == 0)
             {
                 ModelState.AddModelError("", "Vui lòng chọn file Excel.");
-                return Page();
+                return RedirectToPage("/Areas/Charity/ListDonation", new { c_id = CamId });
+            }
+            var allowedExtensions = new[] { ".xls", ".xlsx" };
+            var fileExtension = Path.GetExtension(ExcelFile.FileName).ToLower();
+
+            // Check if the uploaded file is an Excel file
+            if (!allowedExtensions.Contains(fileExtension))
+            {
+                // Store the error message in TempData
+                TempData["ErrorMessage"] = "Chỉ hỗ trợ file Excel (.xls, .xlsx).";
+
+                // Redirect to the ListDonation page with the Campaign ID
+                return RedirectToPage("/Areas/Charity/ListDonation", new { c_id = CamId });
             }
 
             var userId = HttpContext.Session.GetString("UserId");
@@ -274,7 +340,7 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
             if (!int.TryParse(userId, out int parsedUserId))
             {
                 ModelState.AddModelError("", "Không thể xác định người dùng.");
-                return Page();
+                return RedirectToPage("/Areas/Charity/ListDonation", new { c_id = CamId });
             }
 
             var donations = new List<FundraisingDonation>();
@@ -289,12 +355,16 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
                 {
                     var worksheet = package.Workbook.Worksheets[0];
                     var rowCount = worksheet.Dimension.Rows;
-
-                    for (int row = 2; row <= rowCount; row++)
+                    if (rowCount < 6)
                     {
-                        var dateString = worksheet.Cells[row, 2].Text;
-                        var amountText = worksheet.Cells[row, 3].Text;
-                        var message = worksheet.Cells[row, 5].Text;
+                        TempData["ErrorMessage"] = "Dữ liệu không hợp lệ. Vui lòng dùng mẫu chúng tôi cung cấp.";
+                        return RedirectToPage("/Areas/Charity/ListDonation", new { c_id = CamId });
+                    }
+                    for (int row = 6; row <= rowCount; row++)
+                    {
+                        var dateString = worksheet.Cells[row, 1].Text;
+                        var amountText = worksheet.Cells[row, 2].Text;
+                        var message = worksheet.Cells[row, 3].Text;
 
                         if (DateTime.TryParseExact(dateString, "dd/MM/yyyy HH:mm:ss", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedDate)
                             && double.TryParse(amountText, out double amount))
@@ -311,7 +381,10 @@ namespace NaturalDisasterInformationSystem.Pages.Areas.Charity
                         }
                         else
                         {
-                            Console.WriteLine($"Invalid data on row {row}: Date='{dateString}', Amount='{amountText}'");
+                            TempData["ErrorMessage"] = "Dữ liệu không hợp lệ. Vui lòng dùng mẫu chúng tôi cung cấp.";
+
+                            // Redirect to the ListDonation page with the Campaign ID
+                            return RedirectToPage("/Areas/Charity/ListDonation", new { c_id = CamId });
                         }
                     }
                 }

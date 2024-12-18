@@ -33,6 +33,7 @@
   <ItemGroup>
     <Folder Include="Pages\New\" />
     <Folder Include="wwwroot\uploads\donation\" />
+    <Folder Include="wwwroot\uploads\example\" />
   </ItemGroup>
 
   <ItemGroup>

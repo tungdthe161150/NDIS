@@ -7,7 +7,7 @@
     var sdt = HttpContext.Session.GetString("SDT") ?? Request.Cookies["SDT"];
 }
 
-<meta property="og:url" content="http://localhost:5064/User/DisasterDetail?dd_id=@Model.Disaster.DisasterId" />
+<meta property="og:url" content="https://ndis.cloud/User/DisasterDetail?dd_id=@Model.Disaster.DisasterId" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Chi Tiết Thiên Tai - @Model.Disaster.DisasterName" />
 <meta property="og:description" content="@Model.Disaster.Description" />
@@ -44,13 +44,13 @@
 
             @if (Model.Disaster != null)
             {
-                <h3 style="font-size: 20px; color: #333; margin-top: 20px;">Bản đồ thiên tai</h3>
+                @* <h3 style="font-size: 20px; color: #333; margin-top: 20px;">Bản đồ thiên tai</h3> *@
                 <div style="display: flex; gap: 20px; align-items: flex-start; margin-top: 20px;">
                     <div style="flex: 2;">
                         <div id="windy" style="width: 100%; height: 400px; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); margin-bottom: 20px;"></div>
                     </div>
                     <div style="flex: 1; background-color: #f9f9f9; padding: 15px; border: 1px solid #ddd; border-radius: 8px;">
-                        <h3 style="font-size: 18px; margin-top: 0; color: #333;">Thông tin cơ bản</h3>
+                        <h3 style="font-size: 18px; margin-top: 0; color: #333; font-weight: bold;">Thông tin cơ bản</h3>
                         <p style="margin: 5px 0; color: #444;"><strong>Tên Thiên Tai:</strong> @Model.Disaster.DisasterName</p>
                         <p style="margin: 5px 0; color: #444;"><strong>Vị Trí:</strong> @Model.Disaster.Location</p>
                         <p style="margin: 5px 0; color: #444;"><strong>Cấp Độ Thiên Tai:</strong> @Model.Disaster.SeverityLevel</p>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <h3 style="font-size: 20px; color: #333; margin-top: 20px;">Thông tin chi tiết</h3>
+                <h3 style="font-size: 20px; color: #333; margin-top: 20px; font-weight: bold;">Thông tin chi tiết</h3>
                 <div style="font-size: 16px; line-height: 1.6; color: #444; margin-top: 10px;">
                     @Html.Raw(Model.Disaster.Description)
                 </div>
@@ -130,8 +130,7 @@
                             </li>
                             <li>
                                 <button onclick="toggleListForm()" style="padding: 10px 20px; border: none; border-radius: 10px; background-color: #; color: black; cursor: pointer; transition: background-color 0.3s; width: 100%; text-align: left; font-size: 16px;">
-                                    Danh Sách Thông Tin Tôi Cung Cấp
-                                </button>
+                                    Danh Sách Bài Đăng Của TÔI                                </button>
                             </li>
                         }
                         <li>
@@ -279,7 +278,7 @@
                         <div id="addStoryModal" class="modal add-modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.4);">
                             <div class="modal-content" style="background-color: #fefefe; margin: 10% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 600px; border-radius: 8px;">
                                 <span class="close" onclick="toggleAddForm()" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
-                                <h3>Thêm Câu Chuyện Mới</h3>
+                                <h3>Thêm Bài Đăng Mới</h3>
                                 <form method="post" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 15px;">
                                     <input type="hidden" name="disasterId" value="@Model.Disaster?.DisasterId" />
                                     <input type="hidden" name="userId" value="@userId" />
@@ -428,7 +427,11 @@
                 {
                     <div class="card h-100" style="flex: 0 0 300px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
                         <div class="card-img-top" style="background-color: #ddd; height: 200px; text-align: center; display: flex; justify-content: center; align-items: center;">
-                            <img src="/LayoutAdmin/assets/img/kaiadmin/logo3.png" alt="Campaign Image" style="width: 100%; height: 100%; object-fit: cover;" />
+                            <img src="@(campaign.ImgCam != null && campaign.ImgCam.Split(',').Length > 0
+           ? "/uploads/campaigns/" + campaign.ImgCam.Split(',')[0]
+           : "/uploads/campaigns/sample_large.jpg")"
+                                 alt="Campaign Image"
+                                 style="width: 100%; height: 100%; object-fit: cover;" />
                         </div>
                         <div class="card-body text-center">
                             <h5 class="card-title">@campaign.CampaignName</h5>
@@ -589,7 +592,7 @@
     /* share */
     document.getElementById('share-btn').addEventListener('click', async function () {
         const disasterId = this.getAttribute('data-dd-id');
-        const shareUrl = `http://localhost:5064/User/DisasterDetail?dd_id=${disasterId}`;
+        const shareUrl = `https://ndis.cloud/User/DisasterDetail?dd_id=${disasterId}`;
         const shareData = {
             title: 'Chi Tiết Thiên Tai',
             text: `Chi Tiết Thiên Tai - ${'@Model.Disaster?.DisasterName'}`, // Update with dynamic data if needed

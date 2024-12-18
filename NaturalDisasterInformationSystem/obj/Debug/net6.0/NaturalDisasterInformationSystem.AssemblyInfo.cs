@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NaturalDisasterInformationSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95b22999a49567731eda5f126e6fded3cd3aa8d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f83989cea231ef6307af4e6e8990602d62e9a75")]
 [assembly: System.Reflection.AssemblyProductAttribute("NaturalDisasterInformationSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NaturalDisasterInformationSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
